@@ -32,7 +32,7 @@ const ContactText = () => {
             },
           }}
         >
-          Sonia Vihar 5 pusta near North East Delhi 110094
+          A-894 NO-20, SONIA VIHAR DELHI NORTH EAST  DELHI-110094
         </Typography>
       </Box>
 
