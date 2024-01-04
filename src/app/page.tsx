@@ -31,7 +31,15 @@ export default function Home() {
           justifyContent: "center",
         }}
       >
-        <Box textAlign="center" mt={{ xs: "0.5rem", md: "4rem" }}>
+        <Box
+          textAlign="center"
+          width={"100%"}
+          mt={{ xs: "0.5rem", md: "4rem" }}
+          mb={{
+            xs: "2rem",
+            md: "4rem",
+          }}
+        >
           <Typography
             color={"blue"}
             variant="h4"
@@ -44,7 +52,9 @@ export default function Home() {
           >
             Our Photo Gallery
           </Typography>
-          <CrouselComponent />
+          <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
+            <CrouselComponent />
+          </Box>
         </Box>
       </Box>
 
