@@ -30,7 +30,7 @@ const navItems = ["Home", "About", "Event & Update", "Contact US"];
 export default function Navbar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const logoImg = require('../../../helper/logo-2.png')
+  const logoImg = require("../../../helper/logo-2.png");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -101,16 +101,52 @@ export default function Navbar(props: Props) {
               spacing={2}
             >
               <Link className={styles.navItem} href={"/"}>
-                <Typography>Home</Typography>
+                <Typography
+                  sx={{
+                    transition: "font-size 0.3s ease-in-out",
+                    "&:hover": {
+                      fontSize: "1.1em",
+                    },
+                  }}
+                >
+                  Home
+                </Typography>
               </Link>
               <Link className={styles.navItem} href={"/"}>
-                <Typography>About</Typography>
+                <Typography
+                  sx={{
+                    transition: "font-size 0.3s ease-in-out",
+                    "&:hover": {
+                      fontSize: "1.1em",
+                    },
+                  }}
+                >
+                  About
+                </Typography>
               </Link>
               <Link className={styles.navItem} href={"/"}>
-                <Typography>Event & Updates</Typography>
+                <Typography
+                  sx={{
+                    transition: "font-size 0.3s ease-in-out",
+                    "&:hover": {
+                      fontSize: "1.1em",
+                    },
+                  }}
+                >
+                  Event & Updates
+                </Typography>
               </Link>
               <Link className={styles.navItem} href={"/"}>
-                <Typography>Contact Us</Typography>
+                <Typography
+                  sx={{
+                    transition: "font-size 0.3s ease-in-out",
+                    "&:hover": {
+                      fontSize: "1.1em",
+                    },
+                  }}
+                >
+                  Contact Us
+                </Typography>
               </Link>
             </Stack>
           </Box>
