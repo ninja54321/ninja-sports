@@ -16,7 +16,7 @@ export default function Home() {
     <main className={styles.main}>
       <Navbar />
 
-      <Box height={{ xs: "50vh", sm: "70vh", lg: "90vh" }}>
+      <Box height={{ xs: "50vh", sm: "70vh", lg: "75vh" }}>
         <IntroSection />
       </Box>
 

@@ -36,13 +36,24 @@ const FrontDescAndAnouncement = () => {
         >
           <Typography variant="h4">Welcome</Typography>
           <Typography>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Consequatur obcaecati distinctio atque, ex maiores tempora labore
-            quos iure sequi magnam aut officiis perspiciatis? Nobis voluptates
-            sint maxime quo dicta laborum, dolorum temporibus beatae voluptas
-            iusto consectetur cum. Asperiores qui labore, repellat, eaque
-            praesentium iure autem voluptatum laborum dignissimos minima
-            pariatur?
+            Meaning of Ninja: This art emphasizes speed and efficiency in every
+            task, teaching practitioners to be fast, faster, and the fastest in
+            their endeavors. It is an art that encourages individuals to prove
+            their abilities by accomplishing tasks swiftly, akin to the sudden
+            attack Ninja is a martial art that encompasses various defensive
+            techniques, preparing individuals to defend themselves against
+            attacks or weapons. It not only enhances physical skills but also
+            contributes to mental strength. 
+            <br />
+            <br />
+            This self-defense sport is suitable
+            for both boys and girls, offering the opportunity to excel in
+            disciplines like Judo, Karate, Taekwondo, Jeet Kune Do, Wushu,
+            Boxing, Kickboxing, or Muay Thai. Therefore, parents and guardians
+            are urged to introduce their children to this beneficial sport,
+            enabling them to not only develop self-defense skills but also
+            potentially succeed in various sports competitions. Wishing all
+            children a bright and successful future.
           </Typography>
 
           <Button sx={{ mt: "2rem" }} variant="outlined">
@@ -61,7 +72,12 @@ const FrontDescAndAnouncement = () => {
         justifyContent={"center"}
         flexDirection={"column"}
       >
-        <Typography marginY={'3rem'} variant="h4" color={"GrayText"} gutterBottom>
+        <Typography
+          marginY={"3rem"}
+          variant="h4"
+          color={"GrayText"}
+          gutterBottom
+        >
           Announcement & Updates
         </Typography>
         <Box width={"90vw"}>
