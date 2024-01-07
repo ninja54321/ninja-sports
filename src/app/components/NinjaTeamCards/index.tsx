@@ -15,6 +15,7 @@ const NinjaTeamCards = () => {
   return (
     <Box margin={"4rem"}>
       <Typography
+        textAlign={"center"}
         marginTop={"2rem"}
         color={"#939596"}
         variant="h4"
