@@ -37,7 +37,7 @@ const ContactText = () => {
       </Box>
 
       <Box
-        marginY={"1rem"}
+        marginTop={"1rem"}
         display={"flex"}
         gap={{ xs: "0.8rem", sm: "2rem" }}
         justifyContent={"center"}
