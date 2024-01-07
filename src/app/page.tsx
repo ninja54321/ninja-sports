@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main
       className={styles.main}
-      style={{ backgroundColor: "#E3F4F4" }}
+      style={{ backgroundColor: "#ffff8a" }}
     >
       <Navbar />
 
