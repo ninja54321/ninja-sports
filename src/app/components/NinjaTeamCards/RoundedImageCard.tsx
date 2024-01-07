@@ -27,6 +27,7 @@ const RoundImageCard = ({
           padding: "1rem",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
           backgroundColor: "#FBF9F1",
+          borderRadius: '2rem'
         }}
       >
         <CardActionArea>
