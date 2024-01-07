@@ -13,7 +13,7 @@ import {
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className={styles.main} style={{ backgroundColor: "#B7CADB" }}>
       <Navbar />
 
       <Box height={{ xs: "50vh", sm: "70vh", lg: "75vh" }}>

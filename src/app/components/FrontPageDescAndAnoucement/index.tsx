@@ -4,6 +4,7 @@ import {
   Grid,
   ImageList,
   ImageListItem,
+  Paper,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
@@ -34,26 +35,28 @@ const FrontDescAndAnouncement = () => {
           justifyContent={"center"}
           padding={"2rem"}
         >
-          <Typography variant="h4">Welcome</Typography>
+          <Typography variant="h4" mb={"2px"}>
+            Welcome
+          </Typography>
           <Typography>
-            Meaning of Ninja: This art emphasizes speed and efficiency in every
-            task, teaching practitioners to be fast, faster, and the fastest in
-            their endeavors. It is an art that encourages individuals to prove
-            their abilities by accomplishing tasks swiftly, akin to the sudden
-            attack Ninja is a martial art that encompasses various defensive
+            <span style={{ fontWeight: "700" }}>Meaning of Ninja:</span> This
+            art emphasizes speed and efficiency in every task, teaching
+            practitioners to be fast, faster, and the fastest in their
+            endeavors. It is an art that encourages individuals to prove their
+            abilities by accomplishing tasks swiftly, akin to the sudden attack
+            Ninja is a martial art that encompasses various defensive
             techniques, preparing individuals to defend themselves against
             attacks or weapons. It not only enhances physical skills but also
-            contributes to mental strength. 
+            contributes to mental strength.
             <br />
             <br />
-            This self-defense sport is suitable
-            for both boys and girls, offering the opportunity to excel in
-            disciplines like Judo, Karate, Taekwondo, Jeet Kune Do, Wushu,
-            Boxing, Kickboxing, or Muay Thai. Therefore, parents and guardians
-            are urged to introduce their children to this beneficial sport,
-            enabling them to not only develop self-defense skills but also
-            potentially succeed in various sports competitions. Wishing all
-            children a bright and successful future.
+            This self-defense sport is suitable for both boys and girls,
+            offering the opportunity to excel in disciplines like Judo, Karate,
+            Taekwondo, Jeet Kune Do, Wushu, Boxing, Kickboxing, or Muay Thai.
+            Therefore, parents and guardians are urged to introduce their
+            children to this beneficial sport, enabling them to not only develop
+            self-defense skills but also potentially succeed in various sports
+            competitions. Wishing all children a bright and successful future.
           </Typography>
 
           <Button sx={{ mt: "2rem" }} variant="outlined">
