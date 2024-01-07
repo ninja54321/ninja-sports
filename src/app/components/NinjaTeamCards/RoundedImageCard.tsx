@@ -21,7 +21,14 @@ const RoundImageCard = ({
 }: RoundImageCardProps) => {
   return (
     <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-      <Card sx={{ maxWidth: 345, padding: "1rem" }}>
+      <Card
+        sx={{
+          maxWidth: 345,
+          padding: "1rem",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+          backgroundColor: "#FBF9F1",
+        }}
+      >
         <CardActionArea>
           <Box
             overflow={"hidden"}
