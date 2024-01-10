@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
@@ -32,7 +34,7 @@ const ContactText = () => {
             },
           }}
         >
-          A-894 NO-20, SONIA VIHAR DELHI NORTH EAST  DELHI-110094
+          A-894 NO-20, SONIA VIHAR DELHI NORTH EAST DELHI-110094
         </Typography>
       </Box>
 

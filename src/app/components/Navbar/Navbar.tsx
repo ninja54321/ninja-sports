@@ -52,7 +52,7 @@ export default function Navbar(props: Props) {
           <Link className={styles.navItemDrawer} href={"/"}>
             <Typography>Home</Typography>
           </Link>
-          <Link className={styles.navItemDrawer} href={"/"}>
+          <Link className={styles.navItemDrawer} href={"/about"}>
             <Typography>About</Typography>
           </Link>
           <Link className={styles.navItemDrawer} href={"/"}>
@@ -112,7 +112,7 @@ export default function Navbar(props: Props) {
                   Home
                 </Typography>
               </Link>
-              <Link className={styles.navItem} href={"/"}>
+              <Link className={styles.navItem} href={"/about"}>
                 <Typography
                   sx={{
                     transition: "font-size 0.3s ease-in-out",
@@ -124,7 +124,7 @@ export default function Navbar(props: Props) {
                   About
                 </Typography>
               </Link>
-              <Link className={styles.navItem} href={"/"}>
+              <Link className={styles.navItem} href={"/events"}>
                 <Typography
                   sx={{
                     transition: "font-size 0.3s ease-in-out",
