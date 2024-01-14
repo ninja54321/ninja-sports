@@ -6,6 +6,7 @@ import {
   Footer,
   FrontDescAndAnouncement,
   IntroSection,
+  MidNavbar,
   Navbar,
   NinjaTeamCards,
   RegistrationSection,
@@ -13,21 +14,25 @@ import {
 
 export default function Home() {
   return (
-    <main
-      className={styles.main}
-      style={{ backgroundColor: "#fffcd8" }}
-    >
+    <main className={styles.main} style={{ backgroundColor: "#82b9d1" }}>
       <Navbar />
 
       <Box height={{ xs: "50vh", sm: "70vh", lg: "75vh" }}>
         <IntroSection />
       </Box>
 
+
+      {/* section Navbar */}
+      <MidNavbar />
+      
       <Box>
         <FrontDescAndAnouncement />
       </Box>
 
-      <Box
+
+
+      {/* crousel */}
+      {/* <Box
         sx={{
           display: "flex",
           alignItems: "center",
@@ -59,11 +64,11 @@ export default function Home() {
             <CrouselComponent />
           </Box>
         </Box>
-      </Box>
+      </Box> */}
 
-      <Box margin={"1rem"}>
+      {/* <Box margin={"1rem"}>
         <RegistrationSection />
-      </Box>
+      </Box> */}
 
       <NinjaTeamCards />
 

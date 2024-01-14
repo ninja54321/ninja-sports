@@ -10,150 +10,158 @@ const IntroSection = () => {
       justifyContent="center"
       alignItems="center"
       flexDirection="column"
-      width="85%" // Set the width to 85% of the viewport width
+      width="100%" // Set the width to 85% of the viewport width
       mx="auto" // Center the container horizontally
     >
-      <Stack direction={"row"} spacing={2} alignItems={"center"}>
-        <Box width={"100%"}>
+      <Stack direction={"row"}>
+        <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
           <Image
-            alt="icon"
+            style={{ maxHeight: 300 }}
             layout="responsive"
-            style={{ maxHeight: 120 }}
-            src={require("../../../helper/front-page-img/khelo-india-logo.png")}
+            src={require("../../../helper/logo-2.png")}
+            alt="logo"
           />
         </Box>
+        <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+          <Typography
+            fontWeight={"700"}
+            color={"red"}
+            sx={{
+              fontSize: {
+                xs: "1rem",
+                sm: "1.8rem",
+                md: "2.8rem",
+                lg: "3.5rem",
+              },
+            }}
+          >
+            NINJA SPORTS MARTIAL ART
+          </Typography>
 
-        <Box>
-          <Image
-            alt="icon"
-            layout="responsive"
-            style={{ maxHeight: 160 }}
-            src={require("../../../helper/front-page-img/FIT.png")}
-          />
-        </Box>
+          <Stack
+            direction={"row"}
+            justifyContent={"center"}
+            position={"relative"}
+          >
+            <Stack alignItems={"center"}>
+              <Typography
+                variant="h2"
+                fontWeight={"700"}
+                color={"red"}
+                sx={{
+                  fontSize: {
+                    xs: "0.8rem",
+                    sm: "1.2rem",
+                    md: "2.1rem",
+                    lg: "2.5rem",
+                  },
+                }}
+              >
+                SCHOOL GAMES FEDERATION OF INDIA
+              </Typography>
 
-        <Box width={"100%"}>
-          <Image
-            alt="icon"
-            layout="responsive"
-            style={{ maxHeight: 100 }}
-            src={require("../../../helper/front-page-img/swaksh-bharat.png")}
-          />
+              <Typography
+                fontWeight={"600"}
+                color={"blue"}
+                sx={{
+                  fontSize: {
+                    xs: "0.6rem",
+                    sm: "1rem",
+                    md: "1.2rem",
+                  },
+                }}
+              >
+                Affiliated
+              </Typography>
+
+              <Typography
+                fontWeight={"800"}
+                color={"#13c242"}
+                sx={{
+                  fontSize: {
+                    xs: "0.6rem",
+                    sm: "1rem",
+                    md: "1.2rem",
+                  },
+                }}
+              >
+                MINISTRY OF CORPORATE AFFAIRS
+              </Typography>
+              <Typography
+                fontWeight={"800"}
+                color={"#13c242"}
+                sx={{
+                  fontSize: {
+                    xs: "0.6rem",
+                    sm: "1rem",
+                    md: "1.2rem",
+                  },
+                }}
+              >
+                GOVERNMENT OF INDIA
+              </Typography>
+
+              <Box width={"100%"}>
+                <Image
+                  layout="responsive"
+                  src={require("../../../helper/front-page-img/yellow-highlite.png")}
+                  alt="highlited-text"
+                />
+              </Box>
+            </Stack>
+          </Stack>
         </Box>
       </Stack>
 
+      {/* banner */}
       <Box
-        sx={{ backgroundColor: "blue", height: "0.2rem", width: "100%" }}
-      ></Box>
-
-      <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
-        <Typography
-          fontWeight={"700"}
-          color={"red"}
-          sx={{
-            fontSize: {
-              xs: "1rem", 
-              sm: "2rem", 
-              md: "2.5rem",
-            },
-          }}
-        >
-          NINJA SPORTS MARTIAL ART
-        </Typography>
+        height={"2rem"}
+        width={"100%"}
+        sx={{
+          marginTop: "1rem",
+        }}
+      >
+        <Box
+          sx={{ backgroundColor: "blue", height: "0.2rem", width: "100%" }}
+        ></Box>
 
         <Stack
           direction={"row"}
-          justifyContent={"center"}
-          position={"relative"}
+          alignItems={"center"}
+          justifyContent={"space-evenly"}
+          width={"100%"}
         >
           <Box>
             <Image
-              style={{ maxHeight: 200 }}
+              alt="icon"
               layout="responsive"
-              src={require("../../../helper/logo-2.png")}
-              alt="logo"
+              style={{ maxHeight: 100 }}
+              src={require("../../../helper/front-page-img/khelo-india-logo.png")}
             />
           </Box>
-          <Stack alignItems={"center"}>
-            <Typography
-              variant="h2"
-              fontWeight={"700"}
-              color={"red"}
-              sx={{
-                fontSize: {
-                  xs: "1rem", 
-                  sm: "2rem", 
-                  md: "2.5rem",
-                },
-              }}
-            >
-              SCHOOL GAMES
-            </Typography>
-            <Typography
-              variant="h2"
-              fontWeight={"700"}
-              color={"red"}
-              sx={{
-                fontSize: {
-                  xs: "1rem", 
-                  sm: "2rem", 
-                  md: "2.5rem",
-                },
-              }}
-            >
-              FEDERATION OF INDIA
-            </Typography>
 
-            <Typography
-              fontWeight={"600"}
-              color={"blue"}
-              sx={{
-                fontSize: {
-                  xs: "0.8rem", 
-                  sm: "1.4rem", 
-                  md: "1.5rem",
-                },
-              }}
-            >
-              Affiliated
-            </Typography>
+          <Box>
+            <Image
+              alt="icon"
+              layout="responsive"
+              style={{ maxHeight: 60 }}
+              src={require("../../../helper/front-page-img/FIT.png")}
+            />
+          </Box>
 
-            <Typography
-              fontWeight={"800"}
-              color={"#13c242"}
-              sx={{
-                fontSize: {
-                  xs: "0.6rem", 
-                  sm: "1.2rem", 
-                  md: "1.4rem",
-                },
-              }}
-            >
-              MINISTRY OF CORPORATE AFFAIRS
-            </Typography>
-            <Typography
-              fontWeight={"800"}
-              color={"#13c242"}
-              sx={{
-                fontSize: {
-                  xs: "0.6rem", 
-                  sm: "1.2rem", 
-                  md: "1.4rem",
-                },
-              }}
-            >
-              GOVERNMENT OF INDIA
-            </Typography>
-
-            <Box width={"100%"}>
-              <Image
-                layout="responsive"
-                src={require("../../../helper/front-page-img/yellow-highlite.png")}
-                alt="highlited-text"
-              />
-            </Box>
-          </Stack>
+          <Box p={"1rem"}>
+            <Image
+              alt="icon"
+              layout="responsive"
+              style={{ maxHeight: 60 }}
+              src={require("../../../helper/front-page-img/swaksh-bharat.png")}
+            />
+          </Box>
         </Stack>
+
+        <Box
+          sx={{ backgroundColor: "blue", height: "0.2rem", width: "100%" }}
+        ></Box>
       </Box>
     </Box>
   );

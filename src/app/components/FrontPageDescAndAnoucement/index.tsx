@@ -21,12 +21,12 @@ const FrontDescAndAnouncement = () => {
         gap={"2rem"}
         flexDirection={{ xs: "column", md: "row" }}
       >
-        <Image
+        {/* <Image
           height={500}
           layout="responsive"
           src={require("../../../helper/ninja-img/img-38.jpg")}
           alt="khelo youth"
-        />
+        /> */}
 
         <Box
           display={"flex"}
@@ -67,7 +67,7 @@ const FrontDescAndAnouncement = () => {
 
       {/* Announcements section */}
 
-      <Box
+      {/* <Box
         my={"4rem"}
         textAlign={"center"}
         display={"flex"}
@@ -102,7 +102,7 @@ const FrontDescAndAnouncement = () => {
             </Grid>
           </Grid>
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

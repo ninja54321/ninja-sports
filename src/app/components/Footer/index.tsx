@@ -10,8 +10,8 @@ import ContactText from "./ContactText";
 const Footer = () => {
   return (
     <Box>
-      <FooterLogo />
-      <AGM />
+      {/* <FooterLogo /> */}
+      {/* <AGM /> */}
 
       <Grid container spacing={2} marginY={"2rem"}>
         <Grid item xs={6} sm={4}>

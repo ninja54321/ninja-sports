@@ -88,15 +88,16 @@ export default function Navbar(props: Props) {
           >
             <MenuIcon sx={{ color: "black" }} />
           </IconButton>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
+          {/* <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
             <Link href={"/"}>
               <Image priority src={logoImg} alt="logo" height={90} />
             </Link>
-          </Box>
+          </Box> */}
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Stack
+            {/* <Stack
               direction="row"
+              justifyContent={'space-evenly'}
               divider={<Divider orientation="vertical" flexItem />}
               spacing={2}
             >
@@ -148,7 +149,7 @@ export default function Navbar(props: Props) {
                   Contact Us
                 </Typography>
               </Link>
-            </Stack>
+            </Stack> */}
           </Box>
         </Toolbar>
       </AppBar>
