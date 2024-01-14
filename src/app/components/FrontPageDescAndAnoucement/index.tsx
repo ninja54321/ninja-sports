@@ -31,11 +31,11 @@ const FrontDescAndAnouncement = () => {
         <Box
           display={"flex"}
           flexDirection={"column"}
-          alignItems={{ xs: "center", md: "start" }}
+          alignItems={"center"}
           justifyContent={"center"}
           padding={"2rem"}
         >
-          <Typography variant="h4" mb={"2px"}>
+          <Typography variant="h4" m={"10px"} gutterBottom>
             Welcome
           </Typography>
           <Typography>
