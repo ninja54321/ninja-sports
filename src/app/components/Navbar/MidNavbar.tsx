@@ -41,7 +41,7 @@ const MidNavbar = () => {
               },
             }}
           >
-            About
+            Gallery
           </Typography>
         </Link>
         <Link className={styles.navItem} href={"/"}>
