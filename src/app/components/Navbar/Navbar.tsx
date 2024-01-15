@@ -25,7 +25,13 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "Gallery", "Event & Update", "Contact US"];
+const navItems = [
+  "Home",
+  "Gallery",
+  "Affiliation",
+  "Event & Update",
+  "Contact US",
+];
 
 export default function Navbar(props: Props) {
   const { window } = props;
@@ -57,6 +63,9 @@ export default function Navbar(props: Props) {
           </Link>
           <Link className={styles.navItemDrawer} href={"/"}>
             <Typography>Event & Updates</Typography>
+          </Link>
+          <Link className={styles.navItemDrawer} href={"/"}>
+            <Typography>Affiliation</Typography>
           </Link>
           <Link className={styles.navItemDrawer} href={"/"}>
             <Typography>Contact Us</Typography>
@@ -135,6 +144,18 @@ export default function Navbar(props: Props) {
                   }}
                 >
                   Event & Updates
+                </Typography>
+              </Link>
+              <Link className={styles.navItem} href={"/"}>
+                <Typography
+                  sx={{
+                    transition: "font-size 0.3s ease-in-out",
+                    "&:hover": {
+                      fontSize: "1.1em",
+                    },
+                  }}
+                >
+                  Affiliation
                 </Typography>
               </Link>
               <Link className={styles.navItem} href={"/"}>
