@@ -53,6 +53,18 @@ const MidNavbar = () => {
               },
             }}
           >
+            Governing Body
+          </Typography>
+        </Link>
+        <Link className={styles.navItem} href={"/"}>
+          <Typography
+            sx={{
+              transition: "font-size 0.3s ease-in-out",
+              "&:hover": {
+                fontSize: "1.1em",
+              },
+            }}
+          >
             Event & Updates
           </Typography>
         </Link>
