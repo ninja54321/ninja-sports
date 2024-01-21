@@ -17,19 +17,18 @@ export default function Home() {
     <main className={styles.main} style={{ backgroundColor: "#82b9d1" }}>
       <Navbar />
 
-      <Box height={{ xs: "50vh", sm: "70vh", lg: "75vh" }}>
+      <Box>
         <IntroSection />
       </Box>
 
-
       {/* section Navbar */}
-      <MidNavbar />
-      
+      <Box mt={"2.4rem"}>
+        <MidNavbar />
+      </Box>
+
       <Box>
         <FrontDescAndAnouncement />
       </Box>
-
-
 
       {/* crousel */}
       {/* <Box

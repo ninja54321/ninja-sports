@@ -8,52 +8,49 @@ const IntroSection = () => {
     <Box
       display="flex"
       justifyContent="center"
-      alignItems="center"
+      alignItems="flex-start"
       flexDirection="column"
-      width="100%" // Set the width to 85% of the viewport width
-      mx="auto" // Center the container horizontally
+      width="100%"
+      mx="auto"
     >
-      <Stack direction={"row"}>
+      <Stack direction={"row"} width={"100%"} spacing={"2rem"}>
         <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
           <Image
-            style={{ maxHeight: 300 }}
+            style={{ maxHeight: 250 }}
             layout="responsive"
             src={require("../../../helper/logo-2.png")}
             alt="logo"
           />
         </Box>
-        <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+        <Box width="100%" display={"flex"} flexDirection={"column"}>
           <Typography
             fontWeight={"700"}
+            textAlign={"center"}
             color={"red"}
             sx={{
               fontSize: {
                 xs: "1rem",
-                sm: "1.8rem",
+                sm: "2rem",
                 md: "2.8rem",
-                lg: "3.5rem",
+                lg: "4rem",
               },
             }}
           >
             NINJA SPORTS MARTIAL ART
           </Typography>
 
-          <Stack
-            direction={"row"}
-            justifyContent={"center"}
-            position={"relative"}
-          >
-            <Stack alignItems={"center"}>
+            <Stack alignItems={"center"} justifyContent={"center"}>
               <Typography
+                textAlign={"center"}
                 variant="h2"
                 fontWeight={"700"}
                 color={"red"}
                 sx={{
                   fontSize: {
                     xs: "0.8rem",
-                    sm: "1.2rem",
-                    md: "2.1rem",
-                    lg: "2.5rem",
+                    sm: "1.6rem",
+                    md: "2.2rem",
+                    lg: "3.2rem",
                   },
                 }}
               >
@@ -65,9 +62,10 @@ const IntroSection = () => {
                 color={"blue"}
                 sx={{
                   fontSize: {
-                    xs: "0.6rem",
+                    xs: "0.5rem",
                     sm: "1rem",
-                    md: "1.2rem",
+                    md: "1.5rem",
+                    lg: "2rem",
                   },
                 }}
               >
@@ -79,9 +77,10 @@ const IntroSection = () => {
                 color={"#13c242"}
                 sx={{
                   fontSize: {
-                    xs: "0.6rem",
-                    sm: "1rem",
-                    md: "1.2rem",
+                    xs: "0.5rem",
+                    sm: "0.8rem",
+                    md: "1.4rem",
+                    lg: "1.6rem",
                   },
                 }}
               >
@@ -92,16 +91,21 @@ const IntroSection = () => {
                 color={"#13c242"}
                 sx={{
                   fontSize: {
-                    xs: "0.6rem",
-                    sm: "1rem",
-                    md: "1.2rem",
+                    xs: "0.5rem",
+                    sm: "0.8rem",
+                    md: "1.4rem",
+                    lg: "1.6rem",
                   },
                 }}
               >
                 GOVERNMENT OF INDIA
               </Typography>
 
-              <Box width={"100%"}>
+              <Box
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"flex-start"}
+              >
                 <Image
                   layout="responsive"
                   src={require("../../../helper/front-page-img/yellow-highlite.png")}
@@ -109,7 +113,6 @@ const IntroSection = () => {
                 />
               </Box>
             </Stack>
-          </Stack>
         </Box>
       </Stack>
 
@@ -131,32 +134,23 @@ const IntroSection = () => {
           justifyContent={"space-evenly"}
           width={"100%"}
         >
-          <Box>
-            <Image
-              alt="icon"
-              layout="responsive"
-              style={{ maxHeight: 100 }}
-              src={require("../../../helper/front-page-img/khelo-india-logo.png")}
-            />
-          </Box>
+          <Image
+            alt="icon"
+            height={50}
+            src={require("../../../helper/front-page-img/khelo-india-logo.png")}
+          />
 
-          <Box>
-            <Image
-              alt="icon"
-              layout="responsive"
-              style={{ maxHeight: 60 }}
-              src={require("../../../helper/front-page-img/FIT.png")}
-            />
-          </Box>
+          <Image
+            alt="icon"
+            height={25}
+            src={require("../../../helper/front-page-img/FIT.png")}
+          />
 
-          <Box p={"1rem"}>
-            <Image
-              alt="icon"
-              layout="responsive"
-              style={{ maxHeight: 60 }}
-              src={require("../../../helper/front-page-img/swaksh-bharat.png")}
-            />
-          </Box>
+          <Image
+            alt="icon"
+            height={45}
+            src={require("../../../helper/front-page-img/swaksh-bharat.png")}
+          />
         </Stack>
 
         <Box
