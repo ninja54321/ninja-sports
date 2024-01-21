@@ -13,31 +13,44 @@ const IntroSection = () => {
       width="100%"
       mx="auto"
     >
-      <Stack direction={"row"} width={"100%"} spacing={"2rem"}>
-        <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        width={"100%"}
+      >
+        <Box display={{ xs: "none", sm: "block" }}>
           <Image
-            style={{ maxHeight: 250 }}
+            style={{ maxHeight: 200 }}
             layout="responsive"
             src={require("../../../helper/logo-2.png")}
             alt="logo"
           />
         </Box>
-        <Box width="100%" display={"flex"} flexDirection={"column"}>
-          <Typography
-            fontWeight={"700"}
-            textAlign={"center"}
-            color={"red"}
-            sx={{
-              fontSize: {
-                xs: "1rem",
-                sm: "2rem",
-                md: "2.8rem",
-                lg: "4rem",
-              },
-            }}
-          >
-            NINJA SPORTS MARTIAL ART
-          </Typography>
+
+        <Box display={"flex"} width={"100%"}>
+          <Box display={{ xs: "block", sm: "none" }}>
+            <Image
+              height={50}
+              src={require("../../../helper/logo-2.png")}
+              alt="logo"
+            />
+          </Box>
+
+          <Box width="100%" display={"flex"} flexDirection={"column"}>
+            <Typography
+              fontWeight={"700"}
+              textAlign={"center"}
+              color={"red"}
+              sx={{
+                fontSize: {
+                  xs: "1rem",
+                  sm: "2rem",
+                  md: "2.8rem",
+                  lg: "4rem",
+                },
+              }}
+            >
+              NINJA SPORTS MARTIAL ART
+            </Typography>
 
             <Stack alignItems={"center"} justifyContent={"center"}>
               <Typography
@@ -113,6 +126,7 @@ const IntroSection = () => {
                 />
               </Box>
             </Stack>
+          </Box>
         </Box>
       </Stack>
 
