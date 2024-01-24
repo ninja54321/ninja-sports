@@ -8,11 +8,16 @@ import {
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import AnnouncementCard from "./AnnouncementCard";
 import { cardData } from "./constant";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FrontDescAndAnouncement = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Box>
       {/* small intro section */}
@@ -28,41 +33,48 @@ const FrontDescAndAnouncement = () => {
           alt="khelo youth"
         /> */}
 
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          padding={"2rem"}
+        <div
+          data-aos="zoom-in"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000"
         >
-          <Typography variant="h4" m={"10px"} gutterBottom>
-            Welcome
-          </Typography>
-          <Typography>
-            <span style={{ fontWeight: "700" }}>Meaning of Ninja:</span> This
-            art emphasizes speed and efficiency in every task, teaching
-            practitioners to be fast, faster, and the fastest in their
-            endeavors. It is an art that encourages individuals to prove their
-            abilities by accomplishing tasks swiftly, akin to the sudden attack
-            Ninja is a martial art that encompasses various defensive
-            techniques, preparing individuals to defend themselves against
-            attacks or weapons. It not only enhances physical skills but also
-            contributes to mental strength.
-            <br />
-            <br />
-            This self-defense sport is suitable for both boys and girls,
-            offering the opportunity to excel in disciplines like Judo, Karate,
-            Taekwondo, Jeet Kune Do, Wushu, Boxing, Kickboxing, or Muay Thai.
-            Therefore, parents and guardians are urged to introduce their
-            children to this beneficial sport, enabling them to not only develop
-            self-defense skills but also potentially succeed in various sports
-            competitions. Wishing all children a bright and successful future.
-          </Typography>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            padding={"2rem"}
+          >
+            <Typography variant="h4" m={"10px"} gutterBottom>
+              Welcome
+            </Typography>
+            <Typography>
+              <span style={{ fontWeight: "700" }}>Meaning of Ninja:</span> This
+              art emphasizes speed and efficiency in every task, teaching
+              practitioners to be fast, faster, and the fastest in their
+              endeavors. It is an art that encourages individuals to prove their
+              abilities by accomplishing tasks swiftly, akin to the sudden
+              attack Ninja is a martial art that encompasses various defensive
+              techniques, preparing individuals to defend themselves against
+              attacks or weapons. It not only enhances physical skills but also
+              contributes to mental strength.
+              <br />
+              <br />
+              This self-defense sport is suitable for both boys and girls,
+              offering the opportunity to excel in disciplines like Judo,
+              Karate, Taekwondo, Jeet Kune Do, Wushu, Boxing, Kickboxing, or
+              Muay Thai. Therefore, parents and guardians are urged to introduce
+              their children to this beneficial sport, enabling them to not only
+              develop self-defense skills but also potentially succeed in
+              various sports competitions. Wishing all children a bright and
+              successful future.
+            </Typography>
 
-          <Button sx={{ mt: "2rem" }} variant="outlined">
-            Find out More
-          </Button>
-        </Box>
+            <Button sx={{ mt: "2rem" }} variant="outlined">
+              Find out More
+            </Button>
+          </Box>
+        </div>
       </Box>
 
       {/* Announcements section */}

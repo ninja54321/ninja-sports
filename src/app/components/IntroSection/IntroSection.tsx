@@ -1,6 +1,6 @@
 import { Box, Stack, ThemeProvider, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const IntroSection = () => {
@@ -13,10 +13,7 @@ const IntroSection = () => {
       width="100%"
       mx="auto"
     >
-      <Stack
-        direction={{ xs: "column", sm: "row" }}
-        width={"100%"}
-      >
+      <Stack direction={{ xs: "column", sm: "row" }} width={"100%"}>
         <Box display={{ xs: "none", sm: "block" }}>
           <Image
             style={{ maxHeight: 200 }}
@@ -34,7 +31,6 @@ const IntroSection = () => {
               alt="logo"
             />
           </Box>
-
           <Box width="100%" display={"flex"} flexDirection={"column"}>
             <Typography
               fontWeight={"700"}
@@ -129,7 +125,6 @@ const IntroSection = () => {
           </Box>
         </Box>
       </Stack>
-
       {/* banner */}
       <Box
         height={"2rem"}
