@@ -2,8 +2,13 @@ import { Box, Stack, ThemeProvider, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const IntroSection = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Box
       display="flex"
@@ -14,23 +19,35 @@ const IntroSection = () => {
       mx="auto"
     >
       <Stack direction={{ xs: "column", sm: "row" }} width={"100%"}>
-        <Box display={{ xs: "none", sm: "block" }}>
-          <Image
-            style={{ maxHeight: 200 }}
-            layout="responsive"
-            src={require("../../../helper/logo-2.png")}
-            alt="logo"
-          />
-        </Box>
-
-        <Box display={"flex"} width={"100%"}>
-          <Box display={{ xs: "block", sm: "none" }}>
+        <div
+          data-aos="zoom-out-right"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000"
+        >
+          <Box display={{ xs: "none", sm: "block" }}>
             <Image
-              height={50}
+              style={{ maxHeight: 200 }}
+              layout="responsive"
               src={require("../../../helper/logo-2.png")}
               alt="logo"
             />
           </Box>
+        </div>
+
+        <Box display={"flex"} width={"100%"}>
+          <div
+            data-aos="zoom-out-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+          >
+            <Box display={{ xs: "block", sm: "none" }}>
+              <Image
+                height={50}
+                src={require("../../../helper/logo-2.png")}
+                alt="logo"
+              />
+            </Box>
+          </div>
           <Box width="100%" display={"flex"} flexDirection={"column"}>
             <Typography
               fontWeight={"700"}
