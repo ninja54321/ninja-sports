@@ -1,11 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import CallTwoToneIcon from "@mui/icons-material/CallTwoTone";
 import LanguageTwoToneIcon from "@mui/icons-material/LanguageTwoTone";
 import EmailTwoToneIcon from "@mui/icons-material/EmailTwoTone";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactText = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Box>
       <Box
@@ -32,7 +37,7 @@ const ContactText = () => {
             },
           }}
         >
-          A-894 NO-20, SONIA VIHAR DELHI NORTH EAST  DELHI-110094
+          A-894 NO-20, SONIA VIHAR DELHI NORTH EAST DELHI-110094
         </Typography>
       </Box>
 
@@ -73,7 +78,6 @@ const ContactText = () => {
             01169261710
           </Typography>
         </Box>
-
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -134,7 +138,7 @@ const ContactText = () => {
               },
             }}
           >
-            @ninjasportssgfi.com
+            is@ninjasportssgfi.com
           </Typography>
         </Box>
       </Box>
