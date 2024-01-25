@@ -93,7 +93,7 @@ const MidNavbar = () => {
               gap: 1,
             }}
           >
-            Affiliation <Icon path={mdiMenuDown} size={1} />
+            Affiliated <Icon path={mdiMenuDown} size={1} />
           </Typography>
           {/* </Link> */}
           <Menu
@@ -116,6 +116,7 @@ const MidNavbar = () => {
             <MenuItem className={styles.navItem}>Club</MenuItem>
             <MenuItem className={styles.navItem}>Academy</MenuItem>
             <MenuItem className={styles.navItem}>School</MenuItem>
+            <MenuItem className={styles.navItem}>Affiliation</MenuItem>
           </Menu>
         </div>
         <Link className={styles.navItem} href={"/"}>
