@@ -23,7 +23,9 @@ const NinjaTeamCards = () => {
         textAlign={"center"}
         marginTop={"2rem"}
         color={"#939596"}
-        variant="h4"
+        fontSize={"2.5rem"}
+        fontWeight={"700"}
+        fontStyle={"italic"}
         gutterBottom
       >
         Our Team Thoughts!!!

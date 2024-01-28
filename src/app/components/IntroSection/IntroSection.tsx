@@ -21,7 +21,7 @@ const IntroSection = () => {
     >
       <Stack direction={{ xs: "column", sm: "row" }} width={"100%"}>
         <div
-          className="logImg"
+          className="logoImg"
           data-aos="zoom-out-right"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"
@@ -43,7 +43,7 @@ const IntroSection = () => {
             data-aos="zoom-out-right"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1000"
-            className="logImg"
+            className="logoImg"
           >
             <Box display={{ xs: "block", sm: "none" }}>
               <Image

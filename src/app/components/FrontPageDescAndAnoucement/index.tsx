@@ -13,6 +13,7 @@ import AnnouncementCard from "./AnnouncementCard";
 import { cardData } from "./constant";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./styles.css";
 
 const FrontDescAndAnouncement = () => {
   useEffect(() => {
@@ -24,7 +25,8 @@ const FrontDescAndAnouncement = () => {
       <Box
         display={"flex"}
         gap={"2rem"}
-        flexDirection={{ xs: "column", md: "row" }}
+        // flexDirection={{ xs: "column", md: "row" }}
+        flexDirection={"column"}
       >
         {/* <Image
           height={500}
@@ -37,20 +39,111 @@ const FrontDescAndAnouncement = () => {
           data-aos="zoom-in"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"
+          style={{ marginTop: "1rem" }}
+        >
+          <Typography
+            color={"red"}
+            textAlign={"center"}
+            fontStyle={"italic"}
+            fontSize={"2rem"}
+            fontWeight={500}
+          >
+            Welcome
+          </Typography>
+          <Typography
+            color={"red"}
+            textAlign={"center"}
+            fontStyle={"italic"}
+            fontSize={"2rem"}
+            fontWeight={600}
+            gutterBottom
+          >
+            Ninja Sports Martial Art
+          </Typography>
+        </div>
+
+        <Box
+          width={"100%"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={{ xs: "center", md: "space-between" }}
+          marginTop={{ md: "4rem" }}
+        >
+          <Box
+            className="floatImgUp"
+            sx={{ display: { xs: "none", md: "block" } }}
+          >
+            <Image
+              height={300}
+              src={require("../../../helper/front-page-img/ninja-pic1.png")}
+              alt="pic1"
+            />
+          </Box>
+          <Box
+            className="movingImg"
+            sx={{ display: { xs: "none", md: "block" } }}
+          >
+            <Image
+              height={300}
+              src={require("../../../helper/front-page-img/ninja-pic2.png")}
+              alt="pic1"
+            />
+          </Box>
+          <Box
+            className="movingImg"
+            sx={{ display: { xs: "block", md: "none" } }}
+          >
+            <Image
+              height={150}
+              src={require("../../../helper/front-page-img/ninja-pic2.png")}
+              alt="pic1"
+            />
+          </Box>
+          <Box
+            className="floatImgRight"
+            sx={{ display: { xs: "none", md: "block" } }}
+          >
+            <Image
+              height={300}
+              src={require("../../../helper/front-page-img/ninja-pic3.png")}
+              alt="pic1"
+            />
+          </Box>
+        </Box>
+
+        <div
+          data-aos="zoom-in"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000"
         >
           <Box
             display={"flex"}
             flexDirection={"column"}
             alignItems={"center"}
             justifyContent={"center"}
-            padding={"2rem"}
+            paddingX={"2rem"}
           >
-            <Typography variant="h4" m={"10px"} gutterBottom>
-              Welcome
-            </Typography>
+            <div>
+              <Typography
+                textAlign={"center"}
+                color={"#002147"}
+                fontSize={{ xs: "1rem", sm: "2rem" }}
+                fontWeight={700}
+                fontStyle={"italic"}
+              >
+                Meaning of Ninja
+              </Typography>
+              <Box
+                sx={{
+                  width: "40vw",
+                  backgroundColor: "red",
+                  height: "0.2rem",
+                  mb: "2rem",
+                }}
+              ></Box>
+            </div>
             <Typography>
-              <span style={{ fontWeight: "700" }}>Meaning of Ninja:</span> This
-              art emphasizes speed and efficiency in every task, teaching
+              This art emphasizes speed and efficiency in every task, teaching
               practitioners to be fast, faster, and the fastest in their
               endeavors. It is an art that encourages individuals to prove their
               abilities by accomplishing tasks swiftly, akin to the sudden
