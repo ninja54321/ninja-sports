@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./styles.css";
 
 const IntroSection = () => {
   useEffect(() => {
@@ -20,13 +21,16 @@ const IntroSection = () => {
     >
       <Stack direction={{ xs: "column", sm: "row" }} width={"100%"}>
         <div
+          className="logImg"
           data-aos="zoom-out-right"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"
         >
           <Box display={{ xs: "none", sm: "block" }}>
             <Image
-              style={{ maxHeight: 200 }}
+              style={{
+                maxHeight: 200,
+              }}
               layout="responsive"
               src={require("../../../helper/logo-2.png")}
               alt="logo"
@@ -39,6 +43,7 @@ const IntroSection = () => {
             data-aos="zoom-out-right"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1000"
+            className="logImg"
           >
             <Box display={{ xs: "block", sm: "none" }}>
               <Image
@@ -131,12 +136,26 @@ const IntroSection = () => {
                 display={"flex"}
                 alignItems={"center"}
                 justifyContent={"flex-start"}
+                sx={{
+                  backgroundColor: "#FFD93D",
+                  paddingX: "4rem",
+                  borderRadius: "1rem",
+                }}
               >
-                <Image
-                  layout="responsive"
-                  src={require("../../../helper/front-page-img/yellow-highlite.png")}
-                  alt="highlited-text"
-                />
+                <Typography
+                  fontWeight={"600"}
+                  color={"#002147"}
+                  sx={{
+                    fontSize: {
+                      xs: "0.5rem",
+                      sm: "1rem",
+                      md: "1.5rem",
+                      lg: "2rem",
+                    },
+                  }}
+                >
+                  All Indoor & Outdoor Games
+                </Typography>
               </Box>
             </Stack>
           </Box>
