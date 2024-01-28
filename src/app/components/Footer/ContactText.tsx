@@ -6,6 +6,14 @@ import LanguageTwoToneIcon from "@mui/icons-material/LanguageTwoTone";
 import EmailTwoToneIcon from "@mui/icons-material/EmailTwoTone";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Icon from "@mdi/react";
+import {
+  mdiFacebook,
+  mdiInstagram,
+  mdiLinkedin,
+  mdiTwitter,
+  mdiEmail,
+} from "@mdi/js";
 
 const ContactText = () => {
   useEffect(() => {
@@ -13,7 +21,7 @@ const ContactText = () => {
   }, []);
   return (
     <Box>
-      <Box
+      {/* <Box
         sx={{
           display: "flex",
           alignItems: "center",
@@ -39,7 +47,7 @@ const ContactText = () => {
         >
           A-894 NO-20, SONIA VIHAR DELHI NORTH EAST DELHI-110094
         </Typography>
-      </Box>
+      </Box> */}
 
       <Box
         marginTop={"1rem"}
@@ -47,8 +55,9 @@ const ContactText = () => {
         gap={{ xs: "0.8rem", sm: "2rem" }}
         justifyContent={"center"}
         flexWrap={"wrap"}
+        padding={1}
       >
-        <Box
+        {/* <Box
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -140,7 +149,13 @@ const ContactText = () => {
           >
             is@ninjasportssgfi.com
           </Typography>
-        </Box>
+        </Box> */}
+
+        <Icon style={{ cursor: "pointer" }} path={mdiEmail} size={1} />
+        <Icon style={{ cursor: "pointer" }} path={mdiFacebook} size={1} />
+        <Icon style={{ cursor: "pointer" }} path={mdiInstagram} size={1} />
+        <Icon style={{ cursor: "pointer" }} path={mdiLinkedin} size={1} />
+        <Icon style={{ cursor: "pointer" }} path={mdiTwitter} size={1} />
       </Box>
     </Box>
   );
