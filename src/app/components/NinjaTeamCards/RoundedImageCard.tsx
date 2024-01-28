@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Image from "next/image";
+import styles from "./styles.module.css";
 
 interface RoundImageCardProps {
   imageSrc: string;
@@ -24,11 +25,12 @@ const RoundImageCard = ({
       <Card
         sx={{
           maxWidth: 345,
-          padding: "1rem",
+          padding: "0.6rem",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
           backgroundColor: "#FBF9F1",
-          borderRadius: '2rem'
+          borderRadius: "2rem",
         }}
+        className={styles.highlight}
       >
         <CardActionArea>
           <Box

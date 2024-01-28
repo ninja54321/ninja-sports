@@ -3,14 +3,12 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Icon from "@mdi/react";
-import {
-  mdiFacebook,
-  mdiInstagram,
-  mdiLinkedin,
-  mdiTwitter,
-  mdiEmail,
-} from "@mdi/js";
+import styles from "./contact.module.css";
+import { MdOutlineMail } from "react-icons/md";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { BiLogoLinkedinSquare } from "react-icons/bi";
+import { FaTwitter } from "react-icons/fa6";
 
 const ContactText = () => {
   useEffect(() => {
@@ -148,11 +146,16 @@ const ContactText = () => {
           </Typography>
         </Box> */}
 
-        <Icon style={{ cursor: "pointer" }} path={mdiEmail} size={1} />
-        <Icon style={{ cursor: "pointer" }} path={mdiFacebook} size={1} />
-        <Icon style={{ cursor: "pointer" }} path={mdiInstagram} size={1} />
-        <Icon style={{ cursor: "pointer" }} path={mdiLinkedin} size={1} />
-        <Icon style={{ cursor: "pointer" }} path={mdiTwitter} size={1} />
+        {/* <Icon
+          className={styles.socialMedia}
+          size={1.2}
+          path={mdiEmail}
+        /> */}
+        <MdOutlineMail className={styles.socialMedia} />
+        <FaFacebookF className={styles.socialMedia} />
+        <FaInstagram className={styles.socialMedia} />
+        <BiLogoLinkedinSquare className={styles.socialMedia} />
+        <FaTwitter className={styles.socialMedia} />
       </Box>
     </Box>
   );
