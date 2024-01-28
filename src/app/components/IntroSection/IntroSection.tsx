@@ -105,7 +105,7 @@ const IntroSection = () => {
 
               <Typography
                 fontWeight={"800"}
-                color={"#13c242"}
+                color={"#034f84"}
                 sx={{
                   fontSize: {
                     xs: "0.5rem",
@@ -119,7 +119,7 @@ const IntroSection = () => {
               </Typography>
               <Typography
                 fontWeight={"800"}
-                color={"#13c242"}
+                color={"#034f84"}
                 sx={{
                   fontSize: {
                     xs: "0.5rem",
