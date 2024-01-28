@@ -1,8 +1,8 @@
 .logoImg {
-  animation: rotateImage 4s ease-in-out infinite;
+  animation: imgRotate 4s ease-in-out infinite;
 }
 
-@keyframes rotateImage {
+@keyframes imgRotate {
   0% {
     transform: rotateY(0deg);
   }
