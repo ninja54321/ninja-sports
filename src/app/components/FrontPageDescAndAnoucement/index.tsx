@@ -70,12 +70,12 @@ const FrontDescAndAnouncement = () => {
           marginTop={{ md: "4rem" }}
         >
           <Box
-            className="floatImgUp"
+            className="floatImgRight"
             sx={{ display: { xs: "none", md: "block" } }}
           >
             <Image
               height={300}
-              src={require("../../../helper/front-page-img/ninja-pic1.png")}
+              src={require("../../../helper/front-page-img/ninja-pic3.png")}
               alt="pic1"
             />
           </Box>
@@ -100,12 +100,12 @@ const FrontDescAndAnouncement = () => {
             />
           </Box>
           <Box
-            className="floatImgRight"
+            className="floatImgUp"
             sx={{ display: { xs: "none", md: "block" } }}
           >
             <Image
               height={300}
-              src={require("../../../helper/front-page-img/ninja-pic3.png")}
+              src={require("../../../helper/front-page-img/ninja-pic1.png")}
               alt="pic1"
             />
           </Box>
