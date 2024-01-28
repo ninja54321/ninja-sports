@@ -1,9 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import CallTwoToneIcon from "@mui/icons-material/CallTwoTone";
-import LanguageTwoToneIcon from "@mui/icons-material/LanguageTwoTone";
-import EmailTwoToneIcon from "@mui/icons-material/EmailTwoTone";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Icon from "@mdi/react";
