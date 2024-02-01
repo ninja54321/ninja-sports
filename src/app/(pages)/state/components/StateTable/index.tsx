@@ -38,7 +38,7 @@ const rows = [
   // ),
   {
     srn: 1,
-    logo: require("../../../../../helper/state-table/delhi-logo.jpg"),
+    logo: require("../../../../../helper/state-table/delhi-logo.png"),
     state: { code: "NSMA/009/DEL/UT/08", stateName: "Delhi" },
     officials: {
       title: "Mrs.",
@@ -50,7 +50,7 @@ const rows = [
   },
   {
     srn: 2,
-    logo: require("../../../../../helper/state-table/delhi-logo.jpg"),
+    logo: require("../../../../../helper/state-table/is-logo.jpg"),
     state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
     officials: {
       title: "Mr.",
@@ -62,7 +62,7 @@ const rows = [
   },
   {
     srn: 3,
-    logo: require("../../../../../helper/state-table/delhi-logo.jpg"),
+    logo: require("../../../../../helper/state-table/kk-logo.jpg"),
     state: { code: "NSMA/015/JH/140", stateName: "Jharkhand" },
     officials: {
       title: "Mr.",
