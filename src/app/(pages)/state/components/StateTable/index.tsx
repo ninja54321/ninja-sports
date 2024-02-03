@@ -9,33 +9,7 @@ import Paper from "@mui/material/Paper";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
-function createData(
-  srn: number,
-  logo: string,
-  state: {
-    code: string;
-    stateName: String;
-  },
-  officials: { title: string; name: string; designation: string },
-  president: string,
-  genSecretary: string
-) {
-  return { srn, logo, state, officials, president, genSecretary };
-}
-
 const rows = [
-  // createData(
-  //   1,
-  //   require("../../../../../helper/state-table/delhi-logo.jpg"),
-  //   { code: "NSMA/009/DEL/UT/08", stateName: "Delhi" },
-  //   {
-  //     title: "Mrs.",
-  //     name: "Sangeeta Chauhan",
-  //     designation: "Gen. Secretary",
-  //   },
-  //   "",
-  //   require("../../../../../helper/state-table/sangeeta-chauhan-img.jpg")
-  // ),
   {
     srn: 1,
     logo: require("../../../../../helper/state-table/delhi-logo.png"),
@@ -116,7 +90,7 @@ export default function AccessibleTable() {
                     color: "white",
                   }}
                 >
-                  <Typography>coed.</Typography>
+                  <Typography>code.</Typography>
                   <Typography>{row.state.code}</Typography>
                 </Box>
                 <Typography>{row.state.stateName}</Typography>
