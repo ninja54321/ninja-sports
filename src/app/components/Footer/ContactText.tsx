@@ -9,6 +9,9 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { FaTwitter } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa";
+import Link from "next/link";
+import { SiWhatsapp } from "react-icons/si";
 
 const ContactText = () => {
   useEffect(() => {
@@ -151,11 +154,50 @@ const ContactText = () => {
           size={1.2}
           path={mdiEmail}
         /> */}
-        <MdOutlineMail className={styles.socialMedia} />
-        <FaFacebookF className={styles.socialMedia} />
-        <FaInstagram className={styles.socialMedia} />
-        <BiLogoLinkedinSquare className={styles.socialMedia} />
-        <FaTwitter className={styles.socialMedia} />
+        <Link href={"#"} style={{ textDecoration: "none" }}>
+          <MdOutlineMail className={styles.socialMedia} />
+        </Link>
+        <Link
+          href={
+            "https://www.facebook.com/profile.php?id=61553954444474&mibextid=ZbWKwL"
+          }
+          style={{ textDecoration: "none" }}
+        >
+          <FaFacebookF className={styles.socialMedia} />
+        </Link>
+        <Link
+          href={
+            "https://www.instagram.com/ninjasportssgfi?igsh=MTZ0Zmp6bDg0azM2NA=="
+          }
+          style={{ textDecoration: "none" }}
+        >
+          <FaInstagram className={styles.socialMedia} />
+        </Link>
+        <Link
+          href={
+            "https://www.linkedin.com/in/ninja-sports-martial-art-school-games-federation-of-india-a991662b2/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          }
+          style={{ textDecoration: "none" }}
+        >
+          <BiLogoLinkedinSquare className={styles.socialMedia} />
+        </Link>
+        <Link
+          href={
+            "https://twitter.com/i/flow/login?redirect_after_login=%2FNinjaSportssgfi"
+          }
+          style={{ textDecoration: "none" }}
+        >
+          <FaTwitter className={styles.socialMedia} />
+        </Link>
+        <Link
+          href={"https://www.youtube.com/watch?v=P8xYIJG9xGU"}
+          style={{ textDecoration: "none" }}
+        >
+          <FaYoutube className={styles.socialMedia} />
+        </Link>
+        <Link href={"#"} style={{ textDecoration: "none" }}>
+          <SiWhatsapp className={styles.socialMedia} />
+        </Link>
       </Box>
     </Box>
   );
