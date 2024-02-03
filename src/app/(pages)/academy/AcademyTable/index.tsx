@@ -18,7 +18,7 @@ import Image from "next/image";
 const rows = [
   {
     srn: 1,
-    logo: require("../../../../helper/logo.jpg"),
+    logo: require("../../../../helper/academy-table/krishna-kumar-logo.jpg"),
     name: {
       fullName: "Mr. Krishna Kumar",
       post: "Chief Instructor",
@@ -29,7 +29,7 @@ const rows = [
       instituteName: "SHANKAR INSTITUTE OF MARTIAL ARTS & SPORTS",
       city: "Darbhanga (Bihar)",
     },
-    photo: require("../../../../helper/is-chauhan-GS.jpg"),
+    photo: require("../../../../helper/academy-table/krishna-kumar.jpg"),
   },
   {
     srn: 2,
@@ -74,7 +74,7 @@ const rows = [
       instituteName: "M.K. NINJA MARTIAL ARTS ACADEMY",
       city: "Aligarh (U.P)",
     },
-    photo: require("../../../../helper/is-chauhan-GS.jpg"),
+    photo: require("../../../../helper/academy-table/mukesh-kumar.jpg"),
   },
   {
     srn: 5,
