@@ -48,7 +48,7 @@ const IntroSection = () => {
             <Box display={{ xs: "block", sm: "none" }}>
               <Image
                 height={50}
-                src={require("../../../helper/logo-2.png")}
+                src={require("../../../helper/logo/logo-bg-remove.png")}
                 alt="logo"
               />
             </Box>

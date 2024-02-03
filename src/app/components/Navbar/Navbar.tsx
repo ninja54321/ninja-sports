@@ -36,7 +36,7 @@ const navItems = [
 export default function Navbar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const logoImg = require("../../../helper/logo-2.png");
+  const logoImg = require("../../../helper/logo/logo-bg-remove.png");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
