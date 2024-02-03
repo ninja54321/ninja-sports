@@ -14,44 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-// const rows = [
-//   {
-//     srn: 1,
-//     logo: require("../../../../../helper/state-table/delhi-logo.png"),
-//     state: { code: "NSMA/009/DEL/UT/08", stateName: "Delhi" },
-//     officials: {
-//       title: "Mrs.",
-//       name: "Sangeeta Chauhan",
-//       designation: "Gen. Secretary",
-//     },
-//     president: "",
-//     genSecretary: require("../../../../../helper/state-table/sangeeta-chauhan-img.jpg"),
-//   },
-//   {
-//     srn: 2,
-//     logo: require("../../../../../helper/state-table/is-logo.jpg"),
-//     state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
-//     officials: {
-//       title: "Mr.",
-//       name: "I.S. Chauhan",
-//       designation: "Gen. Secretary",
-//     },
-//     president: "",
-//     genSecretary: require("../../../../../helper/is-chauhan-GS.jpg"),
-//   },
-//   {
-//     srn: 3,
-//     logo: require("../../../../../helper/state-table/kk-logo.jpg"),
-//     state: { code: "NSMA/015/JH/140", stateName: "Jharkhand" },
-//     officials: {
-//       title: "Mr.",
-//       name: "Kalim Khan",
-//       designation: "Gen. Secretary",
-//     },
-//     president: "",
-//     genSecretary: require("../../../../../helper/state-table/kalim-khan-img.jpg"),
-//   },
-// ];
 
 const rows = [
   {
@@ -71,7 +33,7 @@ const rows = [
   },
   {
     srn: 2,
-    logo: require("../../../../helper/logo.jpg"),
+    // logo: require("../../../../helper/logo.jpg"),
     name: {
       fullName: "Mr. Ritesh Maurya",
       post: "National Champion",
@@ -82,11 +44,11 @@ const rows = [
       instituteName: "R.M. NINJA MARTIAL ARTS ACADEMY",
       city: "South (Delhi)",
     },
-    photo: require("../../../../helper/is-chauhan-GS.jpg"),
+    photo: require("../../../../helper/academy-table/ritesh-maurya.jpg"),
   },
   {
     srn: 3,
-    logo: require("../../../../helper/logo.jpg"),
+    // logo: require("../../../../helper/logo.jpg"),
     name: {
       fullName: "Miss Rekha Arya",
       post: "Defence Trainer",
@@ -97,11 +59,11 @@ const rows = [
       instituteName: "R.A. NINJA MARTIAL ARTS ACADEMY",
       city: "West (Delhi)",
     },
-    photo: require("../../../../helper/is-chauhan-GS.jpg"),
+    photo: require("../../../../helper/academy-table/rekha-arya.jpg"),
   },
   {
     srn: 4,
-    logo: require("../../../../helper/logo.jpg"),
+    // logo: require("../../../../helper/logo.jpg"),
     name: {
       fullName: "Mr. Mukesh Kumar",
       post: "Self Defence Trainer",
@@ -116,7 +78,7 @@ const rows = [
   },
   {
     srn: 5,
-    logo: require("../../../../helper/logo.jpg"),
+    // logo: require("../../../../helper/logo.jpg"),
     name: {
       fullName: "Mr. Rahul Bhardwaj",
       post: "Self Defence",
@@ -127,7 +89,7 @@ const rows = [
       instituteName: "R.B. NINJA MARTIAL ARTS ACADEMY",
       city: "Mathura (U.P)",
     },
-    photo: require("../../../../helper/is-chauhan-GS.jpg"),
+    photo: require("../../../../helper/academy-table/rahul-bhardwaj.jpg"),
   },
 ];
 const AcademyTable = () => {
@@ -197,12 +159,14 @@ const AcademyTable = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Image
-                    src={row.logo}
-                    height={150}
-                    width={150}
-                    alt="logo-img"
-                  />
+                  {row.logo && (
+                    <Image
+                      src={row.logo}
+                      height={150}
+                      width={150}
+                      alt="logo-img"
+                    />
+                  )}
                 </Box>
               </TableCell>
               <TableCell>
@@ -231,7 +195,13 @@ const AcademyTable = () => {
                 </Stack>
               </TableCell>
               <TableCell>
-                <Image src={row.photo} height={150} width={150} alt="photo" />
+                <Image
+                  style={{ borderRadius: "1rem" }}
+                  src={row.photo}
+                  height={150}
+                  width={150}
+                  alt="photo"
+                />
               </TableCell>
             </TableRow>
           ))}

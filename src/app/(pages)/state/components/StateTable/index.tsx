@@ -6,7 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 
 const rows = [
@@ -54,23 +54,59 @@ export default function AccessibleTable() {
       <Table aria-label="caption table">
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontSize: "1rem", fontWeight: 700 }}>
-              SR. NO.
+            <TableCell>
+              <Typography
+                textAlign={"center"}
+                fontSize={"1rem"}
+                fontWeight={700}
+              >
+                SR. NO.
+              </Typography>
             </TableCell>
-            <TableCell sx={{ fontSize: "1rem", fontWeight: 700 }}>
-              LOGO
+            <TableCell>
+              <Typography
+                textAlign={"center"}
+                fontSize={"1rem"}
+                fontWeight={700}
+              >
+                LOGO
+              </Typography>
             </TableCell>
-            <TableCell sx={{ fontSize: "1rem", fontWeight: 700 }}>
-              STATE
+            <TableCell>
+              <Typography
+                textAlign={"center"}
+                fontSize={"1rem"}
+                fontWeight={700}
+              >
+                STATE
+              </Typography>
             </TableCell>
-            <TableCell sx={{ fontSize: "1rem", fontWeight: 700 }}>
-              OFFICIALS
+            <TableCell>
+              <Typography
+                textAlign={"center"}
+                fontSize={"1rem"}
+                fontWeight={700}
+              >
+                OFFICIALS
+              </Typography>
             </TableCell>
-            <TableCell sx={{ fontSize: "1rem", fontWeight: 700 }}>
-              President
+            <TableCell>
+              <Typography
+                textAlign={"center"}
+                fontSize={"1rem"}
+                fontWeight={700}
+              >
+                President
+              </Typography>
             </TableCell>
-            <TableCell sx={{ fontSize: "1rem", fontWeight: 700 }}>
-              Gen. Secretary
+            <TableCell>
+              <Typography
+                textAlign={"center"}
+                fontSize={"1rem"}
+                fontWeight={700}
+              >
+                Gen. Secretary
+              </Typography>
             </TableCell>
           </TableRow>
         </TableHead>
@@ -78,40 +114,67 @@ export default function AccessibleTable() {
           {rows.map((row) => (
             <TableRow key={row.srn}>
               <TableCell component="th" scope="row">
-                {row.srn}
-              </TableCell>
-              <TableCell>
-                <Image src={row.logo} height={150} width={150} alt="logo-img" />
+                <Typography textAlign={"center"}>{row.srn}</Typography>
               </TableCell>
               <TableCell>
                 <Box
                   sx={{
-                    backgroundColor: "blue",
-                    color: "white",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  <Typography>code.</Typography>
-                  <Typography>{row.state.code}</Typography>
+                  <Image
+                    src={row.logo}
+                    height={150}
+                    width={150}
+                    alt="logo-img"
+                  />
                 </Box>
-                <Typography>{row.state.stateName}</Typography>
               </TableCell>
               <TableCell>
-                <Box>
+                <Stack
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  spacing={1}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      backgroundColor: "blue",
+                      color: "white",
+                      borderRadius: "2rem",
+                      paddingX: "1rem",
+                    }}
+                  >
+                    <Typography>code.</Typography>
+                    <Typography>{row.state.code}</Typography>
+                  </Box>
+                  <Typography>{row.state.stateName}</Typography>
+                </Stack>
+              </TableCell>
+              <TableCell>
+                <Stack justifyContent={"center"} alignItems={"center"}>
                   <Typography>
                     <span>{row.officials.title}</span>
                     {row.officials.name}
                   </Typography>
                   <Typography>{row.officials.designation}</Typography>
-                </Box>
+                </Stack>
               </TableCell>
-              <TableCell>{row.president}</TableCell>
               <TableCell>
-                <Image
-                  src={row.genSecretary}
-                  height={150}
-                  width={150}
-                  alt="gen-sec-img"
-                />
+                <Typography alignItems={"center"}>{row.president}</Typography>
+              </TableCell>
+              <TableCell>
+                <Stack justifyContent={"center"} alignItems={"center"}>
+                  <Image
+                    src={row.genSecretary}
+                    height={150}
+                    width={150}
+                    alt="gen-sec-img"
+                    style={{ borderRadius: "1rem" }}
+                  />
+                </Stack>
               </TableCell>
             </TableRow>
           ))}
