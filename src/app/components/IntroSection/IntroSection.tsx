@@ -32,7 +32,7 @@ const IntroSection = () => {
                 maxHeight: 200,
               }}
               layout="responsive"
-              src={require("../../../helper/logo-2.png")}
+              src={require("../../../helper/logo/logo-bg-remove.png")}
               alt="logo"
             />
           </Box>
