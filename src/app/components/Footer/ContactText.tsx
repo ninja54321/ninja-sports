@@ -196,7 +196,10 @@ const ContactText = () => {
         >
           <FaYoutube className={styles.socialMedia} />
         </Link>
-        <Link href={"#"} style={{ textDecoration: "none" }}>
+        <Link
+          href={"http://wame.pro/1i15pe"}
+          style={{ textDecoration: "none" }}
+        >
           <SiWhatsapp className={styles.socialMedia} />
         </Link>
       </Box>
