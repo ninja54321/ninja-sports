@@ -24,15 +24,15 @@ const rows = [
   },
   {
     srn: 2,
-    logo: require("../../../../../helper/state-table/is-logo.jpg"),
+    logo: require("../../../../../helper/state-table/up-logo.jpg"),
     state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
     officials: {
       title: "Mr.",
-      name: "I.S. Chauhan",
+      name: "T.S. Rana",
       designation: "Gen. Secretary",
     },
     president: "",
-    genSecretary: require("../../../../../helper/is-chauhan-GS.jpg"),
+    genSecretary: require("../../../../../helper/state-table/ts-rana-up.jpg"),
   },
   {
     srn: 3,
