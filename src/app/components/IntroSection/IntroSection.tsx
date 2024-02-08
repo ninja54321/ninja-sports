@@ -32,7 +32,7 @@ const IntroSection = () => {
                 maxHeight: 200,
               }}
               layout="responsive"
-              src={require("../../../helper/logo-3d.png")}
+              src={require("../../../helper/main-logo.png")}
               alt="logo"
             />
           </Box>
@@ -48,7 +48,7 @@ const IntroSection = () => {
             <Box display={{ xs: "block", sm: "none" }}>
               <Image
                 height={50}
-                src={require("../../../helper/logo/logo-bg-remove.png")}
+                src={require("../../../helper/main-logo.png")}
                 alt="logo"
               />
             </Box>
