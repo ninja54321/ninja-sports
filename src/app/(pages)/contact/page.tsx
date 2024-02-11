@@ -1,3 +1,4 @@
+"use client";
 import { IntroSection, MidNavbar, Navbar } from "@/app/components";
 import ContactText from "@/app/components/Footer/ContactText";
 import { Box, Stack } from "@mui/material";
@@ -27,6 +28,7 @@ const ContactUs = () => {
           <Link href={"https://maps.app.goo.gl/9AEs83uE6U49EHf6A"}>
             <Image
               height={350}
+              width={350}
               src={require("../../../helper/map.png")}
               alt="location"
             />
