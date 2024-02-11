@@ -23,7 +23,6 @@ const ContactUs = () => {
         gap={2}
         padding={4}
       >
-        <ContactForm />
         <Box>
           <Link href={"https://maps.app.goo.gl/9AEs83uE6U49EHf6A"}>
             <Image
@@ -34,6 +33,7 @@ const ContactUs = () => {
             />
           </Link>
         </Box>
+        <ContactForm />
       </Stack>
       <ContactText />
     </main>
