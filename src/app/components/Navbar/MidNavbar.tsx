@@ -125,7 +125,7 @@ const MidNavbar = () => {
             <MenuItem className={styles.navItem}>Affiliation</MenuItem>
           </Menu>
         </div>
-        <Link className={styles.navItem} href={"/"}>
+        <Link className={styles.navItem} href={"/contact"}>
           <Typography
             sx={{
               transition: "font-size 0.3s ease-in-out",

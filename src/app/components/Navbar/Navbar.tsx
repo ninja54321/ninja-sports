@@ -70,7 +70,7 @@ export default function Navbar(props: Props) {
           <Link className={styles.navItemDrawer} href={"/"}>
             <Typography>Affiliation</Typography>
           </Link>
-          <Link className={styles.navItemDrawer} href={"/"}>
+          <Link className={styles.navItemDrawer} href={"/contact"}>
             <Typography>Contact Us</Typography>
           </Link>
         </Stack>
