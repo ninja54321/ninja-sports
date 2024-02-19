@@ -7,7 +7,9 @@ import {
   FormHelperText,
   Input,
   InputLabel,
+  Stack,
   TextField,
+  Typography,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import React from "react";
@@ -20,36 +22,65 @@ const ContactForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <FormControl sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-        <Box>
+      <FormControl
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          backgroundColor: "white",
+          padding: "4rem",
+          borderRadius: "2rem",
+        }}
+      >
+        <Typography color={'#1976d2'} fontWeight={700} fontSize={'1.5rem'}>Send a message</Typography>
+
+        <Stack direction={"row"} gap={2}>
+          <TextField
+            required
+            label="First Name"
+            type="text"
+            variant="outlined"
+            InputLabelProps={{
+              style: { color: "#1976d2" },
+            }}
+          />
+          <TextField
+            required
+            label="Last Name"
+            type="text"
+            variant="outlined"
+            InputLabelProps={{
+              style: { color: "#1976d2" },
+            }}
+          />
+        </Stack>
+
+        <Stack direction={"row"} gap={2}>
           <TextField
             required
             label="Email"
             type="email"
             variant="outlined"
             InputLabelProps={{
-              style: { color: "#002147" },
+              style: { color: "#1976d2" },
             }}
           />
-        </Box>
-        <Box>
           <TextField
             type="number"
             required
             label="Phone Number"
             variant="outlined"
             InputLabelProps={{
-              style: { color: "#002147" },
+              style: { color: "#1976d2" },
             }}
             inputProps={{
               min: 0,
             }}
           />
-        </Box>
-        <Box>
-          <TextField
+        </Stack>
+          <TextField fullWidth
             InputLabelProps={{
-              style: { color: "#002147" },
+              style: { color: "#1976d2" },
             }}
             required
             label="Message"
@@ -57,7 +88,6 @@ const ContactForm = () => {
             multiline
             rows={4}
           />
-        </Box>
         <Box>
           <Button type="submit" variant="contained" endIcon={<SendIcon />}>
             Send Message
