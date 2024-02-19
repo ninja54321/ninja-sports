@@ -22,19 +22,30 @@ const ContactForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <FormControl
+      <Box
+        padding={{
+          xs: "2rem",
+          md: "4rem",
+        }}
         sx={{
           display: "flex",
           flexDirection: "column",
           gap: 2,
           backgroundColor: "white",
-          padding: "4rem",
           borderRadius: "2rem",
         }}
       >
-        <Typography color={'#1976d2'} fontWeight={700} fontSize={'1.5rem'}>Send a message</Typography>
+        <Typography color={"#1976d2"} fontWeight={700} fontSize={"1.5rem"}>
+          Send a message
+        </Typography>
 
-        <Stack direction={"row"} gap={2}>
+        <Stack
+          direction={{
+            sx: "column",
+            md: "row",
+          }}
+          gap={2}
+        >
           <TextField
             required
             label="First Name"
@@ -55,7 +66,13 @@ const ContactForm = () => {
           />
         </Stack>
 
-        <Stack direction={"row"} gap={2}>
+        <Stack
+          direction={{
+            sx: "column",
+            md: "row",
+          }}
+          gap={2}
+        >
           <TextField
             required
             label="Email"
@@ -78,22 +95,23 @@ const ContactForm = () => {
             }}
           />
         </Stack>
-          <TextField fullWidth
-            InputLabelProps={{
-              style: { color: "#1976d2" },
-            }}
-            required
-            label="Message"
-            variant="outlined"
-            multiline
-            rows={4}
-          />
+        <TextField
+          fullWidth
+          InputLabelProps={{
+            style: { color: "#1976d2" },
+          }}
+          required
+          label="Message"
+          variant="outlined"
+          multiline
+          rows={4}
+        />
         <Box>
           <Button type="submit" variant="contained" endIcon={<SendIcon />}>
             Send Message
           </Button>
         </Box>
-      </FormControl>
+      </Box>
     </form>
   );
 };

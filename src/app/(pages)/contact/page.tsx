@@ -17,16 +17,24 @@ import {
 } from "react-icons/fa";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import styles from "./styles.module.css";
+import { SiWhatsapp } from "react-icons/si";
 
 const ContactUs = () => {
   return (
-    <main style={{ backgroundColor: "#82b9d1", minHeight: "100vh" }}>
+    <main
+      style={{
+        backgroundColor: "#82b9d1",
+        minHeight: "100vh",
+        overflow: "hidden",
+      }}
+    >
       <Navbar />
       <IntroSection />
       <Box mt={"2.4rem"}>
         <MidNavbar />
       </Box>
       <Stack
+        width={"100vw"}
         direction={{ sx: "column", md: "row" }}
         alignItems={"center"}
         justifyContent={"center"}
@@ -34,7 +42,15 @@ const ContactUs = () => {
         gap={2}
         padding={4}
       >
-        <ContactForm />
+        <Box
+          width={{
+            xs: "100%",
+            sm: "80%",
+            md: "auto",
+          }}
+        >
+          <ContactForm />
+        </Box>
         <Stack spacing={2}>
           <Stack
             spacing={2}
@@ -65,13 +81,41 @@ const ContactUs = () => {
                   className={styles.socialMedia}
                 />
               </Stack>
-              <Stack direction={"row"} spacing={2}>
+              <Stack
+                justifyContent={"center"}
+                alignItems={"center"}
+                direction={"row"}
+                spacing={2}
+              >
                 <FaPhoneAlt
                   fontSize={"1.2rem"}
                   color="white"
                   className={styles.socialMedia}
                 />
-                <Typography color={"white"}>+91 88605 29344</Typography>
+                <Stack>
+                  <Typography fontSize={"0.8rem"} color={"white"}>
+                    Head office number
+                  </Typography>
+                  <Typography fontSize={"0.8rem"} color={"white"}>
+                    01169261710
+                  </Typography>
+                </Stack>
+                <Stack>
+                  <Typography fontSize={"0.8rem"} color={"white"}>
+                    Mr: Sanjay Chaudhary
+                  </Typography>
+                  <Typography fontSize={"0.8rem"} color={"white"}>
+                    8650005330
+                  </Typography>
+                </Stack>
+                <Stack>
+                  <Typography fontSize={"0.8rem"} color={"white"}>
+                    Mr: I.S Chauhan general secretary
+                  </Typography>
+                  <Typography fontSize={"0.8rem"} color={"white"}>
+                    8860529344
+                  </Typography>
+                </Stack>
               </Stack>
             </Stack>
 
@@ -123,13 +167,22 @@ const ContactUs = () => {
               >
                 <FaYoutube fontSize={"1.6rem"} className={styles.socialMedia} />
               </Link>
+              <Link
+                href={"http://wame.pro/1i15pe"}
+                style={{ textDecoration: "none" }}
+              >
+                <SiWhatsapp
+                  fontSize={"1.6rem"}
+                  className={styles.socialMedia}
+                />
+              </Link>
             </Stack>
           </Stack>
           {/* <ContactText /> */}
           <Link href={"https://maps.app.goo.gl/9AEs83uE6U49EHf6A"}>
             <Image
               height={350}
-              style={{width: '100%', borderRadius: '1rem'}}
+              style={{ width: "100%", borderRadius: "1rem" }}
               src={require("../../../helper/map.png")}
               alt="location"
             />
