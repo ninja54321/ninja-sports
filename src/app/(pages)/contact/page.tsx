@@ -18,6 +18,7 @@ import {
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import styles from "./styles.module.css";
 import { SiWhatsapp } from "react-icons/si";
+import ContactNavbar from "./ContactNavbar";
 
 const ContactUs = () => {
   return (
@@ -29,7 +30,8 @@ const ContactUs = () => {
       }}
     >
       <Navbar />
-      <IntroSection />
+      {/* <IntroSection /> */}
+      <ContactNavbar />
       <Box mt={"2.4rem"}>
         <MidNavbar />
       </Box>
@@ -66,7 +68,7 @@ const ContactUs = () => {
                 <Link href={"https://maps.app.goo.gl/9AEs83uE6U49EHf6A"}>
                   <GoLocation
                     fontSize={"1.2rem"}
-                    color="white"
+                    color="#CD201F"
                     className={styles.socialMedia}
                   />
                 </Link>
@@ -77,7 +79,7 @@ const ContactUs = () => {
               <Stack direction={"row"} spacing={2}>
                 <MdOutlineEmail
                   fontSize={"1.2rem"}
-                  color="white"
+                  color="#CD201F"
                   className={styles.socialMedia}
                 />
               </Stack>
@@ -89,7 +91,7 @@ const ContactUs = () => {
               >
                 <FaPhoneAlt
                   fontSize={"1.2rem"}
-                  color="white"
+                  color="#34A853"
                   className={styles.socialMedia}
                 />
                 <Stack>
@@ -126,7 +128,7 @@ const ContactUs = () => {
                 }
                 style={{ textDecoration: "none" }}
               >
-                <FaFacebookF
+                <FaFacebookF color="#316FF6"
                   fontSize={"1.6rem"}
                   className={styles.socialMedia}
                 />
@@ -137,7 +139,7 @@ const ContactUs = () => {
                 }
                 style={{ textDecoration: "none" }}
               >
-                <FaInstagram
+                <FaInstagram color="#ee2a7b"
                   fontSize={"1.6rem"}
                   className={styles.socialMedia}
                 />
@@ -148,7 +150,7 @@ const ContactUs = () => {
                 }
                 style={{ textDecoration: "none" }}
               >
-                <BiLogoLinkedinSquare
+                <BiLogoLinkedinSquare color="#0A66C2"
                   fontSize={"1.6rem"}
                   className={styles.socialMedia}
                 />
@@ -159,19 +161,19 @@ const ContactUs = () => {
                 }
                 style={{ textDecoration: "none" }}
               >
-                <FaTwitter fontSize={"1.6rem"} className={styles.socialMedia} />
+                <FaTwitter color="#1DA1F2" fontSize={"1.6rem"} className={styles.socialMedia} />
               </Link>
               <Link
                 href={"https://www.youtube.com/watch?v=P8xYIJG9xGU"}
                 style={{ textDecoration: "none" }}
               >
-                <FaYoutube fontSize={"1.6rem"} className={styles.socialMedia} />
+                <FaYoutube color="#CD201F" fontSize={"1.6rem"} className={styles.socialMedia} />
               </Link>
               <Link
                 href={"http://wame.pro/1i15pe"}
                 style={{ textDecoration: "none" }}
               >
-                <SiWhatsapp
+                <SiWhatsapp color="#059e2b"
                   fontSize={"1.6rem"}
                   className={styles.socialMedia}
                 />

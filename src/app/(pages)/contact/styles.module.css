@@ -1,15 +1,30 @@
 .socialMedia {
-    color: white;
-    transition: 0.5s ease;
-    transition: box-shadow 0.5s ease;
-    border-radius: 50%;
-    cursor: pointer;
+  color: white;
+  transition: 0.5s ease;
+  transition: box-shadow 0.5s ease;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.socialMedia:hover {
+  color: #3076f9;
+  padding: 4px;
+  border: 2px solid #3076f9;
+  box-shadow: 0 0 1rem #3076f9;
+}
+
+.logoImg {
+  animation: imgRotate 4s ease-in-out infinite;
+}
+
+@keyframes imgRotate {
+  0% {
+    transform: rotateY(0deg);
   }
-  
-  .socialMedia:hover {
-    color: #3076f9;
-    padding: 4px;
-    border: 2px solid #3076f9;
-    box-shadow: 0 0 1rem #3076f9;
+  50% {
+    transform: rotateY(90deg);
   }
-  
+  100% {
+    transform: rotateY(0);
+  }
+}
