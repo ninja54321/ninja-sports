@@ -58,7 +58,7 @@ export default function Navbar(props: Props) {
           <Link className={styles.navItemDrawer} href={"/"}>
             <Typography>Home</Typography>
           </Link>
-          <Link className={styles.navItemDrawer} href={"/"}>
+          <Link className={styles.navItemDrawer} href={"/gallery"}>
             <Typography>Gallery</Typography>
           </Link>
           <Link className={styles.navItemDrawer} href={"/"}>
@@ -67,9 +67,34 @@ export default function Navbar(props: Props) {
           <Link className={styles.navItemDrawer} href={"/"}>
             <Typography>Event & Updates</Typography>
           </Link>
-          <Link className={styles.navItemDrawer} href={"/"}>
-            <Typography>Affiliation</Typography>
-          </Link>
+          {/* <Link className={styles.navItemDrawer} href={"/"}> */}
+          <Typography className={styles.navItemDrawer} fontWeight={700}>
+            Affiliated
+          </Typography>
+
+          <Stack spacing={1} paddingLeft={"2rem"}>
+            <Link href={"/state"} className={styles.navItemDrawer}>
+              <Typography>State</Typography>
+            </Link>
+
+            <Link href={"/"} className={styles.navItemDrawer}>
+              <Typography>Club</Typography>
+            </Link>
+
+            <Link href={"/academy"} className={styles.navItemDrawer}>
+              <Typography>Academy</Typography>
+            </Link>
+
+            <Link href={"/"} className={styles.navItemDrawer}>
+              <Typography>School</Typography>
+            </Link>
+
+            <Link href={"/"} className={styles.navItemDrawer}>
+              <Typography>Affiliation</Typography>
+            </Link>
+          </Stack>
+
+          {/* </Link> */}
           <Link className={styles.navItemDrawer} href={"/contact"}>
             <Typography>Contact Us</Typography>
           </Link>
