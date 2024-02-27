@@ -95,7 +95,7 @@ const rows = [
     srn: 6,
     logo: require("../../../../helper/academy-table/de-nayak-logo.png"),
     name: {
-      fullName: "Dev naik",
+      fullName: "Mr. Dev naik",
       post: "Karate Instructor",
       achievement: "1st Dan Black Belt",
     },
