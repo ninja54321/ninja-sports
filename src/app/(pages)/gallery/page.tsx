@@ -10,7 +10,7 @@ import React from "react";
 import PhotoSection from "./PhotoSection";
 import { sliderItems1 } from "@/app/components/Crousel/content";
 
-const page = () => {
+const GalleryPage = () => {
   return (
     <main
       style={{
@@ -71,4 +71,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default GalleryPage;

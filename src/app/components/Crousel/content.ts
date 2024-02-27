@@ -1,6 +1,6 @@
 export interface ISliderItems {
   id: number;
-  image: string;
+  image: any;
   title: string;
 }
 
