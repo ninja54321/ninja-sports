@@ -91,6 +91,21 @@ const rows = [
     },
     photo: require("../../../../helper/academy-table/rahul-bhardwaj.jpg"),
   },
+  {
+    srn: 6,
+    logo: require("../../../../helper/academy-table/de-nayak-logo.png"),
+    name: {
+      fullName: "Dev naik",
+      post: "Karate Instructor",
+      achievement: "1st Dan Black Belt",
+    },
+    coach: {
+      code: "NSMA/GUJ/100/A/A",
+      instituteName: "NINJA SPORTS KARATE DOJO ACADEMY",
+      city: "Navsari (Gujarat)",
+    },
+    photo: require("../../../../helper/academy-table/dev-nayak.jpg"),
+  },
 ];
 const AcademyTable = () => {
   return (
