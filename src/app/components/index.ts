@@ -1,6 +1,6 @@
 "use client";
 
-import CrouselComponent from "./Crousel/Crousel";
+import CrouselComponent from "../(pages)/gallery/Crousel/Crousel";
 import Navbar from "./Navbar/Navbar";
 import IntroSection from "./IntroSection/IntroSection";
 import FrontDescAndAnouncement from "./FrontPageDescAndAnoucement";

@@ -7,8 +7,8 @@ import {
 } from "@/app/components";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import PhotoSection from "./PhotoSection";
-import { sliderItems1 } from "@/app/components/Crousel/content";
+import PhotoSection from "./Crousel/PhotoSection";
+import { sliderItems1 } from "@/app/(pages)/gallery/Crousel/content";
 
 const GalleryPage = () => {
   return (
@@ -48,23 +48,23 @@ const GalleryPage = () => {
         >
           Our Photo Gallery
         </Typography>
-        <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
+        {/* <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
           <CrouselComponent data={sliderItems1} />
-        </Box>
+        </Box> */}
       </Box>
 
       <Stack justifyContent={"center"} alignItems={"center"}>
         <PhotoSection />
       </Stack>
 
-      <Box
+      {/* <Box
         marginTop={"6rem"}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
       >
         <CrouselComponent data={sliderItems1} />
-      </Box>
+      </Box> */}
 
       <Footer />
     </main>
