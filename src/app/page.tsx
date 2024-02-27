@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Box, Typography } from "@mui/material";
 import {
-  CrouselComponent,
   Footer,
   FrontDescAndAnouncement,
   IntroSection,
@@ -59,9 +58,7 @@ export default function Home() {
           >
             Our Photo Gallery
           </Typography>
-          <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
-            <CrouselComponent />
-          </Box>
+     
         </Box>
       </Box> */}
 
