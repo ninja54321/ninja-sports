@@ -122,7 +122,9 @@ const MidNavbar = () => {
               <MenuItem>Academy</MenuItem>
             </Link>
             <MenuItem className={styles.navItem}>School</MenuItem>
-            <MenuItem className={styles.navItem}>Affiliation</MenuItem>
+            <Link href={"/affiliation"} className={styles.navItem}>
+              <MenuItem>Affiliation</MenuItem>
+            </Link>
           </Menu>
         </div>
         <Link className={styles.navItem} href={"/contact"}>

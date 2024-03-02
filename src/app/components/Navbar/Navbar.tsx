@@ -89,7 +89,7 @@ export default function Navbar(props: Props) {
               <Typography>School</Typography>
             </Link>
 
-            <Link href={"/"} className={styles.navItemDrawer}>
+            <Link href={"/affiliation"} className={styles.navItemDrawer}>
               <Typography>Affiliation</Typography>
             </Link>
           </Stack>
