@@ -43,7 +43,7 @@ const MidNavbar = () => {
             Home
           </Typography>
         </Link>
-        <Link className={styles.navItem} href={"/gallery"}>
+        <Link className={styles.navItem} href={"/"}>
           <Typography
             sx={{
               transition: "font-size 0.3s ease-in-out",

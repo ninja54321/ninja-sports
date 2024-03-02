@@ -1,16 +1,12 @@
 import { IntroSection, MidNavbar, Navbar } from "@/app/components";
 import { Box } from "@mui/material";
 import React from "react";
-import styles from "./page.module.css";
-import { StateTable } from "./components";
+import StateTable from "@/app/components/StateTable/index";
 import ContactText from "@/app/components/Footer/ContactText";
 
 const State = () => {
   return (
-    <main
-      className={styles.main}
-      style={{ backgroundColor: "#82b9d1", minHeight: "100vh" }}
-    >
+    <main style={{ backgroundColor: "#82b9d1", minHeight: "100vh" }}>
       <Navbar />
       <IntroSection />
       <Box mt={"2.4rem"}>

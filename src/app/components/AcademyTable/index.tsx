@@ -18,7 +18,7 @@ import Image from "next/image";
 const rows = [
   {
     srn: 1,
-    logo: require("../../../../helper/academy-table/krishna-kumar-logo.jpg"),
+    logo: require("../../../helper/academy-table/krishna-kumar-logo.jpg"),
     name: {
       fullName: "Mr. Krishna Kumar",
       post: "Chief Instructor",
@@ -29,7 +29,7 @@ const rows = [
       instituteName: "SHANKAR INSTITUTE OF MARTIAL ARTS & SPORTS",
       city: "Darbhanga (Bihar)",
     },
-    photo: require("../../../../helper/academy-table/krishna-kumar.jpg"),
+    photo: require("../../../helper/academy-table/krishna-kumar.jpg"),
   },
   {
     srn: 2,
@@ -44,7 +44,7 @@ const rows = [
       instituteName: "R.M. NINJA MARTIAL ARTS ACADEMY",
       city: "South (Delhi)",
     },
-    photo: require("../../../../helper/academy-table/ritesh-maurya.jpg"),
+    photo: require("../../../helper/academy-table/ritesh-maurya.jpg"),
   },
   {
     srn: 3,
@@ -59,7 +59,7 @@ const rows = [
       instituteName: "R.A. NINJA MARTIAL ARTS ACADEMY",
       city: "West (Delhi)",
     },
-    photo: require("../../../../helper/academy-table/rekha-arya.jpg"),
+    photo: require("../../../helper/academy-table/rekha-arya.jpg"),
   },
   {
     srn: 4,
@@ -74,7 +74,7 @@ const rows = [
       instituteName: "M.K. NINJA MARTIAL ARTS ACADEMY",
       city: "Aligarh (U.P)",
     },
-    photo: require("../../../../helper/academy-table/mukesh-kumar.jpg"),
+    photo: require("../../../helper/academy-table/mukesh-kumar.jpg"),
   },
   {
     srn: 5,
@@ -89,11 +89,11 @@ const rows = [
       instituteName: "R.B. NINJA MARTIAL ARTS ACADEMY",
       city: "Mathura (U.P)",
     },
-    photo: require("../../../../helper/academy-table/rahul-bhardwaj.jpg"),
+    photo: require("../../../helper/academy-table/rahul-bhardwaj.jpg"),
   },
   {
     srn: 6,
-    logo: require("../../../../helper/academy-table/de-nayak-logo.png"),
+    logo: require("../../../helper/academy-table/de-nayak-logo.png"),
     name: {
       fullName: "Mr. Dev naik",
       post: "Karate Instructor",
@@ -104,7 +104,7 @@ const rows = [
       instituteName: "NINJA SPORTS KARATE DOJO ACADEMY",
       city: "Navsari (Gujarat)",
     },
-    photo: require("../../../../helper/academy-table/dev-nayak.jpg"),
+    photo: require("../../../helper/academy-table/dev-nayak.jpg"),
   },
 ];
 const AcademyTable = () => {

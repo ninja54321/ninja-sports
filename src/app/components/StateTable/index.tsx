@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -12,7 +13,7 @@ import Image from "next/image";
 const rows = [
   {
     srn: 1,
-    logo: require("../../../../../helper/state-table/delhi-logo.png"),
+    logo: require("../../../helper/state-table/delhi-logo.png"),
     state: { code: "NSMA/009/DEL/UT/08", stateName: "Delhi" },
     officials: {
       title: "Mrs.",
@@ -20,11 +21,11 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    genSecretary: require("../../../../../helper/state-table/sangeeta-chauhan-img.jpg"),
+    genSecretary: require("../../../helper/state-table/sangeeta-chauhan-img.jpg"),
   },
   {
     srn: 2,
-    logo: require("../../../../../helper/state-table/up-logo.jpg"),
+    logo: require("../../../helper/state-table/up-logo.jpg"),
     state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
     officials: {
       title: "Mr.",
@@ -32,11 +33,11 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    genSecretary: require("../../../../../helper/state-table/ts-rana-up.jpg"),
+    genSecretary: require("../../../helper/state-table/ts-rana-up.jpg"),
   },
   {
     srn: 3,
-    logo: require("../../../../../helper/state-table/kk-logo.jpg"),
+    logo: require("../../../helper/state-table/kk-logo.jpg"),
     state: { code: "NSMA/015/JH/140", stateName: "Jharkhand" },
     officials: {
       title: "Mr.",
@@ -44,11 +45,11 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    genSecretary: require("../../../../../helper/state-table/kalim-khan-img.jpg"),
+    genSecretary: require("../../../helper/state-table/kalim-khan-img.jpg"),
   },
 ];
 
-export default function AccessibleTable() {
+export default function StateTable() {
   return (
     <TableContainer component={Paper} sx={{ maxWidth: "90vw" }}>
       <Table aria-label="caption table">

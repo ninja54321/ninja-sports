@@ -1,7 +1,7 @@
 import { IntroSection, MidNavbar, Navbar } from "@/app/components";
 import { Box } from "@mui/material";
 import React from "react";
-import AcademyTable from "./AcademyTable";
+import AcademyTable from "../../components/AcademyTable";
 import ContactText from "@/app/components/Footer/ContactText";
 
 const page = () => {
