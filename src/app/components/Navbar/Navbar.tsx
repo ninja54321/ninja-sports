@@ -58,7 +58,7 @@ export default function Navbar(props: Props) {
           <Link className={styles.navItemDrawer} href={"/"}>
             <Typography>Home</Typography>
           </Link>
-          <Link className={styles.navItemDrawer} href={"/"}>
+          <Link className={styles.navItemDrawer} href={"/gallery"}>
             <Typography>Gallery</Typography>
           </Link>
           <Link className={styles.navItemDrawer} href={"/"}>
