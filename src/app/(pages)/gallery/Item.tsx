@@ -7,6 +7,8 @@ const Item = ({ item }: any) => {
   return (
     <Box
       sx={{
+        borderRadius: "2rem",
+        overflow: "hidden",
         width: {
           xs: "100%",
           // sm: "100%",

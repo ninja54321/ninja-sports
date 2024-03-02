@@ -1,6 +1,7 @@
 .imageContainer {
   position: relative;
   overflow: hidden;
+  border-radius: 2rem;
 }
 
 .imageContainer:hover .image {
