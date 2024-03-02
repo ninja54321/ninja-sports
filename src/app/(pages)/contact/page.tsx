@@ -76,13 +76,21 @@ const ContactUs = () => {
                   A-894 NO-20, SONIA VIHAR DELHI NORTH EAST DELHI-110094
                 </Typography>
               </Stack>
-              <Stack direction={"row"} spacing={2}>
-                <MdOutlineEmail
-                  fontSize={"1.2rem"}
-                  color="#CD201F"
-                  className={styles.socialMedia}
-                />
-              </Stack>
+              <Link
+                href={"mailto:is@ninjasportssgfi.com"}
+                style={{ textDecoration: "none" }}
+              >
+                <Stack direction={"row"} spacing={2} alignItems={"center"}>
+                  <MdOutlineEmail
+                    fontSize={"1.2rem"}
+                    color="#CD201F"
+                    className={styles.socialMedia}
+                  />
+                  <Typography color={"white"}>
+                    is@ninjasportssgfi.com
+                  </Typography>
+                </Stack>
+              </Link>
               <Stack
                 justifyContent={"center"}
                 alignItems={"center"}
@@ -128,7 +136,8 @@ const ContactUs = () => {
                 }
                 style={{ textDecoration: "none" }}
               >
-                <FaFacebookF color="#316FF6"
+                <FaFacebookF
+                  color="#316FF6"
                   fontSize={"1.6rem"}
                   className={styles.socialMedia}
                 />
@@ -139,7 +148,8 @@ const ContactUs = () => {
                 }
                 style={{ textDecoration: "none" }}
               >
-                <FaInstagram color="#ee2a7b"
+                <FaInstagram
+                  color="#ee2a7b"
                   fontSize={"1.6rem"}
                   className={styles.socialMedia}
                 />
@@ -150,7 +160,8 @@ const ContactUs = () => {
                 }
                 style={{ textDecoration: "none" }}
               >
-                <BiLogoLinkedinSquare color="#0A66C2"
+                <BiLogoLinkedinSquare
+                  color="#0A66C2"
                   fontSize={"1.6rem"}
                   className={styles.socialMedia}
                 />
@@ -161,19 +172,28 @@ const ContactUs = () => {
                 }
                 style={{ textDecoration: "none" }}
               >
-                <FaTwitter color="#1DA1F2" fontSize={"1.6rem"} className={styles.socialMedia} />
+                <FaTwitter
+                  color="#1DA1F2"
+                  fontSize={"1.6rem"}
+                  className={styles.socialMedia}
+                />
               </Link>
               <Link
                 href={"https://www.youtube.com/watch?v=P8xYIJG9xGU"}
                 style={{ textDecoration: "none" }}
               >
-                <FaYoutube color="#CD201F" fontSize={"1.6rem"} className={styles.socialMedia} />
+                <FaYoutube
+                  color="#CD201F"
+                  fontSize={"1.6rem"}
+                  className={styles.socialMedia}
+                />
               </Link>
               <Link
                 href={"http://wame.pro/1i15pe"}
                 style={{ textDecoration: "none" }}
               >
-                <SiWhatsapp color="#059e2b"
+                <SiWhatsapp
+                  color="#059e2b"
                   fontSize={"1.6rem"}
                   className={styles.socialMedia}
                 />

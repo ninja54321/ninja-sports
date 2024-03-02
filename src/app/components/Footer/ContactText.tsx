@@ -155,8 +155,11 @@ const ContactText = () => {
           size={1.2}
           path={mdiEmail}
         /> */}
-        <Link href={"#"} style={{ textDecoration: "none" }}>
-          <MdOutlineMail  color="#CD201F" className={styles.socialMedia} />
+        <Link
+          href={"mailto:is@ninjasportssgfi.com"}
+          style={{ textDecoration: "none" }}
+        >
+          <MdOutlineMail color="#CD201F" className={styles.socialMedia} />
         </Link>
         <Link
           href={
@@ -172,7 +175,7 @@ const ContactText = () => {
           }
           style={{ textDecoration: "none" }}
         >
-          <FaInstagram  color="#ee2a7b" className={styles.socialMedia} />
+          <FaInstagram color="#ee2a7b" className={styles.socialMedia} />
         </Link>
         <Link
           href={
@@ -180,7 +183,10 @@ const ContactText = () => {
           }
           style={{ textDecoration: "none" }}
         >
-          <BiLogoLinkedinSquare color="#0A66C2" className={styles.socialMedia} />
+          <BiLogoLinkedinSquare
+            color="#0A66C2"
+            className={styles.socialMedia}
+          />
         </Link>
         <Link
           href={
@@ -194,13 +200,13 @@ const ContactText = () => {
           href={"https://www.youtube.com/watch?v=P8xYIJG9xGU"}
           style={{ textDecoration: "none" }}
         >
-          <FaYoutube  color="#CD201F" className={styles.socialMedia} />
+          <FaYoutube color="#CD201F" className={styles.socialMedia} />
         </Link>
         <Link
           href={"http://wame.pro/1i15pe"}
           style={{ textDecoration: "none" }}
         >
-          <SiWhatsapp  color="#059e2b" className={styles.socialMedia} />
+          <SiWhatsapp color="#059e2b" className={styles.socialMedia} />
         </Link>
       </Box>
     </Box>
