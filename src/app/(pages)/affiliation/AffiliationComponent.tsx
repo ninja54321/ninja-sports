@@ -68,7 +68,7 @@ const AffiliationComponent = () => {
           width={200}
         />
         <Image
-          src={require("../../../helper/logo-for-slider/shankhar-school.jpg")}
+          src={require("../../../helper/logo-for-slider/shankhar-school.png")}
           alt="logos"
           height={200}
           width={200}
