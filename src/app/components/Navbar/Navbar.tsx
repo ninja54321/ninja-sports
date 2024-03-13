@@ -64,7 +64,7 @@ export default function Navbar(props: Props) {
           <Link className={styles.navItemDrawer} href={"/"}>
             <Typography>Governing Body</Typography>
           </Link>
-          <Link className={styles.navItemDrawer} href={"/"}>
+          <Link className={styles.navItemDrawer} href={"/events"}>
             <Typography>Event & Updates</Typography>
           </Link>
           {/* <Link className={styles.navItemDrawer} href={"/"}> */}

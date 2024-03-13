@@ -1,9 +1,28 @@
-import React from 'react'
+import { Footer, IntroSection, MidNavbar, Navbar } from "@/app/components";
+import { Box } from "@mui/material";
+import React from "react";
+import EventsContent from "./EventsContent";
 
 const EventUpdates = () => {
   return (
-    <div>EventUpdates</div>
-  )
-}
+    <main
+      style={{
+        backgroundColor: "#82b9d1",
+        minHeight: "100vh",
+        overflow: "hidden",
+      }}
+    >
+      <Navbar />
+      <Box>
+        <IntroSection />
+      </Box>
+      <Box mt={"2.4rem"}>
+        <MidNavbar />
+      </Box>
+      <EventsContent />
+      <Footer />
+    </main>
+  );
+};
 
-export default EventUpdates
+export default EventUpdates;
