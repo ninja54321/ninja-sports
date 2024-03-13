@@ -47,6 +47,17 @@ const rows = [
     president: "",
     genSecretary: require("../../../helper/state-table/kalim-khan-img.jpg"),
   },
+  {
+    srn: 4,
+    state: { code: "NSMA/029/RAJ/280", stateName: "Rajasthan" },
+    officials: {
+      title: "Mr.",
+      name: "Dr. Bharat Panwar",
+      designation: "Gen. Secretary",
+    },
+    president: "",
+    genSecretary: require("../../../helper/state-table/bharat-panwar.png"),
+  },
 ];
 
 export default function StateTable() {
