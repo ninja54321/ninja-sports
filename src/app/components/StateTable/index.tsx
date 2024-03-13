@@ -136,12 +136,14 @@ export default function StateTable() {
                     alignItems: "center",
                   }}
                 >
-                  <Image
-                    src={row.logo}
-                    height={150}
-                    width={150}
-                    alt="logo-img"
-                  />
+                  {row.logo && (
+                    <Image
+                      src={row.logo}
+                      height={150}
+                      width={150}
+                      alt="logo-img"
+                    />
+                  )}
                 </Box>
               </TableCell>
               <TableCell>
