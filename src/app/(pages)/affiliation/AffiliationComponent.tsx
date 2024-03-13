@@ -37,13 +37,13 @@ const AffiliationComponent = () => {
           width={200}
         />
         <Image
-          src={require("../../../helper/logo-for-slider/ghaziabad.jpg")}
+          src={require("../../../helper/logo-for-slider/ghaziabad.png")}
           alt="logos"
           height={200}
           width={200}
         />
         <Image
-          src={require("../../../helper/logo-for-slider/bulandshaar.jpg")}
+          src={require("../../../helper/logo-for-slider/bulandshaar.png")}
           alt="logos"
           height={200}
           width={200}
@@ -62,7 +62,7 @@ const AffiliationComponent = () => {
           width={200}
         />
         <Image
-          src={require("../../../helper/logo-for-slider/north-east-delhi.jpg")}
+          src={require("../../../helper/logo-for-slider/north-east-delhi.png")}
           alt="logos"
           height={200}
           width={200}
@@ -74,7 +74,7 @@ const AffiliationComponent = () => {
           width={200}
         />
         <Image
-          src={require("../../../helper/logo-for-slider/up.jpg")}
+          src={require("../../../helper/logo-for-slider/up.png")}
           alt="logos"
           height={200}
           width={200}
