@@ -46,6 +46,9 @@ interface IFormValues {
   blackCourse: boolean;
   img: string;
   starRating: string;
+  title: string;
+  ageCategory: string;
+  certificateNumber: string;
 }
 
 const initialValues: IFormValues = {
@@ -67,6 +70,9 @@ const initialValues: IFormValues = {
   blackCourse: false,
   img: "",
   starRating: "",
+  title: "",
+  ageCategory: "",
+  certificateNumber: "",
 };
 
 // const schema = yup.object().shape({
@@ -156,6 +162,29 @@ const StudentRegistration = () => {
             {/* <Grid container spacing={2}> */}
 
             <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Controller
+                  name="certificateNumber"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      name="certificateNumber"
+                      fullWidth
+                      label="Certificate Number *"
+                      autoFocus
+                      value={field.value}
+                      onChange={(e) =>
+                        field.onChange((field.value = e.target.value))
+                      }
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
               <Grid item xs={12}>
                 <Controller
                   name="fullName"
@@ -310,7 +339,6 @@ const StudentRegistration = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <>{watch('gender')}</>
                 <Controller
                   name="gender"
                   rules={{ required: true }}
@@ -347,6 +375,135 @@ const StudentRegistration = () => {
                       </FormControl>
                     );
                   }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
+                  name="title"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="title"
+                      label="Title/Designation *"
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
+                  name="ageCategory"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="ageCategory"
+                      label="Age Category *"
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
+                  name="state"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="state"
+                      label="State *"
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
+                  name="district"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="district"
+                      label="District *"
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
+                  name="address"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="address"
+                      label="Address *"
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Controller
+                  name="fatherOccupation"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="fatherOccupation"
+                      label="Father Occupation *"
+                      type="text"
+                      multiline
+                      rows={2}
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
                 />
               </Grid>
             </Grid>
