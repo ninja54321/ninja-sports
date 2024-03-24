@@ -1,3 +1,4 @@
+"use client";
 import { Box, Divider, Menu, MenuItem, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
@@ -6,6 +7,8 @@ import Icon from "@mdi/react";
 import { mdiMenuDown } from "@mdi/js";
 
 const MidNavbar = () => {
+  const user =
+    typeof window !== "undefined" ? localStorage.getItem("token") : null;
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event: any) => {
@@ -139,6 +142,52 @@ const MidNavbar = () => {
             Contact Us
           </Typography>
         </Link>
+        {!user && (
+          <Link className={styles.navItem} href={"/signup"}>
+            <Typography
+              sx={{
+                transition: "font-size 0.3s ease-in-out",
+                "&:hover": {
+                  fontSize: "1.1em",
+                },
+              }}
+            >
+              Signup
+            </Typography>
+          </Link>
+        )}
+        {!user && (
+          <Link className={styles.navItem} href={"/login"}>
+            <Typography
+              sx={{
+                transition: "font-size 0.3s ease-in-out",
+                "&:hover": {
+                  fontSize: "1.1em",
+                },
+              }}
+            >
+              Login
+            </Typography>
+          </Link>
+        )}
+        {user && (
+          <Stack
+            sx={{ cursor: "pointer" }}
+            className={styles.navItem}
+            onClick={() => localStorage.removeItem("token")}
+          >
+            <Typography
+              sx={{
+                transition: "font-size 0.3s ease-in-out",
+                "&:hover": {
+                  fontSize: "1.1em",
+                },
+              }}
+            >
+              Logout
+            </Typography>
+          </Stack>
+        )}
       </Stack>
     </Box>
   );
