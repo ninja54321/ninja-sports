@@ -28,6 +28,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 
 interface IFormValues {
+  registrationNumber: string;
   fullName: string;
   mobileNumber: string;
   whatsAppNumber: string;
@@ -52,6 +53,7 @@ interface IFormValues {
 }
 
 const initialValues: IFormValues = {
+  registrationNumber: "",
   fullName: "",
   mobileNumber: "",
   whatsAppNumber: "",
@@ -164,14 +166,14 @@ const StudentRegistration = () => {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Controller
-                  name="certificateNumber"
+                  name="registrationNumber"
                   control={control}
                   rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
-                      name="certificateNumber"
+                      name="registrationNumber"
                       fullWidth
-                      label="Certificate Number *"
+                      label="Registration Number *"
                       autoFocus
                       value={field.value}
                       onChange={(e) =>
