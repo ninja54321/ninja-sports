@@ -58,6 +58,17 @@ const rows = [
     president: "",
     genSecretary: require("../../../helper/state-table/bharat-panwar.png"),
   },
+  {
+    srn: 5,
+    state: { code: "NSMA/026/ODI/250", stateName: "Odisha" },
+    officials: {
+      title: "Mr.",
+      name: "Dr. Dibya Ranjan Barad",
+      designation: "Gen. Secretary",
+    },
+    president: "",
+    genSecretary: require("../../../helper/state-table/dibyaRanjan.jpg"),
+  },
 ];
 
 export default function StateTable() {

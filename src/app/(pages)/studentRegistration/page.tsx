@@ -26,6 +26,7 @@ import { SiGoogleforms } from "react-icons/si";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
+import axios from "axios";
 
 interface IFormValues {
   registrationNumber: string;
@@ -50,6 +51,7 @@ interface IFormValues {
   title: string;
   ageCategory: string;
   certificateNumber: string;
+  photo: any;
 }
 
 const initialValues: IFormValues = {
@@ -75,39 +77,36 @@ const initialValues: IFormValues = {
   title: "",
   ageCategory: "",
   certificateNumber: "",
+  photo: null,
 };
 
 // const schema = yup.object().shape({
-//   fullName: yup.string().required("Full Name is required"),
-//   mobileNumber: yup
-//     .string()
-//     .required("Mobile Number is required")
-//     .matches(/^\d{10}$/, "Mobile Number must be 10 digits long"),
-//   whatsAppNumber: yup
-//     .string()
-//     .required("WhatsApp Number is required")
-//     .matches(/^\d{10}$/, "WhatsApp Number must be 10 digits long"),
-//   fathersName: yup.string().required("Father's Name is required"),
-//   dob: yup.date().required("Date of Birth is required"),
+//   registrationNumber: yup.string().required("Registration number is required"),
+//   fullName: yup.string().required("Full name is required"),
+//   mobileNumber: yup.string().required("Mobile number is required"),
+//   whatsAppNumber: yup.string().required("WhatsApp number is required"),
+//   fathersName: yup.string().required("Father's name is required"),
+//   dob: yup.date().required("Date of birth is required").nullable(),
 //   qualification: yup.string().required("Qualification is required"),
-//   email: yup
-//     .string()
-//     .email("Invalid email address")
-//     .required("Email is required"),
+//   email: yup.string().email("Invalid email").required("Email is required"),
 //   gender: yup.string().required("Gender is required"),
 //   state: yup.string().required("State is required"),
 //   district: yup.string().required("District is required"),
 //   address: yup.string().required("Address is required"),
-//   fatherOccupation: yup.string().required("Father's Occupation is required"),
-//   sportsExperience: yup.string().required("Sports Experience is required"),
+//   fatherOccupation: yup.string().required("Father's occupation is required"),
+//   sportsExperience: yup.string().required("Sports experience is required"),
 //   optionToLearn: yup
 //     .array()
 //     .of(yup.string())
-//     .required("Option to Learn is required"),
+//     .required("Option to learn is required"),
 //   consent: yup.string().required("Consent is required"),
-//   blackCourse: yup.boolean().required("Black Course is required"),
+//   blackCourse: yup.boolean().required("Black course information is required"),
 //   img: yup.string().required("Image is required"),
-//   starRating: yup.string().required("Star Rating is required"),
+//   starRating: yup.string().required("Star rating is required"),
+//   title: yup.string().required("Title is required"),
+//   ageCategory: yup.string().required("Age category is required"),
+//   certificateNumber: yup.string().required("Certificate number is required"),
+//   photo: yup.mixed().required("Photo is required"),
 // });
 
 const StudentRegistration = () => {
@@ -120,7 +119,12 @@ const StudentRegistration = () => {
 
   const onSubmit = async (values: IFormValues) => {
     try {
-      console.log(values);
+      const formData = new FormData();
+      Object.entries(values).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+      const res = await axios.post("/api/students/create", formData);
+      toast.info("Student details added succesfully", { autoClose: 1000 });
     } catch (error: any) {
       console.log(error);
       setIsLoading(false);
@@ -191,7 +195,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="fullName"
                   control={control}
-                  rules={{ required: true }}
+                  rules={{ required: "true" }}
                   render={({ field, fieldState }) => (
                     <TextField
                       name="fullName"
@@ -504,6 +508,25 @@ const StudentRegistration = () => {
                         fieldState.error ? fieldState.error.message : ""
                       }
                       error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <>{console.log(watch("photo"))}</>
+                <Controller
+                  name="photo"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <input
+                      type="file"
+                      onChange={(e) => {
+                        const file = e.target.files && e.target.files[0];
+                        if (file) {
+                          field.onChange(file);
+                        }
+                      }}
                     />
                   )}
                 />

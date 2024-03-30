@@ -35,11 +35,14 @@ export async function POST(request: NextRequest) {
     const token = await jwt.sign(tokenData, process.env.ACCESS_TOKEN_SECRET!, {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
     });
-    return NextResponse.json({
-      message: "Login Successful",
-      success: true,
-      token: token,
-    });
+    return NextResponse.json(
+      {
+        message: "Login Successful",
+        success: true,
+        token: token,
+      },
+      { status: 200 }
+    );
   } catch (error: any) {
     return NextResponse.json(
       {
