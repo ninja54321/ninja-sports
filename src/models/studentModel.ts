@@ -14,9 +14,10 @@ const certificateSchema = new Schema<ICertificate>({
 
 interface IStudentDb {
   _id: Types.ObjectId;
-  user: Types.ObjectId;
+  user: Types.ObjectId | null;
   active: boolean;
   registrationNumber: string;
+  title: string;
   fullName: string;
   mobileNumber: string;
   whatsAppNumber: string;
@@ -35,7 +36,6 @@ interface IStudentDb {
   blackCourse: boolean;
   img: string;
   starRating: string;
-  title: string;
   ageCategory: string;
   certificateNumber: string;
   photo: any;

@@ -60,6 +60,7 @@ const rows = [
   },
   {
     srn: 5,
+    logo: require('../../../helper/state-table/odisha-logo.jpg'),
     state: { code: "NSMA/026/ODI/250", stateName: "Odisha" },
     officials: {
       title: "Mr.",

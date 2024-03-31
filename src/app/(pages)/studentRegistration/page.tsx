@@ -80,41 +80,11 @@ const initialValues: IFormValues = {
   photo: null,
 };
 
-// const schema = yup.object().shape({
-//   registrationNumber: yup.string().required("Registration number is required"),
-//   fullName: yup.string().required("Full name is required"),
-//   mobileNumber: yup.string().required("Mobile number is required"),
-//   whatsAppNumber: yup.string().required("WhatsApp number is required"),
-//   fathersName: yup.string().required("Father's name is required"),
-//   dob: yup.date().required("Date of birth is required").nullable(),
-//   qualification: yup.string().required("Qualification is required"),
-//   email: yup.string().email("Invalid email").required("Email is required"),
-//   gender: yup.string().required("Gender is required"),
-//   state: yup.string().required("State is required"),
-//   district: yup.string().required("District is required"),
-//   address: yup.string().required("Address is required"),
-//   fatherOccupation: yup.string().required("Father's occupation is required"),
-//   sportsExperience: yup.string().required("Sports experience is required"),
-//   optionToLearn: yup
-//     .array()
-//     .of(yup.string())
-//     .required("Option to learn is required"),
-//   consent: yup.string().required("Consent is required"),
-//   blackCourse: yup.boolean().required("Black course information is required"),
-//   img: yup.string().required("Image is required"),
-//   starRating: yup.string().required("Star rating is required"),
-//   title: yup.string().required("Title is required"),
-//   ageCategory: yup.string().required("Age category is required"),
-//   certificateNumber: yup.string().required("Certificate number is required"),
-//   photo: yup.mixed().required("Photo is required"),
-// });
-
 const StudentRegistration = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { handleSubmit, control, watch } = useForm<IFormValues>({
+  const { handleSubmit, control, watch, reset } = useForm<IFormValues>({
     defaultValues: initialValues,
-    // resolver: yupResolver(schema),
   });
 
   const onSubmit = async (values: IFormValues) => {
@@ -125,13 +95,14 @@ const StudentRegistration = () => {
       });
       const res = await axios.post("/api/students/create", formData);
       toast.info("Student details added succesfully", { autoClose: 1000 });
+      reset();
     } catch (error: any) {
       console.log(error);
       setIsLoading(false);
       toast.error(
         error.response.data.message || "Error Occured please try again later",
         {
-          autoClose: 1000,
+          autoClose: 2000,
         }
       );
     }
@@ -177,12 +148,34 @@ const StudentRegistration = () => {
                     <TextField
                       name="registrationNumber"
                       fullWidth
+                      type="number"
                       label="Registration Number *"
                       autoFocus
                       value={field.value}
                       onChange={(e) =>
                         field.onChange((field.value = e.target.value))
                       }
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
+                  name="title"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="title"
+                      label="Title/Designation *"
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
                       helperText={
                         fieldState.error ? fieldState.error.message : ""
                       }
@@ -312,7 +305,7 @@ const StudentRegistration = () => {
                   render={({ field, fieldState }) => (
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                       <DatePicker
-                        label="Father's Name"
+                        label="Date of birth *"
                         value={field.value || null}
                         onChange={(newValue) => field.onChange(newValue)}
                       />
@@ -381,27 +374,6 @@ const StudentRegistration = () => {
                       </FormControl>
                     );
                   }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Controller
-                  name="title"
-                  control={control}
-                  rules={{ required: true }}
-                  render={({ field, fieldState }) => (
-                    <TextField
-                      fullWidth
-                      name="title"
-                      label="Title/Designation *"
-                      type="text"
-                      value={field.value}
-                      onChange={field.onChange}
-                      helperText={
-                        fieldState.error ? fieldState.error.message : ""
-                      }
-                      error={Boolean(fieldState.error)}
-                    />
-                  )}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -513,7 +485,6 @@ const StudentRegistration = () => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <>{console.log(watch("photo"))}</>
                 <Controller
                   name="photo"
                   control={control}
