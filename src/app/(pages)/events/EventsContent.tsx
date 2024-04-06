@@ -16,7 +16,7 @@ const EventsContent = () => {
       gap={10}
     >
       <Image
-        src={require("../../../helper/events/Ghaziabad-district-championship.jpg")}
+        src={require("../../../helper/events/event.jpg")}
         style={{
           height: isHovered1 ? "70vh" : "60vh",
           width: "auto",
@@ -27,7 +27,7 @@ const EventsContent = () => {
         onMouseEnter={() => setIsHovered1(true)}
         onMouseLeave={() => setIsHovered1(false)}
       />
-      <Image
+      {/* <Image
         style={{
           height: isHovered2 ? "80vh" : "70vh",
           width: "auto",
@@ -38,7 +38,7 @@ const EventsContent = () => {
         alt={""}
         onMouseEnter={() => setIsHovered2(true)}
         onMouseLeave={() => setIsHovered2(false)}
-      />
+      /> */}
     </Stack>
   );
 };

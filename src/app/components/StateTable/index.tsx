@@ -60,7 +60,7 @@ const rows = [
   },
   {
     srn: 5,
-    logo: require('../../../helper/state-table/odisha-logo.jpg'),
+    logo: require("../../../helper/state-table/odisha-logo.jpg"),
     state: { code: "NSMA/026/ODI/250", stateName: "Odisha" },
     officials: {
       title: "Mr.",
@@ -69,6 +69,17 @@ const rows = [
     },
     president: "",
     genSecretary: require("../../../helper/state-table/dibyaRanjan.jpg"),
+  },
+  {
+    srn: 6,
+    state: { code: "NSMA/021/MH/200", stateName: "Maharashtra" },
+    officials: {
+      title: "Mr.",
+      name: "Prakash Narharro Pandit",
+      designation: "General Secretary",
+    },
+    president: "",
+    genSecretary: require("../../../helper/state-table/prakash.jpg"),
   },
 ];
 

@@ -24,12 +24,12 @@ const AffiliationComponent = () => {
         className={styles.logosSlide}
         ref={logosRef}
       >
-        <Image
+        {/* <Image
           src={require("../../../helper/logo-for-slider/main-logo.png")}
           alt="logos"
           height={200}
           width={200}
-        />
+        /> */}
         <Image
           src={require("../../../helper/logo-for-slider/delhi.png")}
           alt="logos"
