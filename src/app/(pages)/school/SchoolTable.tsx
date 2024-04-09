@@ -13,7 +13,6 @@ import Image from "next/image";
 const rows = [
   {
     srn: 1,
-    logo: require("../../../helper/state-table/delhi-logo.png"),
     address: {
       code: "NSMA/031/TN/300/B/A",
       stateName: "Tamilnadu",
@@ -37,6 +36,7 @@ export default function SchoolTable() {
           <TableRow>
             <TableCell>
               <Typography
+                whiteSpace={"nowrap"}
                 textAlign={"center"}
                 fontSize={"1rem"}
                 fontWeight={700}
