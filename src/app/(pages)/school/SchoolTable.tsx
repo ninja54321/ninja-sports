@@ -14,83 +14,22 @@ const rows = [
   {
     srn: 1,
     logo: require("../../../helper/state-table/delhi-logo.png"),
-    state: { code: "NSMA/009/DEL/UT/08", stateName: "Delhi" },
+    address: {
+      code: "NSMA/031/TN/300/B/A",
+      stateName: "Tamilnadu",
+      district: "Erode",
+    },
     officials: {
       title: "Mrs.",
-      name: "Sangeeta Chauhan",
-      designation: "Gen. Secretary",
+      name: "BHAMO KALAIYARASAN",
+      instituteName:
+        "TAMILNADU MARTIAL ARTS AND SELF-DEFENCE INSTITUTE KARATE AND KUNG-FU SCHOOL",
     },
-    president: "",
-    photo: require("../../../helper/state-table/sangeeta-chauhan-img.jpg"),
-  },
-  {
-    srn: 2,
-    logo: require("../../../helper/state-table/up-logo.jpg"),
-    state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
-    officials: {
-      title: "Mr.",
-      name: "T.S. Rana",
-      designation: "Gen. Secretary",
-    },
-    president: "",
-    photo: require("../../../helper/state-table/ts-rana-up.jpg"),
-  },
-  {
-    srn: 3,
-    logo: require("../../../helper/state-table/kk-logo.jpg"),
-    state: { code: "NSMA/015/JH/140", stateName: "Jharkhand" },
-    officials: {
-      title: "Mr.",
-      name: "Kalim Khan",
-      designation: "Gen. Secretary",
-    },
-    president: "",
-    photo: require("../../../helper/state-table/kalim-khan-img.jpg"),
-  },
-  {
-    srn: 4,
-    state: { code: "NSMA/029/RAJ/280", stateName: "Rajasthan" },
-    officials: {
-      title: "Mr.",
-      name: "Dr. Bharat Panwar",
-      designation: "Gen. Secretary",
-    },
-    president: "",
-    photo: require("../../../helper/state-table/bharat-panwar.png"),
-  },
-  {
-    srn: 5,
-    logo: require("../../../helper/state-table/odisha-logo.jpg"),
-    state: { code: "NSMA/026/ODI/250", stateName: "Odisha" },
-    officials: {
-      title: "Mr.",
-      name: "Dr. Dibya Ranjan Barad",
-      designation: "Gen. Secretary",
-    },
-    president: "",
-    photo: require("../../../helper/state-table/dibyaRanjan.jpg"),
-  },
-  {
-    srn: 6,
-    state: { code: "NSMA/021/MH/200", stateName: "Maharashtra" },
-    officials: {
-      title: "Mr.",
-      name: "Prakash Pandit",
-      designation: "Gen. Secretary",
-    },
-    president: "",
-    photo: require("../../../helper/state-table/prakash.jpg"),
-  },
-  {
-    srn: 7,
-    logo: require("../../../helper/state-table/tamilnadu-logo.jpg"),
-    state: { code: "NSMA/031/TN/300", stateName: "TAMILNADU" },
-    president: "Mr. M.P. SUDHARSAN",
-    photo: require("../../../helper/state-table/mp-sudharshan.jpg"),
+    photo: require("../../../helper/school-table/bhamo.jpg"),
   },
 ];
 
-export default function StateTable() {
+export default function SchoolTable() {
   return (
     <TableContainer component={Paper} sx={{ maxWidth: "90vw" }}>
       <Table aria-label="caption table">
@@ -120,7 +59,7 @@ export default function StateTable() {
                 fontSize={"1rem"}
                 fontWeight={700}
               >
-                STATE
+                Address
               </Typography>
             </TableCell>
             <TableCell>
@@ -138,7 +77,7 @@ export default function StateTable() {
                 fontSize={"1rem"}
                 fontWeight={700}
               >
-                President
+                Institute Name
               </Typography>
             </TableCell>
             <TableCell>
@@ -192,26 +131,31 @@ export default function StateTable() {
                     }}
                   >
                     <Typography>code.</Typography>
-                    <Typography>{row.state.code}</Typography>
+                    <Typography>{row.address.code}</Typography>
                   </Box>
-                  <Typography>{row.state.stateName}</Typography>
+                  <Typography>
+                    <span style={{ fontWeight: 600 }}>District:</span>{" "}
+                    {row.address.district}
+                  </Typography>
+                  <Typography>
+                    {" "}
+                    <span style={{ fontWeight: 600 }}>State:</span>{" "}
+                    {row.address.stateName}
+                  </Typography>
                 </Stack>
               </TableCell>
               <TableCell>
                 <Stack justifyContent={"center"} alignItems={"center"}>
-                  <Typography>
-                    <span>{row?.officials?.title} </span>
-                    {row?.officials?.name}
+                  <Typography sx={{ whiteSpace: "nowrap" }}>
+                    {row?.officials?.title} {row?.officials?.name}
                   </Typography>
-                  <Typography>{row?.officials?.designation}</Typography>
                 </Stack>
               </TableCell>
               <TableCell>
                 <Stack>
-                  <Typography textAlign={"center"}>{row.president}</Typography>
-                  {row.president && (
-                    <Typography textAlign="center">(President)</Typography>
-                  )}
+                  <Typography textAlign={"center"}>
+                    {row.officials.instituteName}
+                  </Typography>
                 </Stack>
               </TableCell>
               <TableCell>
