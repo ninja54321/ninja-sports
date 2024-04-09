@@ -13,6 +13,7 @@ import Image from "next/image";
 const rows = [
   {
     srn: 1,
+    logo: "",
     address: {
       code: "NSMA/031/TN/300/B/A",
       stateName: "Tamilnadu",
@@ -105,9 +106,9 @@ export default function SchoolTable() {
                     alignItems: "center",
                   }}
                 >
-                  {row.logo && (
+                  {row?.logo && (
                     <Image
-                      src={row.logo}
+                      src={row?.logo}
                       height={150}
                       width={150}
                       alt="logo-img"
