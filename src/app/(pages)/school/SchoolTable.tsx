@@ -13,7 +13,7 @@ import Image from "next/image";
 const rows = [
   {
     srn: 1,
-    logo: "",
+    logo: require("../../../helper/school-table/tamilnadu-logo.jpg"),
     address: {
       code: "NSMA/031/TN/300/B/A",
       stateName: "Tamilnadu",

@@ -83,7 +83,6 @@ const rows = [
   },
   {
     srn: 7,
-    logo: require("../../../helper/state-table/tamilnadu-logo.jpg"),
     officials: {
       title: "Mr.",
       name: "M.P.SUDHARSAN",
