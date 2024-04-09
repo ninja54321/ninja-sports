@@ -5,6 +5,7 @@ import React from "react";
 import styles from "./navbar.module.css";
 import Icon from "@mdi/react";
 import { mdiMenuDown } from "@mdi/js";
+import SearchBar from "./SearchBar";
 
 const MidNavbar = () => {
   const user =
@@ -173,21 +174,24 @@ const MidNavbar = () => {
           </Link>
         )}
         {user && (
-          <Stack
-            sx={{ cursor: "pointer" }}
-            className={styles.navItem}
-            onClick={() => localStorage.removeItem("token")}
-          >
-            <Typography
-              sx={{
-                transition: "font-size 0.3s ease-in-out",
-                "&:hover": {
-                  fontSize: "1.1em",
-                },
-              }}
+          <Stack direction="row" alignItems={"center"} spacing={4}>
+            <SearchBar />
+            <Stack
+              className={styles.navItem}
+              onClick={() => localStorage.removeItem("token")}
             >
-              Logout
-            </Typography>
+              <Typography
+                sx={{
+                  transition: "font-size 0.3s ease-in-out",
+                  "&:hover": {
+                    fontSize: "1.1em",
+                    cursor: "pointer",
+                  },
+                }}
+              >
+                Logout
+              </Typography>
+            </Stack>
           </Stack>
         )}
       </Stack>

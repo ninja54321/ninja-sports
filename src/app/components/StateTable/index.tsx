@@ -21,7 +21,7 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    photo: require("../../../helper/state-table/sangeeta-chauhan-img.jpg"),
+    genSecreatary: require("../../../helper/state-table/sangeeta-chauhan-img.jpg"),
   },
   {
     srn: 2,
@@ -33,7 +33,7 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    photo: require("../../../helper/state-table/ts-rana-up.jpg"),
+    genSecreatary: require("../../../helper/state-table/ts-rana-up.jpg"),
   },
   {
     srn: 3,
@@ -45,7 +45,7 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    photo: require("../../../helper/state-table/kalim-khan-img.jpg"),
+    genSecreatary: require("../../../helper/state-table/kalim-khan-img.jpg"),
   },
   {
     srn: 4,
@@ -56,7 +56,7 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    photo: require("../../../helper/state-table/bharat-panwar.png"),
+    genSecreatary: require("../../../helper/state-table/bharat-panwar.png"),
   },
   {
     srn: 5,
@@ -68,7 +68,7 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    photo: require("../../../helper/state-table/dibyaRanjan.jpg"),
+    genSecreatary: require("../../../helper/state-table/dibyaRanjan.jpg"),
   },
   {
     srn: 6,
@@ -79,14 +79,19 @@ const rows = [
       designation: "Gen. Secretary",
     },
     president: "",
-    photo: require("../../../helper/state-table/prakash.jpg"),
+    genSecreatary: require("../../../helper/state-table/prakash.jpg"),
   },
   {
     srn: 7,
     logo: require("../../../helper/state-table/tamilnadu-logo.jpg"),
+    officials: {
+      title: "Mr.",
+      name: "M.P.SUDHARSAN",
+      designation: "President",
+    },
     state: { code: "NSMA/031/TN/300", stateName: "TAMILNADU" },
-    president: "Mr. M.P. SUDHARSAN",
-    photo: require("../../../helper/state-table/mp-sudharshan.jpg"),
+    president: require("../../../helper/state-table/mp-sudharshan.jpg"),
+    genSecreatary: "",
   },
 ];
 
@@ -207,23 +212,30 @@ export default function StateTable() {
                 </Stack>
               </TableCell>
               <TableCell>
-                <Stack>
-                  <Typography textAlign={"center"}>{row.president}</Typography>
-                  {row.president && (
-                    <Typography textAlign="center">(President)</Typography>
-                  )}
-                </Stack>
+                {row.president && (
+                  <Stack justifyContent={"center"} alignItems={"center"}>
+                    <Image
+                      src={row?.president}
+                      height={150}
+                      width={150}
+                      alt="gen-sec-img"
+                      style={{ borderRadius: "1rem" }}
+                    />
+                  </Stack>
+                )}
               </TableCell>
               <TableCell>
-                <Stack justifyContent={"center"} alignItems={"center"}>
-                  <Image
-                    src={row.photo}
-                    height={150}
-                    width={150}
-                    alt="gen-sec-img"
-                    style={{ borderRadius: "1rem" }}
-                  />
-                </Stack>
+                {row.genSecreatary && (
+                  <Stack justifyContent={"center"} alignItems={"center"}>
+                    <Image
+                      src={row?.genSecreatary}
+                      height={150}
+                      width={150}
+                      alt="gen-sec-img"
+                      style={{ borderRadius: "1rem" }}
+                    />
+                  </Stack>
+                )}
               </TableCell>
             </TableRow>
           ))}
