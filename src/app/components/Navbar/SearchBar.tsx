@@ -7,11 +7,13 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import axios from "axios";
 import React, { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { CiSearch } from "react-icons/ci";
+import { toast } from "react-toastify";
 
-const searchType = ["student", "referee"];
+const searchType = ["student", "officials"];
 
 const SearchBar = () => {
   const [type, setType] = useState<string>("student");
@@ -21,10 +23,24 @@ const SearchBar = () => {
   const [searchAnchorEl, setSearchAnchorEl] =
     React.useState<HTMLButtonElement | null>(null);
 
-  const handleSearch = () => {
-    // Handle search here using selectedSearchType and registrationNumber
+  const handleSearch = async () => {
     console.log("Search type:", type);
     console.log("Registration number:", registrationNumber);
+    try {
+      const res = await axios.get(
+        `api/search?registrationNumber=${registrationNumber}&type=${type}`
+      );
+
+      console.log(res.data);
+    } catch (error: any) {
+      console.log(error);
+      toast.error(
+        error.response.data.message || "Error Occured please try again later",
+        {
+          autoClose: 1000,
+        }
+      );
+    }
   };
   return (
     <Stack>
