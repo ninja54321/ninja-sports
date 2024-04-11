@@ -100,8 +100,8 @@ const rows = [
       designation: "Gen. secretary",
     },
     state: { code: "NSMA/018/MP/170", stateName: "Madhya Pradesh" },
-    president: require("../../../helper/state-table/anami.jpg"),
-    genSecreatary: "",
+    president: "",
+    genSecreatary: require("../../../helper/state-table/anami.jpg"),
   },
 ];
 
