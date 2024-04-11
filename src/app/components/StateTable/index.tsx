@@ -92,6 +92,17 @@ const rows = [
     president: require("../../../helper/state-table/mp-sudharshan.jpg"),
     genSecreatary: "",
   },
+  {
+    srn: 8,
+    officials: {
+      title: "Mr.",
+      name: "Anami sharan",
+      designation: "Gen. secretary",
+    },
+    state: { code: "NSMA/018/MP/170", stateName: "Madhya Pradesh" },
+    president: require("../../../helper/state-table/anami.jpg"),
+    genSecreatary: "",
+  },
 ];
 
 export default function StateTable() {
