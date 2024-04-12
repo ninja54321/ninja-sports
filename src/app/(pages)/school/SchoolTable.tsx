@@ -14,16 +14,14 @@ const rows = [
   {
     srn: 1,
     logo: require("../../../helper/school-table/tamilnadu-logo.jpg"),
-    address: {
-      code: "NSMA/031/TN/300/B/A",
-      stateName: "Tamilnadu",
-      district: "Erode",
+    name: {
+      fullName: "Mr. BHAMO KALAIYARASAN",
     },
-    officials: {
-      title: "Mrs.",
-      name: "BHAMO KALAIYARASAN",
+    coach: {
+      code: "NSMA/031/TN/300/B/A",
       instituteName:
         "TAMILNADU MARTIAL ARTS AND SELF-DEFENCE INSTITUTE KARATE AND KUNG-FU SCHOOL",
+      city: "Erode (Tamilnadu)",
     },
     photo: require("../../../helper/school-table/bhamo.jpg"),
   },
@@ -37,7 +35,6 @@ export default function SchoolTable() {
           <TableRow>
             <TableCell>
               <Typography
-                whiteSpace={"nowrap"}
                 textAlign={"center"}
                 fontSize={"1rem"}
                 fontWeight={700}
@@ -60,7 +57,7 @@ export default function SchoolTable() {
                 fontSize={"1rem"}
                 fontWeight={700}
               >
-                Address
+                NAME
               </Typography>
             </TableCell>
             <TableCell>
@@ -69,7 +66,7 @@ export default function SchoolTable() {
                 fontSize={"1rem"}
                 fontWeight={700}
               >
-                OFFICIALS
+                TRAINER/COACH
               </Typography>
             </TableCell>
             <TableCell>
@@ -78,22 +75,13 @@ export default function SchoolTable() {
                 fontSize={"1rem"}
                 fontWeight={700}
               >
-                Institute Name
-              </Typography>
-            </TableCell>
-            <TableCell>
-              <Typography
-                textAlign={"center"}
-                fontSize={"1rem"}
-                fontWeight={700}
-              >
-                Gen. Secretary
+                PHOTO
               </Typography>
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row: any) => (
             <TableRow key={row.srn}>
               <TableCell component="th" scope="row">
                 <Typography textAlign={"center"}>{row.srn}</Typography>
@@ -106,9 +94,9 @@ export default function SchoolTable() {
                     alignItems: "center",
                   }}
                 >
-                  {row?.logo && (
+                  {row.logo && (
                     <Image
-                      src={row?.logo}
+                      src={row.logo}
                       height={150}
                       width={150}
                       alt="logo-img"
@@ -117,11 +105,12 @@ export default function SchoolTable() {
                 </Box>
               </TableCell>
               <TableCell>
-                <Stack
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                  spacing={1}
-                >
+                <Stack justifyContent={"center"} alignItems={"center"}>
+                  <Typography>{row.name.fullName}</Typography>
+                </Stack>
+              </TableCell>
+              <TableCell>
+                <Stack justifyContent={"center"} alignItems={"center"}>
                   <Box
                     sx={{
                       display: "flex",
@@ -132,43 +121,20 @@ export default function SchoolTable() {
                     }}
                   >
                     <Typography>code.</Typography>
-                    <Typography>{row.address.code}</Typography>
+                    <Typography>{row.coach.code}</Typography>
                   </Box>
-                  <Typography>
-                    <span style={{ fontWeight: 600 }}>District:</span>{" "}
-                    {row.address.district}
-                  </Typography>
-                  <Typography>
-                    {" "}
-                    <span style={{ fontWeight: 600 }}>State:</span>{" "}
-                    {row.address.stateName}
-                  </Typography>
+                  <Typography>{row.coach.instituteName}</Typography>
+                  <Typography>{row.coach.city}</Typography>
                 </Stack>
               </TableCell>
               <TableCell>
-                <Stack justifyContent={"center"} alignItems={"center"}>
-                  <Typography sx={{ whiteSpace: "nowrap" }}>
-                    {row?.officials?.title} {row?.officials?.name}
-                  </Typography>
-                </Stack>
-              </TableCell>
-              <TableCell>
-                <Stack>
-                  <Typography textAlign={"center"}>
-                    {row.officials.instituteName}
-                  </Typography>
-                </Stack>
-              </TableCell>
-              <TableCell>
-                <Stack justifyContent={"center"} alignItems={"center"}>
-                  <Image
-                    src={row.photo}
-                    height={150}
-                    width={150}
-                    alt="gen-sec-img"
-                    style={{ borderRadius: "1rem" }}
-                  />
-                </Stack>
+                <Image
+                  style={{ borderRadius: "1rem" }}
+                  src={row.photo}
+                  height={150}
+                  width={150}
+                  alt="photo"
+                />
               </TableCell>
             </TableRow>
           ))}
