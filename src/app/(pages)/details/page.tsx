@@ -1,7 +1,7 @@
 "use client";
 import { IntroSection, MidNavbar, Navbar } from "@/app/components";
 import ContactText from "@/app/components/Footer/ContactText";
-import { Box } from "@mui/material";
+import { Box, CircularProgress, Paper, Typography } from "@mui/material";
 import Content from "./Content";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -17,17 +17,21 @@ const DetailsPage = () => {
   const registrationNumber = searchParms.get("registrationNumber");
   const type = searchParms.get("type");
   const [details, setDetails] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const fetchDetails = async () => {
+    setIsLoading(true);
     try {
       const res = await axios.get(
         `api/search?registrationNumber=${registrationNumber}&type=${type}`
       );
       setDetails(res.data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
       toast.error("No result found please enter correct details", {
         autoClose: 2000,
       });
+      setIsLoading(false);
     }
   };
 
@@ -47,7 +51,28 @@ const DetailsPage = () => {
         justifyContent={"center"}
         padding={"1rem"}
       >
-        <Content details={details} />
+        {details && !isLoading ? (
+          <Content details={details} />
+        ) : (
+          <Paper
+            elevation={4}
+            sx={{
+              padding: "10px",
+              width: "80vw",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {isLoading ? (
+              <CircularProgress />
+            ) : (
+              <Typography>
+                No Result Found. Please enter correct details
+              </Typography>
+            )}
+          </Paper>
+        )}
       </Box>
       <ContactText />
     </main>
