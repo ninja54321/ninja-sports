@@ -43,7 +43,7 @@ const Content = ({ details }: IContentProps) => {
   const [viewCertificate, setViewCertificate] = useState<boolean>(false);
   return (
     <Box>
-      <Paper elevation={4} sx={{ width: "90vw" }}>
+      <Paper elevation={4} sx={{ maxWidth: "90vw", minWidth: "50vw" }}>
         <Typography
           variant="h4"
           textAlign="center"
@@ -54,38 +54,47 @@ const Content = ({ details }: IContentProps) => {
 
         <Stack spacing={2} padding={2}>
           <Stack
-            direction={"row-reverse"}
-            justifyContent={"space-between"}
-            alignItems="center"
+            direction={["column-reverse", "row"]}
+            justifyContent={["flex-start", "space-between"]}
+            alignItems={["flex-start", "center"]}
+            gap={4}
           >
-            <Image
-              src={
-                "https://wallpapers.com/images/high/confident-kevin-minion-pfp-axjhewuueh9041t6.webp"
-              }
-              width={100}
-              height={100}
-              alt="profile image"
-              style={{ borderRadius: "10px" }}
-            />
             <Stack spacing={1}>
-              <Text label="Name" value="Harry potter" />
-              <Text label="Registration Number" value="12345" />
-              <Text label="Father's Name" value="James Potter" />
+              <Text
+                label="Name"
+                value={details?.title + " " + details?.fullName}
+              />
+              <Text
+                label="Registration Number"
+                value={details?.registrationNumber}
+              />
+              <Text label="Father's Name" value={details.fatherName} />
               <Text
                 label="Date of birth"
-                value={new Date(
-                  "2024-03-30T12:24:37.000+00:00"
-                ).toLocaleDateString()}
+                value={new Date(details?.dob).toLocaleDateString()}
               />
-              <Text label="Age Category" value="16+" />
+              <Text label="Age Category" value={details?.ageCategory} />
             </Stack>
+            {details.photo && (
+              <Image
+                src={details?.photo}
+                width={100}
+                height={100}
+                alt="profile image"
+                style={{ borderRadius: "10px" }}
+              />
+            )}
           </Stack>
           <Stack spacing={1}>
-            <Text label="Email" value="harry@gmail.com" />
-            <Text label="Mobile Nubmer" value="1234567897" />
-            <Text label="Gender" value="Male" />
-            <Text label="Address" value="London, England" />
-            <Text label="Father's Occupation" value="Wizard" />
+            <Text label="Email" value={details?.email} />
+            <Text label="Mobile Number" value={details?.mobileNumber} />
+            <Text label="WhatshApp Number" value={details?.whatsAppNumber} />
+            <Text label="Gender" value={details?.gender} />
+            <Text label="Address" value={details?.address} />
+            <Text
+              label="Father's Occupation"
+              value={details?.fatherOccupation}
+            />
           </Stack>
 
           <Stack>

@@ -52,7 +52,7 @@ const DetailsPage = () => {
         padding={"1rem"}
       >
         {details && !isLoading ? (
-          <Content details={details} />
+          <Content details={details.data} />
         ) : (
           <Paper
             elevation={4}

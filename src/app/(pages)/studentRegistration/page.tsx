@@ -33,7 +33,7 @@ interface IFormValues {
   fullName: string;
   mobileNumber: string;
   whatsAppNumber: string;
-  fathersName: string;
+  fatherName: string;
   dob: Date;
   qualification: string;
   email: string;
@@ -59,7 +59,7 @@ const initialValues: IFormValues = {
   fullName: "",
   mobileNumber: "",
   whatsAppNumber: "",
-  fathersName: "",
+  fatherName: "",
   dob: new Date(),
   qualification: "",
   email: "",
@@ -279,13 +279,13 @@ const StudentRegistration = () => {
 
               <Grid item xs={12}>
                 <Controller
-                  name="fathersName"
+                  name="fatherName"
                   control={control}
                   rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
-                      name="fathersName"
+                      name="fatherName"
                       label="Father's Name *"
                       type="text"
                       value={field.value}

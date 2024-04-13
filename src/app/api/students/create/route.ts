@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
       fullName: formDataObject.fullName,
       mobileNumber: formDataObject.mobileNumber,
       whatsAppNumber: formDataObject.whatsAppNumber,
-      fathersName: formDataObject.fathersName,
+      fatherName: formDataObject.fatherName,
       dob: formDataObject.dob,
       qualification: formDataObject.qualification,
       gender: formDataObject.gender,
