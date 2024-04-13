@@ -88,6 +88,7 @@ const StudentRegistration = () => {
   });
 
   const onSubmit = async (values: IFormValues) => {
+    setIsLoading(true);
     try {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => {
@@ -95,6 +96,7 @@ const StudentRegistration = () => {
       });
       const res = await axios.post("/api/students/create", formData);
       toast.info("Student details added succesfully", { autoClose: 1000 });
+      setIsLoading(false);
       reset();
     } catch (error: any) {
       console.log(error);

@@ -1,3 +1,4 @@
+"use client";
 import {
   IconButton,
   MenuItem,
@@ -8,6 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { CiSearch } from "react-icons/ci";
@@ -22,25 +25,18 @@ const SearchBar = () => {
   );
   const [searchAnchorEl, setSearchAnchorEl] =
     React.useState<HTMLButtonElement | null>(null);
+  const router = useRouter();
 
   const handleSearch = async () => {
-    console.log("Search type:", type);
-    console.log("Registration number:", registrationNumber);
-    try {
-      const res = await axios.get(
-        `api/search?registrationNumber=${registrationNumber}&type=${type}`
-      );
-
-      console.log(res.data);
-    } catch (error: any) {
-      console.log(error);
-      toast.error(
-        error.response.data.message || "Error Occured please try again later",
-        {
-          autoClose: 1000,
-        }
-      );
+    if (!registrationNumber) {
+      toast.error("Please Enter registration Number", {
+        autoClose: 1000,
+      });
+      return;
     }
+    router.push(
+      `/details/?registrationNumber=${registrationNumber}&type=${type}`
+    );
   };
   return (
     <Stack>
