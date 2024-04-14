@@ -15,32 +15,13 @@ import React, { useState } from "react";
 import Text from "./Text";
 import { FiEye } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
+import ViewCertificate from "./ViewCertificate";
 
 interface IContentProps {
   details: any;
 }
 
-interface ICertificate {
-  certificateNumber: string;
-  certificateName: string;
-  certificateLink: string;
-}
-
-const certificates: ICertificate[] = [
-  {
-    certificateNumber: "1234",
-    certificateName: "Sorcerer",
-    certificateLink: require("../../../helper/certificate-sample.jpg"),
-  },
-  {
-    certificateNumber: "1234",
-    certificateName: "Wizard",
-    certificateLink: require("../../../helper/certificate-sample.jpg"),
-  },
-];
-
 const Content = ({ details }: IContentProps) => {
-  const [viewCertificate, setViewCertificate] = useState<boolean>(false);
   return (
     <Box>
       <Paper elevation={4} sx={{ maxWidth: "90vw", minWidth: "50vw" }}>
@@ -107,65 +88,16 @@ const Content = ({ details }: IContentProps) => {
             </Typography>
 
             <Stack spacing={4}>
-              {certificates.map((certificate, index) => (
-                <Stack key={index}>
-                  <Text
-                    label="Certificate Number"
-                    value={certificate.certificateNumber}
-                  />
-                  <Text
-                    label="Certificate Name"
-                    value={certificate.certificateName}
-                  />
-
-                  <Stack direction="row" spacing={2} alignItems={"center"}>
-                    <Typography fontWeight={700}>View Certificate:</Typography>
-                    <IconButton onClick={() => setViewCertificate(true)}>
-                      <FiEye color="#0077b5" fontSize={"18px"} />
-                    </IconButton>
-                  </Stack>
-                </Stack>
-              ))}
+              {details.certificates &&
+                details?.certificates?.map(
+                  (certificate: any, index: number) => (
+                    <ViewCertificate certificate={certificate} key={index} />
+                  )
+                )}
             </Stack>
           </Stack>
         </Stack>
       </Paper>
-      <Dialog
-        open={viewCertificate}
-        onClose={() => setViewCertificate(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        maxWidth="md"
-      >
-        <Stack
-          direction={"row"}
-          justifyContent={"space-between"}
-          sx={{ backgroundColor: "#002147" }}
-        >
-          <DialogTitle color={"white"} id="alert-dialog-title">
-            {"Certificate"}
-          </DialogTitle>
-          <IconButton onClick={() => setViewCertificate(false)}>
-            <IoMdClose color="white" />
-          </IconButton>
-        </Stack>
-        <DialogContent
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Image
-            style={{
-              width: "90%",
-              height: "50%",
-            }}
-            src={require("../../../helper/certificate-sample.jpg")}
-            alt="certificate"
-          />
-        </DialogContent>
-      </Dialog>
     </Box>
   );
 };
