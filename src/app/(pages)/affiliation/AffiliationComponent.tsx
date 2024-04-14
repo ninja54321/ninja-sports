@@ -20,6 +20,7 @@ const AffiliationComponent = () => {
     <div className={styles.logos}>
       <Stack
         direction={"row"}
+        alignItems="center"
         spacing={2}
         className={styles.logosSlide}
         ref={logosRef}
@@ -41,6 +42,12 @@ const AffiliationComponent = () => {
           alt="logos"
           height={200}
           width={200}
+        />
+        <Image
+          src={require("../../../helper/logo-for-slider/odisha.png")}
+          alt="logos"
+          height={180}
+          width={180}
         />
         <Image
           src={require("../../../helper/logo-for-slider/bulandshaar.png")}
