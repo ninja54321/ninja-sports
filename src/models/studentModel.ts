@@ -21,7 +21,7 @@ interface IStudentDb {
   fullName: string;
   mobileNumber: string;
   whatsAppNumber: string;
-  fathersName: string;
+  fatherName: string;
   dob: Date;
   qualification: string;
   email: string;
@@ -48,7 +48,7 @@ const studentSchema = new Schema<IStudentDb>({
   fullName: String,
   mobileNumber: String,
   whatsAppNumber: String,
-  fathersName: String,
+  fatherName: String,
   dob: Date,
   qualification: String,
   email: String,

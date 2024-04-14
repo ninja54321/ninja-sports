@@ -3,7 +3,7 @@ import User from "@/models/userModel";
 import Student from "@/models/studentModel";
 import { NextRequest, NextResponse } from "next/server";
 import { UploadApiResponse } from "cloudinary";
-import { uploadOnCloudinary } from "@/utils/cloudinary";
+import { uploadImage, uploadOnCloudinary } from "@/utils/cloudinary";
 
 connect();
 
@@ -15,15 +15,24 @@ export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.formData();
     const formDataObject = Object.fromEntries(Array.from(reqBody.entries()));
-    const photo = formDataObject.photo as File;
-    // const buffer = Buffer.from(await photo.arrayBuffer());
-    // console.log(buffer);
-    // let filePath;
 
-    // const cloudinaryResponse: UploadApiResponse = uploadOnCloudinary(
-    //   filePath,
-    //   `students/${sanitizeTitle(formDataObject.name.toString())}`
-    // );
+    if (!formDataObject.registrationNumber) {
+      return NextResponse.json(
+        {
+          message: "Please enter registration number",
+          success: true,
+        },
+        { status: 400 }
+      );
+    }
+
+    const photo = formDataObject.photo as File;
+    const cloudinaryResponse: UploadApiResponse = (await uploadImage(
+      photo,
+      `students/${sanitizeTitle(
+        formDataObject?.registrationNumber?.toString()
+      )}`
+    )) as UploadApiResponse;
 
     const { email, registrationNumber } = formDataObject;
 
@@ -58,15 +67,16 @@ export async function POST(request: NextRequest) {
       district: formDataObject.district,
       address: formDataObject.address,
       fatherOccupation: formDataObject.fatherOccupation,
+      photo: cloudinaryResponse?.secure_url.toString() || "",
     };
 
     const student = await Student.create(newStudent);
-    console.log(student);
 
     return NextResponse.json(
       {
         message: "Student details added successfully",
         success: true,
+        data: student,
       },
       { status: 201 }
     );
