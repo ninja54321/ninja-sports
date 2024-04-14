@@ -70,7 +70,15 @@ const Content = ({ details }: IContentProps) => {
             <Text label="Email" value={details?.email} />
             <Text label="Mobile Number" value={details?.mobileNumber} />
             <Text label="WhatshApp Number" value={details?.whatsAppNumber} />
-            <Text label="Gender" value={details?.gender} />
+            <Text
+              label="Gender"
+              value={
+                details?.gender
+                  ? details.gender.charAt(0).toUpperCase() +
+                    details.gender.slice(1)
+                  : ""
+              }
+            />
             <Text label="Address" value={details?.address} />
             <Text
               label="Father's Occupation"

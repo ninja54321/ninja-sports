@@ -27,6 +27,7 @@ const DetailsPage = () => {
       setDetails(res.data);
       setIsLoading(false);
     } catch (error) {
+      setDetails(null);
       console.log(error);
       toast.error("No result found please enter correct details", {
         autoClose: 2000,
@@ -37,7 +38,7 @@ const DetailsPage = () => {
 
   useEffect(() => {
     fetchDetails();
-  }, []);
+  }, [searchParms]);
   return (
     <main style={{ backgroundColor: "#82b9d1", minHeight: "100vh" }}>
       <Navbar />
