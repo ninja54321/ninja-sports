@@ -94,10 +94,64 @@ export default function Navbar(props: Props) {
             </Link>
           </Stack>
 
+          <Typography className={styles.navItemDrawer} fontWeight={700}>
+            Contact Us
+          </Typography>
+
+          <Stack spacing={1} paddingLeft={"2rem"}>
+            <Link href={"/contact"} className={styles.navItemDrawer}>
+              <Typography>Contact Page</Typography>
+            </Link>
+
+            <Link href={"/"} className={styles.navItemDrawer}>
+              <Typography>Admission</Typography>
+            </Link>
+
+            <Link
+              href={"https://surveyheart.com/form/65e0d36840cd5c3ad68ddeed"}
+              className={styles.navItemDrawer}
+              target="_blank"
+            >
+              <Typography>Affiliation</Typography>
+            </Link>
+
+            <Link
+              href={"https://surveyheart.com/form/65e0d36840cd5c3ad68ddeed"}
+              className={styles.navItemDrawer}
+              target="_blank"
+            >
+              <Typography>Membership</Typography>
+            </Link>
+
+            <Link
+              href={"https://surveyheart.com/form/65fb046b34b5320b455d9848"}
+              className={styles.navItemDrawer}
+              target="_blank"
+            >
+              <Typography>Referee</Typography>
+            </Link>
+
+            <Link href={""} className={styles.navItemDrawer}>
+              <Typography>Training Camp</Typography>
+            </Link>
+
+            <Link
+              href={"https://surveyheart.com/form/63802c949200ce422304f15f"}
+              className={styles.navItemDrawer}
+              target="_blank"
+            >
+              <Typography>Belt Greeting</Typography>
+            </Link>
+
+            <Link href={"/"} className={styles.navItemDrawer}>
+              <Typography>National</Typography>
+            </Link>
+          </Stack>
+
           {/* </Link> */}
-          <Link className={styles.navItemDrawer} href={"/contact"}>
+          {/* <Link className={styles.navItemDrawer} href={"/contact"}>
             <Typography>Contact Us</Typography>
-          </Link>
+          </Link> */}
         </Stack>
       </List>
     </Box>
