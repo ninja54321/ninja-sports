@@ -106,6 +106,21 @@ const rows = [
     },
     photo: require("../../../helper/academy-table/dev-nayak.jpg"),
   },
+  {
+    srn: 7,
+    logo: require("../../../helper/academy-table/silchar-logo.jpg"),
+    name: {
+      fullName: "Mr. Rameswar Das",
+      post: "Founder and Chief Instructor",
+      // achievement: "1st Dan Black Belt",
+    },
+    coach: {
+      code: "NSMA/004/AS/30/A/A",
+      instituteName: "Extreme Martial Arts Silchar",
+      city: "Cachar (Assam)",
+    },
+    photo: require("../../../helper/academy-table/rameswar.jpg"),
+  },
 ];
 const AcademyTable = () => {
   return (
@@ -188,7 +203,7 @@ const AcademyTable = () => {
                 <Stack justifyContent={"center"} alignItems={"center"}>
                   <Typography>{row.name.fullName}</Typography>
                   <Typography>{row.name.post}</Typography>
-                  <Typography>{row.name.achievement}</Typography>
+                  <Typography>{row?.name?.achievement}</Typography>
                 </Stack>
               </TableCell>
               <TableCell>

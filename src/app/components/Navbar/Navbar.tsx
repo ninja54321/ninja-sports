@@ -67,6 +67,9 @@ export default function Navbar(props: Props) {
           <Link className={styles.navItemDrawer} href={"/events"}>
             <Typography>Event & Updates</Typography>
           </Link>
+          <Link className={styles.navItemDrawer} href={"/contact"}>
+            <Typography>Contact Us</Typography>
+          </Link>
           {/* <Link className={styles.navItemDrawer} href={"/"}> */}
           <Typography className={styles.navItemDrawer} fontWeight={700}>
             Affiliated
@@ -95,7 +98,7 @@ export default function Navbar(props: Props) {
           </Stack>
 
           <Typography className={styles.navItemDrawer} fontWeight={700}>
-            Contact Us
+            Registration
           </Typography>
 
           <Stack spacing={1} paddingLeft={"2rem"}>
@@ -149,9 +152,9 @@ export default function Navbar(props: Props) {
           </Stack>
 
           {/* </Link> */}
-          {/* <Link className={styles.navItemDrawer} href={"/contact"}>
+          <Link className={styles.navItemDrawer} href={"/contact"}>
             <Typography>Contact Us</Typography>
-          </Link> */}
+          </Link>
         </Stack>
       </List>
     </Box>

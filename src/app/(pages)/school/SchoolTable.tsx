@@ -18,7 +18,7 @@ const rows = [
       fullName: "Mr. BHAMO KALAIYARASAN",
     },
     coach: {
-      code: "NSMA/031/TN/300/B/A",
+      code: "NSMA/031/TN/300/A/A",
       instituteName:
         "TAMILNADU MARTIAL ARTS AND SELF-DEFENCE INSTITUTE KARATE AND KUNG-FU SCHOOL",
       city: "Erode (Tamilnadu)",
