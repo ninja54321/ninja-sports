@@ -106,20 +106,24 @@ const MidNavbar = () => {
             {/* <Link className={styles.navItem} href={"/contact"}>
               <MenuItem>Contact Page</MenuItem>
             </Link> */}
-            <Link href={"/"} className={styles.navItem}>
+            <Link
+              href={"https://forms.gle/651PyYNX3fnc61ydA"}
+              className={styles.navItem}
+              target="_blank"
+            >
               <MenuItem>
                 <Typography>Admission</Typography>
               </MenuItem>
             </Link>
             <Link
-              href={"https://surveyheart.com/form/65e0d36840cd5c3ad68ddeed"}
-              className={styles.navItem}
+              href={"https://forms.gle/eLsWh2MYYMqTkJ4Y9"}
               target="_blank"
+              className={styles.navItem}
             >
               <MenuItem className={styles.navItem}>Affiliation</MenuItem>
             </Link>
             <Link
-              href={"https://surveyheart.com/form/65e0d36840cd5c3ad68ddeed"}
+              href={"https://forms.gle/7SW692CVHoYcFD3j8"}
               target="_blank"
               className={styles.navItem}
             >
@@ -128,21 +132,29 @@ const MidNavbar = () => {
             <Link
               className={styles.navItem}
               target="_blank"
-              href={"https://surveyheart.com/form/65fb046b34b5320b455d9848"}
+              href={"https://forms.gle/7daxiG4rT66VFJrcA"}
             >
               <MenuItem className={styles.navItem}>Referee</MenuItem>
             </Link>
-            <Link href={"/"} className={styles.navItem}>
+            <Link
+              href={"https://forms.gle/jNFPJjhwKXucuGhb6"}
+              target="_blank"
+              className={styles.navItem}
+            >
               <MenuItem>Training Camp</MenuItem>
             </Link>
             <Link
-              href={"https://surveyheart.com/form/63802c949200ce422304f15f"}
+              href={"https://forms.gle/gABrL3uYSV5G1ySr6"}
               target="_blank"
               className={styles.navItem}
             >
               <MenuItem>Belt Greeting</MenuItem>
             </Link>
-            <Link href={"/"} className={styles.navItem}>
+            <Link
+              href={"https://forms.gle/DNFMEwKiZ9evNoSDA"}
+              className={styles.navItem}
+              target="_blank"
+            >
               <MenuItem>National</MenuItem>
             </Link>
           </Menu>
@@ -208,6 +220,9 @@ const MidNavbar = () => {
               },
             }}
           >
+            <Link href={"/"} className={styles.navItem}>
+              <MenuItem>Governing Body</MenuItem>
+            </Link>
             <Link href={"/state"} className={styles.navItem}>
               <MenuItem>
                 <Typography>State</Typography>
@@ -222,9 +237,6 @@ const MidNavbar = () => {
             </Link>
             <Link href={"/affiliation"} className={styles.navItem}>
               <MenuItem>Affiliation</MenuItem>
-            </Link>
-            <Link href={"/"} className={styles.navItem}>
-              <MenuItem>Governing Body</MenuItem>
             </Link>
           </Menu>
         </div>

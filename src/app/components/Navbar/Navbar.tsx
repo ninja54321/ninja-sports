@@ -102,24 +102,28 @@ export default function Navbar(props: Props) {
           </Typography>
 
           <Stack spacing={1} paddingLeft={"2rem"}>
-            <Link href={"/contact"} className={styles.navItemDrawer}>
+            {/* <Link href={"/contact"} className={styles.navItemDrawer}>
               <Typography>Contact Page</Typography>
-            </Link>
+            </Link> */}
 
-            <Link href={"/"} className={styles.navItemDrawer}>
+            <Link
+              href={"https://forms.gle/651PyYNX3fnc61ydA"}
+              className={styles.navItemDrawer}
+              target="_blank"
+            >
               <Typography>Admission</Typography>
             </Link>
 
             <Link
-              href={"https://surveyheart.com/form/65e0d36840cd5c3ad68ddeed"}
               className={styles.navItemDrawer}
+              href={"https://forms.gle/eLsWh2MYYMqTkJ4Y9"}
               target="_blank"
             >
               <Typography>Affiliation</Typography>
             </Link>
 
             <Link
-              href={"https://surveyheart.com/form/65e0d36840cd5c3ad68ddeed"}
+              href={"https://forms.gle/7SW692CVHoYcFD3j8"}
               className={styles.navItemDrawer}
               target="_blank"
             >
@@ -127,34 +131,42 @@ export default function Navbar(props: Props) {
             </Link>
 
             <Link
-              href={"https://surveyheart.com/form/65fb046b34b5320b455d9848"}
+              href={"https://forms.gle/7daxiG4rT66VFJrcA"}
               className={styles.navItemDrawer}
               target="_blank"
             >
               <Typography>Referee</Typography>
             </Link>
 
-            <Link href={""} className={styles.navItemDrawer}>
+            <Link
+              href={"https://forms.gle/jNFPJjhwKXucuGhb6"}
+              target="_blank"
+              className={styles.navItemDrawer}
+            >
               <Typography>Training Camp</Typography>
             </Link>
 
             <Link
-              href={"https://surveyheart.com/form/63802c949200ce422304f15f"}
+              href={"https://forms.gle/gABrL3uYSV5G1ySr6"}
               className={styles.navItemDrawer}
               target="_blank"
             >
               <Typography>Belt Greeting</Typography>
             </Link>
 
-            <Link href={"/"} className={styles.navItemDrawer}>
+            <Link
+              href={"https://forms.gle/DNFMEwKiZ9evNoSDA"}
+              target="_blank"
+              className={styles.navItemDrawer}
+            >
               <Typography>National</Typography>
             </Link>
           </Stack>
 
           {/* </Link> */}
-          <Link className={styles.navItemDrawer} href={"/contact"}>
+          {/* <Link className={styles.navItemDrawer} href={"/contact"}>
             <Typography>Contact Us</Typography>
-          </Link>
+          </Link> */}
         </Stack>
       </List>
     </Box>
