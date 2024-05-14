@@ -26,14 +26,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const photo = formDataObject.photo as File;
-    const cloudinaryResponse: UploadApiResponse = (await uploadImage(
-      photo,
-      `students/${sanitizeTitle(
-        formDataObject?.registrationNumber?.toString()
-      )}`
-    )) as UploadApiResponse;
-
     const { email, registrationNumber } = formDataObject;
 
     const user = await User.findOne({ email });
@@ -48,6 +40,14 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    const photo = formDataObject.photo as File;
+    const cloudinaryResponse: UploadApiResponse = (await uploadImage(
+      photo,
+      `students/${sanitizeTitle(
+        formDataObject?.registrationNumber?.toString()
+      )}`
+    )) as UploadApiResponse;
 
     const newStudent = {
       email: email,

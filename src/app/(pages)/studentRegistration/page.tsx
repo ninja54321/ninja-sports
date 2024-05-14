@@ -169,7 +169,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="title"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -190,7 +190,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="fullName"
                   control={control}
-                  rules={{ required: "true" }}
+                  // rules={{ required: "true" }}
                   render={({ field, fieldState }) => (
                     <TextField
                       name="fullName"
@@ -214,7 +214,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="email"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -236,7 +236,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="mobileNumber"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -259,7 +259,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="whatsAppNumber"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -281,7 +281,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="fatherName"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -303,7 +303,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="dob"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                       <DatePicker
@@ -319,7 +319,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="qualification"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -342,7 +342,7 @@ const StudentRegistration = () => {
               <Grid item xs={12}>
                 <Controller
                   name="gender"
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   control={control}
                   render={({ field, fieldState }) => {
                     return (
@@ -382,7 +382,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="ageCategory"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -403,7 +403,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="state"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -424,7 +424,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="district"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -445,7 +445,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="address"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
@@ -467,7 +467,7 @@ const StudentRegistration = () => {
                 <Controller
                   name="fatherOccupation"
                   control={control}
-                  rules={{ required: true }}
+                  // rules={{ required: true }}
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
