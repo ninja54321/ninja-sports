@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import {
@@ -18,7 +16,6 @@ import {
   Grid,
   Radio,
   RadioGroup,
-  Stack,
   TextField,
   Typography,
 } from "@mui/material";
@@ -157,8 +154,6 @@ const StudentRegistration = () => {
             onSubmit={handleSubmit(onSubmit)}
             style={{ marginTop: 3 }}
           >
-            {/* <Grid container spacing={2}> */}
-
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Controller
@@ -193,7 +188,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="title"
-                      label="Title *"
+                      label="Title "
                       type="text"
                       value={field.value}
                       onChange={field.onChange}
@@ -214,7 +209,7 @@ const StudentRegistration = () => {
                     <TextField
                       name="fullName"
                       fullWidth
-                      label="Full Name *"
+                      label="Full Name "
                       autoFocus
                       value={field.value}
                       onChange={(e) =>
@@ -237,7 +232,7 @@ const StudentRegistration = () => {
                   render={({ field, fieldState }) => (
                     <TextField
                       fullWidth
-                      label="Email Address *"
+                      label="Email Address "
                       name="email"
                       autoComplete="email"
                       value={field.value}
@@ -260,7 +255,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="mobileNumber"
-                      label="MobileNumber *"
+                      label="MobileNumber "
                       type="number"
                       id="mobileNumber"
                       value={field.value}
@@ -283,7 +278,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="whatsAppNumber"
-                      label="whatsAppNumber *"
+                      label="whatsAppNumber"
                       type="number"
                       value={field.value}
                       onChange={field.onChange}
@@ -305,7 +300,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="fatherName"
-                      label="Father's Name *"
+                      label="Father's Name "
                       type="text"
                       value={field.value}
                       onChange={field.onChange}
@@ -326,7 +321,7 @@ const StudentRegistration = () => {
                   render={({ field, fieldState }) => (
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                       <DatePicker
-                        label="Date of birth *"
+                        label="Date of birth "
                         value={field.value || null}
                         onChange={(newValue) => field.onChange(newValue)}
                       />
@@ -343,7 +338,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="qualification"
-                      label="Qualification *"
+                      label="Qualification "
                       type="text"
                       multiline={true}
                       rows={2}
@@ -406,7 +401,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="ageCategory"
-                      label="Age Category *"
+                      label="Age Category "
                       type="text"
                       value={field.value}
                       onChange={field.onChange}
@@ -427,7 +422,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="state"
-                      label="State *"
+                      label="State "
                       type="text"
                       value={field.value}
                       onChange={field.onChange}
@@ -448,7 +443,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="district"
-                      label="District *"
+                      label="District "
                       type="text"
                       value={field.value}
                       onChange={field.onChange}
@@ -469,7 +464,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="address"
-                      label="Address *"
+                      label="Address "
                       type="text"
                       value={field.value}
                       onChange={field.onChange}
@@ -491,7 +486,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="fatherOccupation"
-                      label="Father Occupation *"
+                      label="Father Occupation "
                       type="text"
                       multiline
                       rows={2}
