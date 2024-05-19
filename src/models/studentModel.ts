@@ -40,6 +40,15 @@ interface IStudentDb {
   certificateNumber: string;
   photo: any;
   certificates: ICertificate[];
+  club: string;
+  academy: string;
+  school: string;
+  award: string;
+  position: string;
+  designation: string;
+  eventVenue: string;
+  eventDate: Date;
+  certificateNo: string;
 }
 
 const studentSchema = new Schema<IStudentDb>({
@@ -68,6 +77,15 @@ const studentSchema = new Schema<IStudentDb>({
   photo: String,
   certificates: [certificateSchema],
   user: { type: Schema.Types.ObjectId, ref: "User" },
+  club: String,
+  academy: String,
+  school: String,
+  award: String,
+  position: String,
+  designation: String,
+  eventVenue: String,
+  eventDate: Date,
+  certificateNo: String,
 });
 
 const Student =

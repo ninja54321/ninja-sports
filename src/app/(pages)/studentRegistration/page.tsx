@@ -52,6 +52,16 @@ interface IFormValues {
   ageCategory: string;
   certificateNumber: string;
   photo: any;
+
+  club: string;
+  academy: string;
+  school: string;
+  award: string;
+  position: string;
+  designation: string;
+  eventVenue: string;
+  eventDate: Date;
+  certificateNo: string;
 }
 
 const initialValues: IFormValues = {
@@ -78,6 +88,15 @@ const initialValues: IFormValues = {
   ageCategory: "",
   certificateNumber: "",
   photo: null,
+  club: "",
+  academy: "",
+  school: "",
+  award: "",
+  position: "",
+  designation: "",
+  eventVenue: "",
+  eventDate: new Date(),
+  certificateNo: "",
 };
 
 const StudentRegistration = () => {
@@ -174,7 +193,7 @@ const StudentRegistration = () => {
                     <TextField
                       fullWidth
                       name="title"
-                      label="Title/Designation *"
+                      label="Title *"
                       type="text"
                       value={field.value}
                       onChange={field.onChange}
@@ -486,6 +505,177 @@ const StudentRegistration = () => {
                   )}
                 />
               </Grid>
+
+              <Grid item xs={12}>
+                <Controller
+                  name="club"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="club"
+                      label="Club "
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Controller
+                  name="academy"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="academy"
+                      label="Academy "
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Controller
+                  name="school"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="school"
+                      label="School "
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Controller
+                  name="award"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="award"
+                      label="Award "
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Controller
+                  name="position"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="position"
+                      label="Position "
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Controller
+                  name="designation"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="designation"
+                      label="Designation "
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Controller
+                  name="eventVenue"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="eventVenue"
+                      label="Event Venue "
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Controller
+                  name="eventDate"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                      <DatePicker
+                        label="Event Date"
+                        value={field.value || null}
+                        onChange={(newValue) => field.onChange(newValue)}
+                      />
+                    </LocalizationProvider>
+                  )}
+                />
+              </Grid>
+
               <Grid item xs={12}>
                 <Controller
                   name="photo"
