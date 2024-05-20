@@ -63,6 +63,7 @@ export async function POST(request: NextRequest) {
       qualification: formDataObject.qualification,
       gender: formDataObject.gender,
       ageCategory: formDataObject.ageCategory,
+      category: formDataObject.category,
       state: formDataObject.state,
       district: formDataObject.district,
       address: formDataObject.address,

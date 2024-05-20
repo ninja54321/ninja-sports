@@ -50,6 +50,7 @@ interface IFormValues {
   certificateNumber: string;
   photo: any;
 
+  category: string;
   club: string;
   academy: string;
   school: string;
@@ -83,6 +84,7 @@ const initialValues: IFormValues = {
   starRating: "",
   title: "",
   ageCategory: "",
+  category: "",
   certificateNumber: "",
   photo: null,
   club: "",
@@ -164,7 +166,7 @@ const StudentRegistration = () => {
                     <TextField
                       name="registrationNumber"
                       fullWidth
-                      type="number"
+                      type="text"
                       label="Registration Number *"
                       autoFocus
                       value={field.value}
@@ -392,7 +394,7 @@ const StudentRegistration = () => {
                   }}
                 />
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Controller
                   name="ageCategory"
                   control={control}
@@ -402,6 +404,27 @@ const StudentRegistration = () => {
                       fullWidth
                       name="ageCategory"
                       label="Age Category "
+                      type="text"
+                      value={field.value}
+                      onChange={field.onChange}
+                      helperText={
+                        fieldState.error ? fieldState.error.message : ""
+                      }
+                      error={Boolean(fieldState.error)}
+                    />
+                  )}
+                />
+              </Grid> */}
+              <Grid item xs={12}>
+                <Controller
+                  name="category"
+                  control={control}
+                  // rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      fullWidth
+                      name="category"
+                      label="Category "
                       type="text"
                       value={field.value}
                       onChange={field.onChange}

@@ -37,6 +37,7 @@ interface IStudentDb {
   img: string;
   starRating: string;
   ageCategory: string;
+  category: string;
   certificateNumber: string;
   photo: any;
   certificates: ICertificate[];
@@ -74,6 +75,7 @@ const studentSchema = new Schema<IStudentDb>({
   starRating: String,
   title: String,
   ageCategory: String,
+  category: String,
   photo: String,
   certificates: [certificateSchema],
   user: { type: Schema.Types.ObjectId, ref: "User" },
