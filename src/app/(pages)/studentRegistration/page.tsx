@@ -314,7 +314,6 @@ const StudentRegistration = () => {
                   )}
                 />
               </Grid>
-
               <Grid item xs={12}>
                 <Controller
                   name="dob"
