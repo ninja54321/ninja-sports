@@ -69,7 +69,7 @@ const SearchBar = () => {
                 }
               }}
               placeholder="Enter registration number"
-              type="number"
+              // type="number"
               onChange={(event) => setRegistrationNumber(event.target.value)}
               InputProps={{
                 endAdornment: (
