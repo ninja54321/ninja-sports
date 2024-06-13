@@ -41,10 +41,8 @@ const Content = ({ details }: IContentProps) => {
             gap={4}
           >
             <Stack spacing={1}>
-              <Text
-                label="Name"
-                value={details?.title + " " + details?.fullName}
-              />
+              <Text label="Name" value={details?.fullName} />
+              <Text label="Title" value={details?.title} />
               <Text
                 label="Registration Number"
                 value={details?.registrationNumber}
