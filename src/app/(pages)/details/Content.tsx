@@ -41,18 +41,28 @@ const Content = ({ details }: IContentProps) => {
             gap={4}
           >
             <Stack spacing={1}>
-              <Text label="Name" value={details?.fullName} />
-              <Text label="Title" value={details?.title} />
-              <Text
-                label="Registration Number"
-                value={details?.registrationNumber}
-              />
-              <Text label="Father's Name" value={details.fatherName} />
-              <Text
-                label="Date of birth"
-                value={new Date(details?.dob).toLocaleDateString()}
-              />
-              <Text label="Age Category" value={details?.ageCategory} />
+              {details?.title && <Text label="Title" value={details.title} />}
+              {details?.fullName && (
+                <Text label="Name" value={details.fullName} />
+              )}
+              {details?.registrationNumber && (
+                <Text
+                  label="Registration Number"
+                  value={details.registrationNumber}
+                />
+              )}
+              {details?.fatherName && (
+                <Text label="Father's Name" value={details.fatherName} />
+              )}
+              {details?.dob && (
+                <Text
+                  label="Date of birth"
+                  value={new Date(details.dob).toLocaleDateString()}
+                />
+              )}
+              {details?.ageCategory && (
+                <Text label="Age Category" value={details.ageCategory} />
+              )}
             </Stack>
             {details.photo && (
               <Image
@@ -65,43 +75,98 @@ const Content = ({ details }: IContentProps) => {
             )}
           </Stack>
           <Stack spacing={1}>
-            <Text label="Email" value={details?.email} />
-            <Text label="Mobile Number" value={details?.mobileNumber} />
-            <Text label="WhatshApp Number" value={details?.whatsAppNumber} />
-            <Text
-              label="Gender"
-              value={
-                details?.gender
-                  ? details.gender.charAt(0).toUpperCase() +
-                    details.gender.slice(1)
-                  : ""
-              }
-            />
-            <Text label="Address" value={details?.address} />
-            <Text
-              label="Father's Occupation"
-              value={details?.fatherOccupation}
-            />
+            {details?.email && <Text label="Email" value={details.email} />}
+            {details?.mobileNumber && (
+              <Text label="Mobile Number" value={details.mobileNumber} />
+            )}
+            {details?.whatsAppNumber && (
+              <Text label="WhatsApp Number" value={details.whatsAppNumber} />
+            )}
+            {details?.gender && (
+              <Text
+                label="Gender"
+                value={
+                  details.gender.charAt(0).toUpperCase() +
+                  details.gender.slice(1)
+                }
+              />
+            )}
+            {details?.fatherOccupation && (
+              <Text
+                label="Father's Occupation"
+                value={details.fatherOccupation}
+              />
+            )}
+            {details?.address && (
+              <Text label="Address" value={details.address} />
+            )}
+            {details?.state && <Text label="State" value={details.state} />}
+            {details?.district && (
+              <Text label="District" value={details.district} />
+            )}
+            {details?.qualification && (
+              <Text label="Qualification" value={details.qualification} />
+            )}
+            {details?.sportsExperience && (
+              <Text
+                label="Sports Experience"
+                value={details.sportsExperience}
+              />
+            )}
+            {details?.blackCourse !== undefined && (
+              <Text
+                label="Black Course"
+                value={details.blackCourse ? "Yes" : "No"}
+              />
+            )}
+            {details?.starRating && (
+              <Text label="Star Rating" value={details.starRating} />
+            )}
+            {details?.category && (
+              <Text label="Category" value={details.category} />
+            )}
+            {details?.club && <Text label="Club" value={details.club} />}
+            {details?.academy && (
+              <Text label="Academy" value={details.academy} />
+            )}
+            {details?.school && <Text label="School" value={details.school} />}
+            {details?.award && <Text label="Award" value={details.award} />}
+            {details?.position && (
+              <Text label="Position" value={details.position} />
+            )}
+            {details?.designation && (
+              <Text label="Designation" value={details.designation} />
+            )}
+            {details?.eventVenue && (
+              <Text label="Event Venue" value={details.eventVenue} />
+            )}
+            {details?.eventDate && (
+              <Text
+                label="Event Date"
+                value={new Date(details.eventDate).toLocaleDateString()}
+              />
+            )}
           </Stack>
 
-          <Stack>
-            <Typography
-              variant="h6"
-              fontWeight={700}
-              sx={{ textDecoration: "underline" }}
-            >
-              Certificates
-            </Typography>
+          {details.certificates && details.certificates.length !== 0 && (
+            <Stack>
+              <Typography
+                variant="h6"
+                fontWeight={700}
+                sx={{ textDecoration: "underline" }}
+              >
+                Certificates
+              </Typography>
 
-            <Stack spacing={4}>
-              {details.certificates &&
-                details?.certificates?.map(
+              <Stack spacing={4}>
+                {details?.certificates?.map(
                   (certificate: any, index: number) => (
                     <ViewCertificate certificate={certificate} key={index} />
                   )
                 )}
+              </Stack>
             </Stack>
-          </Stack>
+          )}
         </Stack>
       </Paper>
     </Box>
