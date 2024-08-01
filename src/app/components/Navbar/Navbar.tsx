@@ -155,7 +155,7 @@ export default function Navbar(props: Props) {
             </Link>
 
             <Link
-              href={"https://forms.gle/DNFMEwKiZ9evNoSDA"}
+              href={"/nationalRegistration"}
               target="_blank"
               className={styles.navItemDrawer}
             >

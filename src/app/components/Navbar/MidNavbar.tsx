@@ -151,7 +151,7 @@ const MidNavbar = () => {
               <MenuItem>Belt Greeting</MenuItem>
             </Link>
             <Link
-              href={"https://forms.gle/DNFMEwKiZ9evNoSDA"}
+              href={"/nationalRegistration"}
               className={styles.navItem}
               target="_blank"
             >
