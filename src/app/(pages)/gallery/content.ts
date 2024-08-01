@@ -1,10 +1,71 @@
 export interface ISliderItems {
-  id: number;
+  id?: number;
   image: any;
   title: string;
 }
 
 export const sliderItems1 = [
+  {
+    image: require("../../../../public/sliderImage/20.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/28.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/30.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/32.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/33.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/34.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/35.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/36.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/3.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/4.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/6.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/8.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/9.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/11.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/sliderImage/13.jpg"),
+    title: "image 1",
+  },
+
   {
     id: 1,
     image: require("../../../helper/ninja-img/img-1.jpg"),
@@ -38,6 +99,145 @@ export const sliderItems1 = [
   {
     id: 6,
     image: require("../../../helper/ninja-img/img-7.jpg"),
+    title: "image 1",
+  },
+];
+
+export const galleryPhotos = [
+  {
+    image: require("../../../../public/galleryImage/12.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/14.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/15.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/16.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/17.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/18.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/19.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/21.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/22.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/23.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/24.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/25.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/26.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/31.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/37.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/38.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/39.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/40.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/41.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/42.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/43.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/44.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/45.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/46.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/47.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/48.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/49.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/50.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/51.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/52.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/53.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/54.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/55.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/56.jpg"),
     title: "image 1",
   },
 ];

@@ -2,6 +2,7 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
+import styles from "./styles.module.css";
 
 const EventsContent = () => {
   const [isHovered1, setIsHovered1] = useState(false);
@@ -20,105 +21,112 @@ const EventsContent = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Image
-            src={"/event/0.jpg"}
-            width={250}
-            height={250}
-            style={{
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease", // Adding smooth transition
-            }}
-            alt={""}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
-          <Image
-            src={"/event/1.jpg"}
-            width={250}
-            height={250}
-            style={{
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease", // Adding smooth transition
-            }}
-            alt={""}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
-          <Image
-            src={"/event/2.jpg"}
-            width={250}
-            height={250}
-            style={{
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease", // Adding smooth transition
-            }}
-            alt={""}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
-          <Image
-            src={"/event/5.jpg"}
-            width={250}
-            height={250}
-            style={{
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease", // Adding smooth transition
-            }}
-            alt={""}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
-          <Image
-            src={"/event/7.jpg"}
-            width={250}
-            height={250}
-            style={{
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease", // Adding smooth transition
-            }}
-            alt={""}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
-          <Image
-            src={"/event/10.jpg"}
-            width={250}
-            height={250}
-            style={{
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease", // Adding smooth transition
-            }}
-            alt={""}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
-          <Image
-            src={"/event/27.jpg"}
-            width={250}
-            height={250}
-            style={{
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease", // Adding smooth transition
-            }}
-            alt={""}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
-          <Image
-            src={"/event/29.jpg"}
-            width={250}
-            height={250}
-            style={{
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease", // Adding smooth transition
-            }}
-            alt={""}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/event/0.jpg"}
+              width={250}
+              height={250}
+              style={{
+                borderRadius: "1.5rem",
+              }}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/event/1.jpg"}
+              width={250}
+              height={250}
+              style={{
+                borderRadius: "1.5rem",
+              }}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/event/2.jpg"}
+              width={250}
+              height={250}
+              style={{
+                borderRadius: "1.5rem",
+              }}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/event/5.jpg"}
+              width={250}
+              height={250}
+              style={{
+                borderRadius: "1.5rem",
+              }}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/event/7.jpg"}
+              width={250}
+              height={250}
+              style={{
+                borderRadius: "1.5rem",
+              }}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/event/10.jpg"}
+              width={250}
+              height={250}
+              style={{
+                borderRadius: "1.5rem",
+              }}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/event/27.jpg"}
+              width={250}
+              height={250}
+              style={{
+                borderRadius: "1.5rem",
+              }}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/event/29.jpg"}
+              width={250}
+              height={250}
+              style={{
+                borderRadius: "1.5rem",
+              }}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
         </Stack>
       </Stack>
-      <Stack
+      {/* <Stack
         direction={{ sx: "column", md: "row" }}
         alignItems={"center"}
         justifyContent={"center"}
@@ -131,25 +139,25 @@ const EventsContent = () => {
             height: isHovered1 ? "70vh" : "60vh",
             width: "auto",
             borderRadius: "1.5rem",
-            transition: "height 0.5s ease", // Adding smooth transition
+            
           }}
-          alt={""}
+          alt={""}  className={styles.image}
           onMouseEnter={() => setIsHovered1(true)}
           onMouseLeave={() => setIsHovered1(false)}
         />
-        {/* <Image
+        <Image
         style={{
           height: isHovered2 ? "80vh" : "70vh",
           width: "auto",
           borderRadius: "1.5rem",
-          transition: "height 0.5s ease", // Adding smooth transition
+          
         }}
         src={require("../../../helper/events/referee-seminar.jpg")}
-        alt={""}
+        alt={""}  className={styles.image}
         onMouseEnter={() => setIsHovered2(true)}
         onMouseLeave={() => setIsHovered2(false)}
-      /> */}
-      </Stack>
+      />
+      </Stack> */}
     </Stack>
   );
 };

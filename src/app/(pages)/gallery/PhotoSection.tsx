@@ -3,10 +3,23 @@ import { Grid, Stack } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import styles from "./styles.module.css";
+import { galleryPhotos } from "./content";
 
 const PhotoSection = () => {
   return (
     <Grid container spacing={2} justifyContent={"center"}>
+      {galleryPhotos.map((photo, index) => (
+        <Grid item key={index}>
+          <div className={styles.imageContainer}>
+            <Image
+              src={photo.image}
+              height={200}
+              alt={""}
+              className={styles.image}
+            />
+          </div>
+        </Grid>
+      ))}
       <Grid item>
         <div className={styles.imageContainer}>
           <Image

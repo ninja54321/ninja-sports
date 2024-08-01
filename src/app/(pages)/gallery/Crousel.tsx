@@ -24,8 +24,8 @@ function CrouselComponent({ data }: ICrouselComponentProps) {
         },
       }}
     >
-      {data.map((item) => (
-        <Item key={item.id} item={item} />
+      {data.map((item, index) => (
+        <Item key={index} item={item} />
       ))}
     </Carousel>
   );
