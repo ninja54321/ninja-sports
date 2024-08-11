@@ -462,7 +462,7 @@ const NationalRegistration = () => {
                   defaultValue=""
                   render={({ field }) => (
                     <Stack>
-                      <Typography>Adhar Front Upload</Typography>
+                      <Typography>Aadhaar Front Upload</Typography>
                       <input
                         type="file"
                         onChange={(e) => {
@@ -484,7 +484,7 @@ const NationalRegistration = () => {
                   defaultValue=""
                   render={({ field }) => (
                     <Stack>
-                      <Typography>Adhar Back Upload</Typography>
+                      <Typography>Aadhaar Back Upload</Typography>
 
                       <input
                         type="file"
