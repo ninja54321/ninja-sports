@@ -14,6 +14,41 @@ const EventsContent = () => {
         <Typography color="white" variant="h3" textAlign="center">
           Latest Events
         </Typography>
+
+        <Stack
+          direction={{ sx: "column", md: "row" }}
+          alignItems={"center"}
+          justifyContent={"center"}
+          // m={"8rem"}
+          // gap={10}
+        >
+          <Image
+            src={require("../../../helper/events/event.jpg")}
+            style={{
+              height: isHovered1 ? "70vh" : "60vh",
+              width: "auto",
+              borderRadius: "1.5rem",
+              transition: "height 0.5s ease-in-out",
+            }}
+            alt={""}
+            className={styles.image}
+            onMouseEnter={() => setIsHovered1(true)}
+            onMouseLeave={() => setIsHovered1(false)}
+          />
+          {/* <Image
+          style={{
+            height: isHovered2 ? "80vh" : "70vh",
+            width: "auto",
+            borderRadius: "1.5rem",
+          }}
+          src={require("../../../helper/events/referee-seminar.jpg")}
+          alt={""}
+          className={styles.image}
+          onMouseEnter={() => setIsHovered2(true)}
+          onMouseLeave={() => setIsHovered2(false)}
+        /> */}
+        </Stack>
+
         <Stack
           flexWrap="wrap"
           direction="row"
@@ -126,38 +161,6 @@ const EventsContent = () => {
           </div>
         </Stack>
       </Stack>
-      {/* <Stack
-        direction={{ sx: "column", md: "row" }}
-        alignItems={"center"}
-        justifyContent={"center"}
-        m={"8rem"}
-        gap={10}
-      >
-        <Image
-          src={require("../../../helper/events/event.jpg")}
-          style={{
-            height: isHovered1 ? "70vh" : "60vh",
-            width: "auto",
-            borderRadius: "1.5rem",
-            
-          }}
-          alt={""}  className={styles.image}
-          onMouseEnter={() => setIsHovered1(true)}
-          onMouseLeave={() => setIsHovered1(false)}
-        />
-        <Image
-        style={{
-          height: isHovered2 ? "80vh" : "70vh",
-          width: "auto",
-          borderRadius: "1.5rem",
-          
-        }}
-        src={require("../../../helper/events/referee-seminar.jpg")}
-        alt={""}  className={styles.image}
-        onMouseEnter={() => setIsHovered2(true)}
-        onMouseLeave={() => setIsHovered2(false)}
-      />
-      </Stack> */}
     </Stack>
   );
 };
