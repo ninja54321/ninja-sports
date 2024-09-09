@@ -41,19 +41,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const photo = formDataObject.photo as File;
-    const cloudinaryResponse: UploadApiResponse = (await uploadImage(
-      photo,
-      `students/${sanitizeTitle(
-        formDataObject?.registrationNumber?.toString()
-      )}`
-    )) as UploadApiResponse;
+    // const photo = formDataObject.photo as File;
+    // const cloudinaryResponse: UploadApiResponse = (await uploadImage(
+    //   photo,
+    //   `students/${sanitizeTitle(
+    //     formDataObject?.registrationNumber?.toString()
+    //   )}`
+    // )) as UploadApiResponse;
 
+    const updatedRegistrationNumber = formDataObject.registrationNumber
+      .toString()
+      .replace(/\s+/g, "");
     const newStudent = {
       email: email,
       active: true,
       user: user?._id || null,
-      registrationNumber: formDataObject.registrationNumber,
+      registrationNumber: updatedRegistrationNumber,
       title: formDataObject.title,
       fullName: formDataObject.fullName,
       mobileNumber: formDataObject.mobileNumber,
@@ -76,7 +79,8 @@ export async function POST(request: NextRequest) {
       eventVenue: formDataObject.eventVenue,
       eventDate: formDataObject.eventDate,
       fatherOccupation: formDataObject.fatherOccupation,
-      photo: cloudinaryResponse?.secure_url.toString() || "",
+      // photo: cloudinaryResponse?.secure_url.toString() || "",
+      photo: formDataObject.photo,
     };
 
     const student = await Student.create(newStudent);
