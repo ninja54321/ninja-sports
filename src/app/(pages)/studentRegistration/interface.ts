@@ -21,7 +21,7 @@ export interface IFormValues {
   title: string;
   ageCategory: string;
   certificateNumber: string;
-  photo: any;
+  photo: string;
 
   category: string;
   club: string;

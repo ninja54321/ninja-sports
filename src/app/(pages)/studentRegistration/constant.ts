@@ -24,7 +24,7 @@ export const initialValues: IFormValues = {
   ageCategory: "",
   category: "",
   certificateNumber: "",
-  photo: null,
+  photo: "",
   club: "",
   academy: "",
   school: "",

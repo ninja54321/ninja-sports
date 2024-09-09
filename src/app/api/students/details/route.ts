@@ -129,6 +129,7 @@ export async function PUT(request: NextRequest) {
       );
     }
 
+    delete formDataObject.certificates;
     // if (formDataObject.photo) {
     //   const photo = formDataObject.photo as File;
     //   const cloudinaryResponse: UploadApiResponse = (await uploadImage(
@@ -141,6 +142,7 @@ export async function PUT(request: NextRequest) {
     //   formDataObject.photo = cloudinaryResponse?.secure_url.toString() || "";
     // }
 
+    console.log(formDataObject.photo, "photo");
     const updatedStudent = await Student.findOneAndUpdate(
       { registrationNumber },
       {

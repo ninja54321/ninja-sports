@@ -670,6 +670,28 @@ const StudentRegistration = () => {
                   <Controller
                     name="photo"
                     control={control}
+                    // rules={{ required: true }}
+                    render={({ field, fieldState }) => (
+                      <TextField
+                        fullWidth
+                        name="photo"
+                        label="Enter photo link"
+                        type="text"
+                        value={field.value}
+                        onChange={field.onChange}
+                        helperText={
+                          fieldState.error ? fieldState.error.message : ""
+                        }
+                        error={Boolean(fieldState.error)}
+                      />
+                    )}
+                  />
+                </Grid>
+
+                {/* <Grid item xs={12}>
+                  <Controller
+                    name="photo"
+                    control={control}
                     defaultValue=""
                     render={({ field }) => (
                       <input
@@ -683,7 +705,7 @@ const StudentRegistration = () => {
                       />
                     )}
                   />
-                </Grid>
+                </Grid> */}
               </Grid>
               <Button
                 type="submit"

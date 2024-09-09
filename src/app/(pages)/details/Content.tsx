@@ -1,20 +1,8 @@
 "use client";
-import {
-  Box,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  Paper,
-  Stack,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import Text from "./Text";
-import { FiEye } from "react-icons/fi";
-import { IoMdClose } from "react-icons/io";
 import ViewCertificate from "./ViewCertificate";
 
 interface IContentProps {
@@ -22,6 +10,21 @@ interface IContentProps {
 }
 
 const Content = ({ details }: IContentProps) => {
+  // Function to check and transform Google Drive link
+  const getTransformedLink = (link: string) => {
+    if (link.includes("drive.google.com")) {
+      const extractFileIdFromGoogleDriveLink = (link: string) => {
+        const regex = /\/d\/(.*?)\//;
+        const match = link.match(regex);
+        return match ? match[1] : "";
+      };
+
+      const fileId = extractFileIdFromGoogleDriveLink(link);
+      return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    }
+    return link;
+  };
+
   return (
     <Box>
       <Paper elevation={4} sx={{ maxWidth: "90vw", minWidth: "50vw" }}>
@@ -66,7 +69,7 @@ const Content = ({ details }: IContentProps) => {
             </Stack>
             {details.photo && (
               <Image
-                src={details?.photo}
+                src={getTransformedLink(details.photo)}
                 width={100}
                 height={100}
                 alt="profile image"
