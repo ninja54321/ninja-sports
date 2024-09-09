@@ -4,12 +4,16 @@ import { NextRequest, NextResponse } from "next/server";
 
 connect();
 
-export async function GET(request: NextRequest) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
-    const registrationNumber =
-      request.nextUrl.searchParams.get("registrationNumber");
+    console.log("called");
+    const { id: registrationNumber } = params;
+    console.log(registrationNumber, "registration");
 
-    const student = await Student.find({ registrationNumber });
+    const student = await Student.findOne({ registrationNumber });
 
     if (!student) {
       return NextResponse.json(

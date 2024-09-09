@@ -99,3 +99,72 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
+export async function PUT(request: NextRequest) {
+  try {
+    console.log("called");
+    const reqBody = await request.formData();
+    const formDataObject = Object.fromEntries(Array.from(reqBody.entries()));
+
+    if (!formDataObject.registrationNumber) {
+      return NextResponse.json(
+        {
+          message: "Please enter registration number",
+          success: false,
+        },
+        { status: 400 }
+      );
+    }
+
+    const { registrationNumber } = formDataObject;
+
+    const student = await Student.findOne({ registrationNumber });
+    if (!student) {
+      return NextResponse.json(
+        {
+          message: "Student with the given registration number does not exist",
+          success: false,
+        },
+        { status: 404 }
+      );
+    }
+
+    // if (formDataObject.photo) {
+    //   const photo = formDataObject.photo as File;
+    //   const cloudinaryResponse: UploadApiResponse = (await uploadImage(
+    //     photo,
+    //     `students/${sanitizeTitle(
+    //       formDataObject?.registrationNumber?.toString()
+    //     )}`
+    //   )) as UploadApiResponse;
+
+    //   formDataObject.photo = cloudinaryResponse?.secure_url.toString() || "";
+    // }
+
+    const updatedStudent = await Student.findOneAndUpdate(
+      { registrationNumber },
+      {
+        ...formDataObject,
+        // photo: formDataObject.photo || student.photo,
+      },
+      { new: true }
+    );
+
+    return NextResponse.json(
+      {
+        message: "Student details updated successfully",
+        success: true,
+        data: updatedStudent,
+      },
+      { status: 200 }
+    );
+  } catch (error: any) {
+    console.log(error);
+    return NextResponse.json(
+      {
+        message: "Internal Server Error",
+      },
+      { status: 500 }
+    );
+  }
+}

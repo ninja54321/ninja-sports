@@ -8,25 +8,32 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { fetchStudentDetails } from "../apis";
+import { fetchStudentsDetails } from "@/front-end-apis/student";
 import { FaPencilAlt } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const StudentTable = () => {
   const [studentData, setStudentData] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
   const [limit, setLimit] = useState<number>(10);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter(); // Initialize the router
+
+  // Update handleEdit to receive registration number
+  const handleEdit = (registration: string) => {
+    router.push(`/studentRegistration?registrationNumber=${registration}`);
+  };
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    const data = await fetchStudentsDetails(page, limit);
+    setIsLoading(false);
+    if (data) {
+      setStudentData(data.data);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      const data = await fetchStudentDetails(page, limit);
-      setIsLoading(false);
-      if (data) {
-        setStudentData(data.data);
-        console.log(data, "data");
-      }
-    };
     fetchData();
   }, [page, limit]);
 
@@ -69,7 +76,9 @@ const StudentTable = () => {
       ),
       renderCell: ({ row }: any) => (
         <Stack justifyContent="center" alignItems="center">
-          <IconButton onClick={() => console.log("clicked the pencil button")}>
+          <IconButton onClick={() => handleEdit(row.registrationNumber)}>
+            {" "}
+            {/* Pass the registration number */}
             <FaPencilAlt color="black" fontSize={18} />
           </IconButton>
         </Stack>
@@ -93,6 +102,11 @@ const StudentTable = () => {
           }}
         />
       )}
+      {studentData.length === 0 ? (
+        <Typography textAlign="center">No result found</Typography>
+      ) : (
+        <></>
+      )}
       {isLoading && <CircularProgress sx={{ color: "#82b9d1" }} />}
       <Stack
         direction="row"
@@ -101,11 +115,19 @@ const StudentTable = () => {
         justifyContent="flex-end"
         mt="2rem"
       >
-        <Button onClick={() => setPage((prev) => Math.max(prev - 1, 1))}>
+        <Button
+          disabled={isLoading}
+          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+        >
           Previous
         </Button>
         <Typography>Page {page}</Typography>
-        <Button onClick={() => setPage((prev) => prev + 1)}>Next</Button>
+        <Button
+          disabled={isLoading || studentData.length === 0}
+          onClick={() => setPage((prev) => prev + 1)}
+        >
+          Next
+        </Button>
       </Stack>
     </Stack>
   );
