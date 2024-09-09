@@ -4,27 +4,13 @@ import Image from "next/image";
 import React from "react";
 import Text from "./Text";
 import ViewCertificate from "./ViewCertificate";
+import { getTransformedLink } from "@/utils/util-function";
 
 interface IContentProps {
   details: any;
 }
 
 const Content = ({ details }: IContentProps) => {
-  // Function to check and transform Google Drive link
-  const getTransformedLink = (link: string) => {
-    if (link.includes("drive.google.com")) {
-      const extractFileIdFromGoogleDriveLink = (link: string) => {
-        const regex = /\/d\/(.*?)\//;
-        const match = link.match(regex);
-        return match ? match[1] : "";
-      };
-
-      const fileId = extractFileIdFromGoogleDriveLink(link);
-      return `https://drive.google.com/uc?export=view&id=${fileId}`;
-    }
-    return link;
-  };
-
   return (
     <Box>
       <Paper elevation={4} sx={{ maxWidth: "90vw", minWidth: "50vw" }}>

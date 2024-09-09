@@ -13,8 +13,9 @@ function sanitizeTitle(street: string) {
 
 export async function POST(request: NextRequest) {
   try {
-    const reqBody = await request.formData();
-    const formDataObject = Object.fromEntries(Array.from(reqBody.entries()));
+    // const reqBody = await request.formData();
+    // const formDataObject = Object.fromEntries(Array.from(reqBody.entries()));
+    const formDataObject = await request.json();
 
     if (!formDataObject.registrationNumber) {
       return NextResponse.json(
@@ -81,6 +82,7 @@ export async function POST(request: NextRequest) {
       fatherOccupation: formDataObject.fatherOccupation,
       // photo: cloudinaryResponse?.secure_url.toString() || "",
       photo: formDataObject.photo,
+      certificates: JSON.parse(formDataObject.certificates || "[]"),
     };
 
     const student = await Student.create(newStudent);
@@ -106,9 +108,8 @@ export async function POST(request: NextRequest) {
 
 export async function PUT(request: NextRequest) {
   try {
-    console.log("called");
-    const reqBody = await request.formData();
-    const formDataObject = Object.fromEntries(Array.from(reqBody.entries()));
+    // Parse JSON payload
+    const formDataObject = await request.json();
 
     if (!formDataObject.registrationNumber) {
       return NextResponse.json(
@@ -122,6 +123,7 @@ export async function PUT(request: NextRequest) {
 
     const { registrationNumber } = formDataObject;
 
+    // Check if student exists
     const student = await Student.findOne({ registrationNumber });
     if (!student) {
       return NextResponse.json(
@@ -133,25 +135,12 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    delete formDataObject.certificates;
-    // if (formDataObject.photo) {
-    //   const photo = formDataObject.photo as File;
-    //   const cloudinaryResponse: UploadApiResponse = (await uploadImage(
-    //     photo,
-    //     `students/${sanitizeTitle(
-    //       formDataObject?.registrationNumber?.toString()
-    //     )}`
-    //   )) as UploadApiResponse;
-
-    //   formDataObject.photo = cloudinaryResponse?.secure_url.toString() || "";
-    // }
-
-    console.log(formDataObject.photo, "photo");
+    // Update student record
     const updatedStudent = await Student.findOneAndUpdate(
       { registrationNumber },
       {
         ...formDataObject,
-        // photo: formDataObject.photo || student.photo,
+        certificates: JSON.parse(formDataObject.certificates || "[]"),
       },
       { new: true }
     );

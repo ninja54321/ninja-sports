@@ -27,6 +27,7 @@ import axios from "axios";
 import { fetchStudent } from "@/front-end-apis/student";
 import { IFormValues } from "./interface";
 import { initialValues } from "./constant";
+import Certificates from "./Certificates";
 
 const StudentRegistration = () => {
   const router = useRouter();
@@ -39,38 +40,37 @@ const StudentRegistration = () => {
 
   const onSubmit = async (values: IFormValues) => {
     setIsLoading(true);
+
     try {
       const registrationNumber = searchParams.get("registrationNumber");
 
-      const formData = new FormData();
-      Object.entries(values).forEach(([key, value]) => {
-        if (value !== null && value !== undefined) {
-          formData.append(key, value.toString());
-        }
-      });
+      // Convert certificates to JSON string
+      const plainData = {
+        ...values,
+        certificates: JSON.stringify(values.certificates),
+      };
 
       let res;
       if (registrationNumber) {
-        res = await axios.put(`/api/students/details`, formData);
+        res = await axios.put(`/api/students/details`, plainData, {
+          headers: { "Content-Type": "application/json" },
+        });
         toast.info("Student details updated successfully", { autoClose: 1000 });
       } else {
-        res = await axios.post("/api/students/details", formData);
+        res = await axios.post("/api/students/details", plainData, {
+          headers: { "Content-Type": "application/json" },
+        });
         toast.info("Student details added successfully", { autoClose: 1000 });
         reset();
       }
-
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to submit student details", { autoClose: 1000 });
+    } finally {
       setIsLoading(false);
-    } catch (error: any) {
-      console.log(error);
-      setIsLoading(false);
-      toast.error(
-        error.response.data.message || "Error Occured please try again later",
-        {
-          autoClose: 2000,
-        }
-      );
     }
   };
+
   useEffect(() => {
     const registrationNumber = searchParams.get("registrationNumber");
     if (registrationNumber) {
@@ -99,11 +99,13 @@ const StudentRegistration = () => {
   }, []);
   return (
     <main
-      style={{
-        // backgroundColor: "#82b9d1",
-        minHeight: "100vh",
-        overflow: "hidden",
-      }}
+      style={
+        {
+          // backgroundColor: "#82b9d1",
+          // minHeight: "100vh",
+          // overflow: "hidden",
+        }
+      }
     >
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -687,7 +689,6 @@ const StudentRegistration = () => {
                     )}
                   />
                 </Grid>
-
                 {/* <Grid item xs={12}>
                   <Controller
                     name="photo"
@@ -707,6 +708,7 @@ const StudentRegistration = () => {
                   />
                 </Grid> */}
               </Grid>
+              <Certificates control={control} />
               <Button
                 type="submit"
                 fullWidth

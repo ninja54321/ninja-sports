@@ -23,7 +23,6 @@ export const initialValues: IFormValues = {
   title: "",
   ageCategory: "",
   category: "",
-  certificateNumber: "",
   photo: "",
   club: "",
   academy: "",
@@ -33,5 +32,5 @@ export const initialValues: IFormValues = {
   designation: "",
   eventVenue: "",
   eventDate: new Date(),
-  certificateNo: "",
+  certificates: [],
 };

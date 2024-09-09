@@ -40,7 +40,6 @@ interface IStudentDb {
   img: string;
   starRating: string;
   category: string;
-  certificateNumber: string;
   photo: any;
   club: string;
   academy: string;
@@ -51,7 +50,6 @@ interface IStudentDb {
   eventVenue: string;
   eventDate: Date;
   certificates: ICertificate[];
-  certificateNo: string;
 }
 
 const studentSchema = new Schema<IStudentDb>({
@@ -89,7 +87,6 @@ const studentSchema = new Schema<IStudentDb>({
   designation: String,
   eventVenue: String,
   eventDate: Date,
-  certificateNo: String,
 });
 
 const Student =

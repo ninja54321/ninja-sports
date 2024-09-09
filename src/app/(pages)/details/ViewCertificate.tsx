@@ -12,6 +12,7 @@ import { FiEye } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import Image from "next/image";
 import styles from "./styles.module.css";
+import { getTransformedLink } from "@/utils/util-function";
 
 // certificate query to add data
 // db.students.updateOne(
@@ -88,7 +89,7 @@ const ViewCertificate = ({ certificate }: IViewCertificateProps) => {
         >
           <Image
             className={styles.customCertificate}
-            src={certificate?.certificateLink}
+            src={getTransformedLink(certificate?.certificateLink)}
             width={800}
             height={800}
             alt="certificate"

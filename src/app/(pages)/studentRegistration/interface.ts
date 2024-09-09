@@ -20,7 +20,6 @@ export interface IFormValues {
   starRating: string;
   title: string;
   ageCategory: string;
-  certificateNumber: string;
   photo: string;
 
   category: string;
@@ -32,5 +31,5 @@ export interface IFormValues {
   designation: string;
   eventVenue: string;
   eventDate: Date;
-  certificateNo: string;
+  certificates: [];
 }
