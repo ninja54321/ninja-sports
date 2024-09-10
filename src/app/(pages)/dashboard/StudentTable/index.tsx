@@ -116,20 +116,22 @@ const StudentTable = () => {
   return (
     <Stack marginTop="2rem" p={4} justifyContent="center">
       {studentData.length > 0 && !isLoading && (
-        <DataGrid
-          enableVirtualization={false}
-          className="rdg-light"
-          headerRowHeight={60}
-          columns={columns}
-          rows={studentData}
-          style={{
-            overflowX: "auto",
-            gridColumnStart: 1,
-            gridColumnEnd: -1,
-            height: "60vh",
-          }}
-          rowHeight={50}
-        />
+        <Stack maxHeight="60vh">
+          <DataGrid
+            enableVirtualization={false}
+            className="rdg-light"
+            headerRowHeight={60}
+            columns={columns}
+            rows={studentData}
+            style={{
+              overflowX: "auto",
+              gridColumnStart: 1,
+              gridColumnEnd: -1,
+              height: "100%",
+            }}
+            rowHeight={50}
+          />
+        </Stack>
       )}
       {studentData.length === 0 ? (
         <Typography textAlign="center">No result found</Typography>
