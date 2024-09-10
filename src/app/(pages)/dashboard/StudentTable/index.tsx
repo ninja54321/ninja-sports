@@ -13,6 +13,7 @@ import { FaPencilAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import StatusUpdate from "./StatusUpdate";
 import styles from "./styles.module.css";
+import { MdDelete } from "react-icons/md";
 
 const StudentTable = () => {
   const [studentData, setStudentData] = useState<any[]>([]);
@@ -32,6 +33,10 @@ const StudentTable = () => {
     if (data) {
       setStudentData(data.data);
     }
+  };
+
+  const handleDelete = (studentId: string) => {
+    console.log(studentId, "student id to be deleted");
   };
 
   useEffect(() => {
@@ -111,12 +116,28 @@ const StudentTable = () => {
         </Stack>
       ),
     },
+    {
+      key: "delet",
+      name: "delet",
+      renderHeaderCell: () => (
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">Delete Student details</Typography>
+        </Stack>
+      ),
+      renderCell: ({ row }: any) => (
+        <Stack className={styles.commonCellStyle}>
+          <IconButton onClick={() => handleDelete(row._id)}>
+            <MdDelete />
+          </IconButton>
+        </Stack>
+      ),
+    },
   ];
 
   return (
     <Stack marginTop="2rem" p={4} justifyContent="center">
       {studentData.length > 0 && !isLoading && (
-        <Stack maxHeight="60vh">
+        <Stack maxHeight="65vh">
           <DataGrid
             enableVirtualization={false}
             className="rdg-light"
