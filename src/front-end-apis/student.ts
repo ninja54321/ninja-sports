@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export const fetchStudentsDetails = async (page: number, limit: number) => {
   try {
     const res = await axios.get(
-      `/api/students/getDetails?page=${page}&limit=${limit}`
+      `/api/students/details?page=${page}&limit=${limit}`
     );
     return res.data;
   } catch (error) {
@@ -15,12 +15,9 @@ export const fetchStudentsDetails = async (page: number, limit: number) => {
   }
 };
 
-export const fetchStudent = async (registrationNumber: string) => {
+export const fetchStudent = async (studentId: string) => {
   try {
-    const encodedRegistrationNumber = encodeURIComponent(registrationNumber);
-    const res = await axios.get(
-      `/api/students/getDetails/${encodedRegistrationNumber}`
-    );
+    const res = await axios.get(`/api/students/details/${studentId}`);
     return res.data;
   } catch (error) {
     console.log(error);

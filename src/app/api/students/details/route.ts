@@ -106,55 +106,35 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function PUT(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
-    // Parse JSON payload
-    const formDataObject = await request.json();
-
-    if (!formDataObject.registrationNumber) {
-      return NextResponse.json(
-        {
-          message: "Please enter registration number",
-          success: false,
-        },
-        { status: 400 }
-      );
-    }
-
-    const { registrationNumber } = formDataObject;
-
-    // Check if student exists
-    const student = await Student.findOne({ registrationNumber });
-    if (!student) {
-      return NextResponse.json(
-        {
-          message: "Student with the given registration number does not exist",
-          success: false,
-        },
-        { status: 404 }
-      );
-    }
-
-    // Update student record
-    const updatedStudent = await Student.findOneAndUpdate(
-      { registrationNumber },
-      {
-        ...formDataObject,
-        certificates: JSON.parse(formDataObject.certificates || "[]"),
-      },
-      { new: true }
+    const page = parseInt(request.nextUrl.searchParams.get("page") || "1", 10);
+    const limit = parseInt(
+      request.nextUrl.searchParams.get("limit") || "10",
+      10
     );
+    // const limit = parseInt(
+    //   request.nextUrl.searchParams.get("limit") || "2",
+    //   10
+    // );
 
+    const skip = (page - 1) * limit;
+
+    const students = await Student.find()
+      .sort({ _id: -1 })
+      .skip(skip)
+      .limit(limit);
     return NextResponse.json(
       {
-        message: "Student details updated successfully",
+        data: students,
+        page,
+        message: "Data Found",
         success: true,
-        data: updatedStudent,
       },
       { status: 200 }
     );
-  } catch (error: any) {
-    console.log(error);
+  } catch (error) {
+    console.error("Error fetching student details:", error);
     return NextResponse.json(
       {
         message: "Internal Server Error",

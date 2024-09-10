@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "react-data-grid/lib/styles.css";
-import DataGrid from "react-data-grid";
+import DataGrid, { renderHeaderCell } from "react-data-grid";
 import {
   Button,
   CircularProgress,
@@ -11,17 +11,17 @@ import {
 import { fetchStudentsDetails } from "@/front-end-apis/student";
 import { FaPencilAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import StatusUpdate from "./StatusUpdate";
 
 const StudentTable = () => {
   const [studentData, setStudentData] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
   const [limit, setLimit] = useState<number>(10);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const router = useRouter(); // Initialize the router
+  const router = useRouter();
 
-  // Update handleEdit to receive registration number
-  const handleEdit = (registration: string) => {
-    router.push(`/studentRegistration?registrationNumber=${registration}`);
+  const handleEdit = (studentId: string) => {
+    router.push(`/studentRegistration?id=${studentId}`);
   };
 
   const fetchData = async () => {
@@ -69,19 +69,27 @@ const StudentTable = () => {
       ),
     },
     {
-      key: "action",
-      name: "Action",
+      key: "edit",
+      name: "edit",
       renderHeaderCell: () => (
-        <Typography textAlign="center">Action</Typography>
+        <Typography textAlign="center">Edit Details</Typography>
       ),
       renderCell: ({ row }: any) => (
         <Stack justifyContent="center" alignItems="center">
-          <IconButton onClick={() => handleEdit(row.registrationNumber)}>
-            {" "}
-            {/* Pass the registration number */}
+          <IconButton onClick={() => handleEdit(row?._id)}>
             <FaPencilAlt color="black" fontSize={18} />
           </IconButton>
         </Stack>
+      ),
+    },
+    {
+      key: "status",
+      name: "Status",
+      renderHeaderCell: () => (
+        <Typography textAlign="center">Status</Typography>
+      ),
+      renderCell: ({ row }: any) => (
+        <StatusUpdate studentId={row._id} status={row?.active} />
       ),
     },
   ];
