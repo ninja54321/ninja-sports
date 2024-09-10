@@ -86,7 +86,7 @@ const StatusUpdate = ({ status, studentId }: IStatusUpdateProps) => {
             />
           </RadioGroup>
         </DialogContent>
-        <DialogActions>
+        <DialogActions sx={{ gap: "2rem" }}>
           <Button onClick={() => setChangeStatus(false)}>Cancel</Button>
           <Button
             disabled={isLoading}

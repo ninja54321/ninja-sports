@@ -12,6 +12,7 @@ import { fetchStudentsDetails } from "@/front-end-apis/student";
 import { FaPencilAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import StatusUpdate from "./StatusUpdate";
+import styles from "./styles.module.css";
 
 const StudentTable = () => {
   const [studentData, setStudentData] = useState<any[]>([]);
@@ -42,37 +43,51 @@ const StudentTable = () => {
       key: "registrationNumber",
       name: "Registration Number",
       renderHeaderCell: () => (
-        <Typography textAlign="center">Registration Number</Typography>
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">Registration Number</Typography>
+        </Stack>
       ),
       renderCell: ({ row }: any) => (
-        <Typography textAlign="center">{row.registrationNumber}</Typography>
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">{row.registrationNumber}</Typography>
+        </Stack>
       ),
     },
     {
       key: "fullName",
       name: "Full Name",
       renderHeaderCell: () => (
-        <Typography textAlign="center">Full Name</Typography>
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">Full Name</Typography>
+        </Stack>
       ),
       renderCell: ({ row }: any) => (
-        <Typography textAlign="center">{row?.fullName}</Typography>
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">{row?.fullName}</Typography>
+        </Stack>
       ),
     },
     {
       key: "academy",
       name: "Academy",
       renderHeaderCell: () => (
-        <Typography textAlign="center">Academy</Typography>
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">Academy</Typography>
+        </Stack>
       ),
       renderCell: ({ row }: any) => (
-        <Typography textAlign="center">{row?.academy}</Typography>
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">{row?.academy}</Typography>
+        </Stack>
       ),
     },
     {
       key: "edit",
       name: "edit",
       renderHeaderCell: () => (
-        <Typography textAlign="center">Edit Details</Typography>
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">Edit Details</Typography>
+        </Stack>
       ),
       renderCell: ({ row }: any) => (
         <Stack justifyContent="center" alignItems="center">
@@ -86,10 +101,14 @@ const StudentTable = () => {
       key: "status",
       name: "Status",
       renderHeaderCell: () => (
-        <Typography textAlign="center">Status</Typography>
+        <Stack className={styles.commonCellStyle}>
+          <Typography textAlign="center">Status</Typography>
+        </Stack>
       ),
       renderCell: ({ row }: any) => (
-        <StatusUpdate studentId={row._id} status={row?.active} />
+        <Stack className={styles.commonCellStyle}>
+          <StatusUpdate studentId={row._id} status={row?.active} />
+        </Stack>
       ),
     },
   ];
@@ -98,16 +117,18 @@ const StudentTable = () => {
     <Stack marginTop="2rem" p={4} justifyContent="center">
       {studentData.length > 0 && !isLoading && (
         <DataGrid
+          enableVirtualization={false}
           className="rdg-light"
+          headerRowHeight={60}
           columns={columns}
           rows={studentData}
-          rowKeyGetter={(row) => row._id}
           style={{
             overflowX: "auto",
             gridColumnStart: 1,
             gridColumnEnd: -1,
-            height: "100%",
+            height: "60vh",
           }}
+          rowHeight={50}
         />
       )}
       {studentData.length === 0 ? (
