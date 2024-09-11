@@ -131,7 +131,10 @@ export async function PUT(
   }
 }
 
-export async function Delete(request: NextRequest) {
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   const authHeader = request.headers.get("authorization");
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return NextResponse.json(
@@ -163,11 +166,19 @@ export async function Delete(request: NextRequest) {
         { status: 401 }
       );
 
+    const deletedStudent = await Student.findByIdAndDelete(params.id);
+
+    if (!deletedStudent) {
+      return NextResponse.json(
+        { message: "Student not found" },
+        { status: 404 }
+      );
+    }
     return NextResponse.json(
       {
         message: "Student data is deleted successfully",
         success: true,
-        // data: updatedStudent,
+        deletedStudent,
       },
       { status: 200 }
     );

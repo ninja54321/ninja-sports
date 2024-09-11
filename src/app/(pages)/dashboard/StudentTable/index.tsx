@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import StatusUpdate from "./StatusUpdate";
 import styles from "./styles.module.css";
 import { MdDelete } from "react-icons/md";
+import DeleteDetails from "./DeleteDetails";
 
 const StudentTable = () => {
   const [studentData, setStudentData] = useState<any[]>([]);
@@ -117,18 +118,16 @@ const StudentTable = () => {
       ),
     },
     {
-      key: "delet",
-      name: "delet",
+      key: "delete",
+      name: "delete",
       renderHeaderCell: () => (
         <Stack className={styles.commonCellStyle}>
-          <Typography textAlign="center">Delete Student details</Typography>
+          <Typography textAlign="center">Delete details</Typography>
         </Stack>
       ),
       renderCell: ({ row }: any) => (
         <Stack className={styles.commonCellStyle}>
-          <IconButton onClick={() => handleDelete(row._id)}>
-            <MdDelete />
-          </IconButton>
+          <DeleteDetails studentId={row._id} />
         </Stack>
       ),
     },

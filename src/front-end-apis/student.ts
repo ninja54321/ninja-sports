@@ -26,3 +26,25 @@ export const fetchStudent = async (studentId: string) => {
     });
   }
 };
+
+export const deleteStudentDetails = async (studentId: string) => {
+  try {
+    const token = localStorage.getItem("token");
+    const res = await axios.delete(`/api/students/details/${studentId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    toast.info("Details deleted successfully");
+    return res.data;
+  } catch (error: any) {
+    console.log(error);
+    toast.error(
+      error?.response?.data?.message || "Error in deleting student data",
+      {
+        autoClose: 2000,
+      }
+    );
+  }
+};
