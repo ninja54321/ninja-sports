@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     let data;
     switch (type) {
       case "student":
-        data = await Student.findOne({ registrationNumber });
+        data = await Student.findOne({ registrationNumber, active: true });
         break;
       default:
         console.log("default call");
@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
     if (!data) {
       return NextResponse.json(
         {
-          message: "Result Not found",
+          message: "No details found",
         },
         {
           status: 404,

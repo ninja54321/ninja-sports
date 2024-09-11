@@ -44,7 +44,10 @@ export async function GET(
   }
 }
 
-export async function PUT(request: NextRequest) {
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   const authHeader = request.headers.get("authorization");
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return NextResponse.json(
@@ -86,10 +89,9 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    const { registrationNumber } = formDataObject;
-
+    const { id } = params;
     // Check if student exists
-    const student = await Student.findOne({ registrationNumber });
+    const student = await Student.findById(id);
     if (!student) {
       return NextResponse.json(
         {
@@ -102,7 +104,7 @@ export async function PUT(request: NextRequest) {
 
     // Update student record
     const updatedStudent = await Student.findOneAndUpdate(
-      { registrationNumber },
+      { _id: id },
       {
         ...formDataObject,
         certificates: JSON.parse(formDataObject.certificates || "[]"),
@@ -115,6 +117,57 @@ export async function PUT(request: NextRequest) {
         message: "Student details updated successfully",
         success: true,
         data: updatedStudent,
+      },
+      { status: 200 }
+    );
+  } catch (error: any) {
+    console.log(error);
+    return NextResponse.json(
+      {
+        message: "Internal Server Error",
+      },
+      { status: 500 }
+    );
+  }
+}
+
+export async function Delete(request: NextRequest) {
+  const authHeader = request.headers.get("authorization");
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return NextResponse.json(
+      { message: "Unauthorized: No token provided" },
+      { status: 401 }
+    );
+  }
+  const token = authHeader.split(" ")[1];
+  let decoded: any;
+
+  try {
+    decoded = await jwt.verify(token, process.env.ACCESS_TOKEN_SECRET!);
+  } catch (error) {
+    return NextResponse.json(
+      {
+        message: getJwtErrorMessage(error) || "Invalid Token",
+      },
+      { status: 401 }
+    );
+  }
+
+  try {
+    const user = await User.findById(decoded?._id);
+    if (!user.isAdmin)
+      return NextResponse.json(
+        {
+          message: "Unauthorized access. Only admin can perform this action",
+        },
+        { status: 401 }
+      );
+
+    return NextResponse.json(
+      {
+        message: "Student data is deleted successfully",
+        success: true,
+        // data: updatedStudent,
       },
       { status: 200 }
     );
