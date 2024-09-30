@@ -119,22 +119,6 @@ const Content = ({ details }: IContentProps) => {
               <Text label="Academy" value={details.academy} />
             )}
             {details?.school && <Text label="School" value={details.school} />}
-            {details?.award && <Text label="Award" value={details.award} />}
-            {details?.position && (
-              <Text label="Position" value={details.position} />
-            )}
-            {details?.designation && (
-              <Text label="Designation" value={details.designation} />
-            )}
-            {details?.eventVenue && (
-              <Text label="Event Venue" value={details.eventVenue} />
-            )}
-            {details?.eventDate && (
-              <Text
-                label="Event Date"
-                value={new Date(details.eventDate).toLocaleDateString()}
-              />
-            )}
           </Stack>
 
           {details.certificates && details.certificates.length !== 0 && (
