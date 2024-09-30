@@ -107,6 +107,7 @@ const StudentRegistration = () => {
         });
     }
   }, []);
+  
   return (
     <main
       style={
