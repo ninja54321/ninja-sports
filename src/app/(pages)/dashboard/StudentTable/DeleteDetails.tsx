@@ -10,7 +10,7 @@ interface IDeleteDetailsProps {
 const DeleteDetails = ({ studentId }: IDeleteDetailsProps) => {
   const handleDelete = async (studentId: string) => {
     console.log('clicked')
-    // await deleteStudentDetails(studentId);
+    await deleteStudentDetails(studentId);
   };
   return (
     <IconButton onClick={() => handleDelete(studentId)}>
