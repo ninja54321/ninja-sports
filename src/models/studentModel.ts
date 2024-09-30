@@ -4,12 +4,22 @@ interface ICertificate {
   certificateNumber: string;
   certificateName: string;
   certificateLink: string;
+  award: string;
+  position: string;
+  designation: string;
+  eventVenue: string;
+  eventDate: Date;
 }
 
 const certificateSchema = new Schema<ICertificate>({
-  certificateNumber: { type: String, required: true },
-  certificateName: { type: String, required: true },
-  certificateLink: { type: String, required: true },
+  certificateNumber: { type: String },
+  certificateName: { type: String },
+  certificateLink: { type: String },
+  award: { type: String },
+  position: { type: String },
+  designation: { type: String },
+  eventVenue: { type: String },
+  eventDate: { type: Date },
 });
 
 interface IStudentDb {
@@ -44,11 +54,6 @@ interface IStudentDb {
   club: string;
   academy: string;
   school: string;
-  award: string;
-  position: string;
-  designation: string;
-  eventVenue: string;
-  eventDate: Date;
   certificates: ICertificate[];
 }
 
@@ -82,11 +87,6 @@ const studentSchema = new Schema<IStudentDb>({
   club: String,
   academy: String,
   school: String,
-  award: String,
-  position: String,
-  designation: String,
-  eventVenue: String,
-  eventDate: Date,
 });
 
 const Student =

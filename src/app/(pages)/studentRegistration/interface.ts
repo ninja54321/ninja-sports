@@ -26,10 +26,10 @@ export interface IFormValues {
   club: string;
   academy: string;
   school: string;
-  award: string;
-  position: string;
-  designation: string;
-  eventVenue: string;
-  eventDate: Date;
+  // award: string;
+  // position: string;
+  // designation: string;
+  // eventVenue: string;
+  // eventDate: Date;
   certificates: [];
 }

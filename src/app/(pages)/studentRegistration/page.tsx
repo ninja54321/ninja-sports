@@ -87,14 +87,15 @@ const StudentRegistration = () => {
       fetchStudent(studentId)
         .then((res) => {
           const data = res.data;
+          console.log(data, "data");
           if (data) {
             reset({
               ...initialValues,
               ...data,
               dob: data.dob ? new Date(data.dob) : initialValues.dob,
-              eventDate: data.eventDate
-                ? new Date(data.eventDate)
-                : initialValues.eventDate,
+              // eventDate: data.eventDate
+              //   ? new Date(data.eventDate)
+              //   : initialValues.eventDate,
             });
           }
         })
@@ -569,110 +570,6 @@ const StudentRegistration = () => {
                         }
                         error={Boolean(fieldState.error)}
                       />
-                    )}
-                  />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <Controller
-                    name="award"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="award"
-                        label="Award "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
-                    )}
-                  />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <Controller
-                    name="position"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="position"
-                        label="Position "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
-                    )}
-                  />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <Controller
-                    name="designation"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="designation"
-                        label="Designation "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
-                    )}
-                  />
-                </Grid>
-
-                <Grid item xs={12}>
-                  <Controller
-                    name="eventVenue"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="eventVenue"
-                        label="Event Venue "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Controller
-                    name="eventDate"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <DatePicker
-                          label="Event Date"
-                          value={field.value || null}
-                          onChange={(newValue) => field.onChange(newValue)}
-                        />
-                      </LocalizationProvider>
                     )}
                   />
                 </Grid>
