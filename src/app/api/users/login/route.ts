@@ -11,7 +11,8 @@ export async function POST(request: NextRequest) {
     const reqBody = await request.json();
     const { email, password } = reqBody;
 
-    const user = await User.findOne({ email });
+    const cleanedEmail = email.trim().replace(/\s+/g, "");
+    const user = await User.findOne({ email: cleanedEmail });
     if (!user)
       return NextResponse.json(
         { message: "User doesnot exist" },

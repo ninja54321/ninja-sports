@@ -13,7 +13,8 @@ export async function POST(request: NextRequest) {
     const reqBody = await request.json();
     const { name, email, password } = reqBody;
 
-    if (!isValidEmail(email)) {
+    const cleanedEmail = email.trim().replace(/\s+/g, "");
+    if (!isValidEmail(cleanedEmail)) {
       return NextResponse.json(
         {
           message:
@@ -23,7 +24,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const userAvailable = await User.findOne({ email });
+    const userAvailable = await User.findOne({ email: cleanedEmail });
     if (userAvailable && userAvailable.isVerified)
       return NextResponse.json(
         { message: "User already exists" },
@@ -39,7 +40,7 @@ export async function POST(request: NextRequest) {
       await userAvailable.save();
 
       await sendOTP({
-        email,
+        email: cleanedEmail,
         emailType: EmailType.VERIFY,
         userId: userAvailable.id,
       });
@@ -57,12 +58,16 @@ export async function POST(request: NextRequest) {
     if (!userAvailable) {
       const user = await User.create({
         active: true,
-        email,
+        email: cleanedEmail,
         hashedPassword,
         name,
       });
 
-      await sendOTP({ email, emailType: EmailType.VERIFY, userId: user.id });
+      await sendOTP({
+        email: cleanedEmail,
+        emailType: EmailType.VERIFY,
+        userId: user.id,
+      });
 
       if (user) {
         return NextResponse.json(
