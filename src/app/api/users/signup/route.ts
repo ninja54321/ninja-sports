@@ -13,8 +13,7 @@ export async function POST(request: NextRequest) {
     const reqBody = await request.json();
     const { name, email, password } = reqBody;
 
-    const cleanedEmail = email.trim().replace(/\s+/g, "");
-    if (!isValidEmail(cleanedEmail)) {
+    if (!isValidEmail(email)) {
       return NextResponse.json(
         {
           message:
@@ -23,6 +22,7 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+    const cleanedEmail = email.trim().replace(/\s+/g, "").toLowerCase();
 
     const userAvailable = await User.findOne({ email: cleanedEmail });
     if (userAvailable && userAvailable.isVerified)

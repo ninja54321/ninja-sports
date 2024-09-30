@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     const reqBody = await request.json();
     const { email, password } = reqBody;
 
-    const cleanedEmail = email.trim().replace(/\s+/g, "");
+    const cleanedEmail = email.trim().replace(/\s+/g, "").toLowerCase();
     const user = await User.findOne({ email: cleanedEmail });
     if (!user)
       return NextResponse.json(
