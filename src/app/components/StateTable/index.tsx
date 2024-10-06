@@ -23,17 +23,29 @@ const rows = [
     president: "",
     genSecreatary: require("../../../helper/state-table/sangeeta-chauhan-img.jpg"),
   },
+  // {
+  //   srn: 2,
+  //   logo: require("../../../helper/state-table/up-logo.jpg"),
+  //   state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
+  //   officials: {
+  //     title: "Mr.",
+  //     name: "T.S. Rana",
+  //     designation: "Gen. Secretary",
+  //   },
+  //   president: "",
+  //   genSecreatary: require("../../../helper/state-table/ts-rana-up.jpg"),
+  // },
   {
     srn: 2,
     logo: require("../../../helper/state-table/up-logo.jpg"),
     state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
     officials: {
       title: "Mr.",
-      name: "T.S. Rana",
+      name: "Vicky Panchal",
       designation: "Gen. Secretary",
     },
     president: "",
-    genSecreatary: require("../../../helper/state-table/ts-rana-up.jpg"),
+    genSecreatary: require("../../../helper/state-table/Vicky-Panchal-up-General-Secretary.jpg"),
   },
   {
     srn: 3,
@@ -47,17 +59,17 @@ const rows = [
     president: "",
     genSecreatary: require("../../../helper/state-table/kalim-khan-img.jpg"),
   },
-  {
-    srn: 4,
-    state: { code: "NSMA/029/RAJ/280", stateName: "Rajasthan" },
-    officials: {
-      title: "Mr.",
-      name: "Dr. Bharat Panwar",
-      designation: "Gen. Secretary",
-    },
-    president: "",
-    genSecreatary: require("../../../helper/state-table/bharat-panwar.png"),
-  },
+  // {
+  //   srn: 4,
+  //   state: { code: "NSMA/029/RAJ/280", stateName: "Rajasthan" },
+  //   officials: {
+  //     title: "Mr.",
+  //     name: "Dr. Bharat Panwar",
+  //     designation: "Gen. Secretary",
+  //   },
+  //   president: "",
+  //   genSecreatary: require("../../../helper/state-table/bharat-panwar.png"),
+  // },
   {
     srn: 5,
     logo: require("../../../helper/state-table/odisha-logo.jpg"),
@@ -70,17 +82,17 @@ const rows = [
     president: "",
     genSecreatary: require("../../../helper/state-table/dibyaRanjan.jpg"),
   },
-  {
-    srn: 6,
-    state: { code: "NSMA/021/MH/200", stateName: "Maharashtra" },
-    officials: {
-      title: "Mr.",
-      name: "Prakash Pandit",
-      designation: "Gen. Secretary",
-    },
-    president: "",
-    genSecreatary: require("../../../helper/state-table/prakash.jpg"),
-  },
+  // {
+  //   srn: 6,
+  //   state: { code: "NSMA/021/MH/200", stateName: "Maharashtra" },
+  //   officials: {
+  //     title: "Mr.",
+  //     name: "Prakash Pandit",
+  //     designation: "Gen. Secretary",
+  //   },
+  //   president: "",
+  //   genSecreatary: require("../../../helper/state-table/prakash.jpg"),
+  // },
   {
     srn: 7,
     officials: {
