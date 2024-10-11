@@ -53,36 +53,41 @@ export async function POST(request: NextRequest) {
     const updatedRegistrationNumber = formDataObject.registrationNumber
       .toString()
       .replace(/\s+/g, "");
+
+    const events =
+      typeof formDataObject.events === "string"
+        ? JSON.parse(formDataObject.events || "[]")
+        : [];
+    // console.log(formDataObject.events, "event");
+    // return;
+
     const newStudent = {
-      email: email,
       active: true,
-      user: user?._id || null,
       registrationNumber: updatedRegistrationNumber,
       title: formDataObject.title,
       fullName: formDataObject.fullName,
-      mobileNumber: formDataObject.mobileNumber,
-      whatsAppNumber: formDataObject.whatsAppNumber,
       fatherName: formDataObject.fatherName,
       dob: formDataObject.dob,
-      qualification: formDataObject.qualification,
       gender: formDataObject.gender,
-      ageCategory: formDataObject.ageCategory,
-      category: formDataObject.category,
       state: formDataObject.state,
       district: formDataObject.district,
+      institute: formDataObject.institute,
+      mobileNumber: formDataObject.mobileNumber,
       address: formDataObject.address,
-      club: formDataObject.club,
-      academy: formDataObject.academy,
-      school: formDataObject.school,
-      // award: formDataObject.award,
-      // position: formDataObject.position,
-      // designation: formDataObject.designation,
-      // eventVenue: formDataObject.eventVenue,
-      // eventDate: formDataObject.eventDate,
-      fatherOccupation: formDataObject.fatherOccupation,
-      // photo: cloudinaryResponse?.secure_url.toString() || "",
+      referenceCoachName: formDataObject.referenceCoachName,
+      designation: formDataObject.designation,
+      joiningDate: formDataObject.joiningDate,
+      expiryDate: formDataObject.expiryDate,
       photo: formDataObject.photo,
-      certificates: JSON.parse(formDataObject.certificates || "[]"),
+
+      whatsAppNumber: formDataObject.whatsAppNumber,
+      qualification: formDataObject.qualification,
+      email: email,
+      fatherOccupation: formDataObject.fatherOccupation,
+      sportsExperience: formDataObject.ageCategory,
+      user: user?._id || null,
+      // events: JSON.parse(formDataObject.events || "[]"),
+      events: formDataObject.events || [],
     };
 
     const student = await Student.create(newStudent);

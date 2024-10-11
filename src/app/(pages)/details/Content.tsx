@@ -3,7 +3,7 @@ import { Box, Paper, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import Text from "./Text";
-import ViewCertificate from "./ViewCertificate";
+import ViewEvent from "./ViewEvent";
 import { getTransformedLink } from "@/utils/util-function";
 
 interface IContentProps {
@@ -49,9 +49,6 @@ const Content = ({ details }: IContentProps) => {
                   value={new Date(details.dob).toLocaleDateString()}
                 />
               )}
-              {details?.ageCategory && (
-                <Text label="Age Category" value={details.ageCategory} />
-              )}
             </Stack>
             {details.photo && (
               <Image
@@ -65,20 +62,48 @@ const Content = ({ details }: IContentProps) => {
           </Stack>
           <Stack spacing={1}>
             {details?.email && <Text label="Email" value={details.email} />}
+            {details?.gender && <Text label="Gender" value={details.gender} />}
+            {details?.state && <Text label="State" value={details.state} />}
+            {details?.district && (
+              <Text label="District" value={details.district} />
+            )}
+            {details?.institute && (
+              <Text label="Institute" value={details.institute} />
+            )}
             {details?.mobileNumber && (
-              <Text label="Mobile Number" value={details.mobileNumber} />
+              <Text label="MobileNumber" value={details.mobileNumber} />
             )}
             {details?.whatsAppNumber && (
               <Text label="WhatsApp Number" value={details.whatsAppNumber} />
             )}
-            {details?.gender && (
+            {details?.email && <Text label="Email" value={details.email} />}
+            {details?.email && <Text label="Email" value={details.email} />}
+            {details?.address && (
+              <Text label="Address" value={details.address} />
+            )}
+            {details?.referenceCoachName && (
               <Text
-                label="Gender"
-                value={
-                  details.gender.charAt(0).toUpperCase() +
-                  details.gender.slice(1)
-                }
+                label="Reference Coach name"
+                value={details.referenceCoachName}
               />
+            )}
+            {details?.designation && (
+              <Text label="Designation" value={details.designation} />
+            )}
+            {details?.joiningDate && (
+              <Text
+                label="Joining Date"
+                value={new Date(details.joiningDate).toLocaleDateString()}
+              />
+            )}
+            {details?.expiryDate && (
+              <Text
+                label="Expiry Date"
+                value={new Date(details.expiryDate).toLocaleDateString()}
+              />
+            )}
+            {details?.qualification && (
+              <Text label="Qualification" value={details.qualification} />
             )}
             {details?.fatherOccupation && (
               <Text
@@ -86,57 +111,22 @@ const Content = ({ details }: IContentProps) => {
                 value={details.fatherOccupation}
               />
             )}
-            {details?.address && (
-              <Text label="Address" value={details.address} />
-            )}
-            {details?.state && <Text label="State" value={details.state} />}
-            {details?.district && (
-              <Text label="District" value={details.district} />
-            )}
-            {details?.qualification && (
-              <Text label="Qualification" value={details.qualification} />
-            )}
-            {details?.sportsExperience && (
-              <Text
-                label="Sports Experience"
-                value={details.sportsExperience}
-              />
-            )}
-            {details?.blackCourse !== undefined && (
-              <Text
-                label="Black Course"
-                value={details.blackCourse ? "Yes" : "No"}
-              />
-            )}
-            {details?.starRating && (
-              <Text label="Star Rating" value={details.starRating} />
-            )}
-            {details?.category && (
-              <Text label="Category" value={details.category} />
-            )}
-            {details?.club && <Text label="Club" value={details.club} />}
-            {details?.academy && (
-              <Text label="Academy" value={details.academy} />
-            )}
-            {details?.school && <Text label="School" value={details.school} />}
           </Stack>
 
-          {details.certificates && details.certificates.length !== 0 && (
+          {details.events && details.events.length !== 0 && (
             <Stack>
               <Typography
                 variant="h6"
                 fontWeight={700}
                 sx={{ textDecoration: "underline" }}
               >
-                Certificates
+                Events
               </Typography>
 
               <Stack spacing={4}>
-                {details?.certificates?.map(
-                  (certificate: any, index: number) => (
-                    <ViewCertificate certificate={certificate} key={index} />
-                  )
-                )}
+                {details?.events?.map((event: any, index: number) => (
+                  <ViewEvent event={event} key={index} />
+                ))}
               </Stack>
             </Stack>
           )}

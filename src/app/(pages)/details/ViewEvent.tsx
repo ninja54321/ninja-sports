@@ -49,40 +49,50 @@ interface ICertificate {
 //   },
 // ];
 
-interface IViewCertificateProps {
-  certificate: ICertificate;
+interface IViewEventProps {
+  event: any;
 }
 
-const ViewCertificate = ({ certificate }: IViewCertificateProps) => {
+const ViewCertificate = ({ event }: IViewEventProps) => {
   const [viewCertificate, setViewCertificate] = useState<boolean>(false);
   return (
     <Stack>
-      {certificate?.award && <Text label="Award" value={certificate.award} />}
-      {certificate?.position && (
-        <Text label="Position" value={certificate.position} />
+      {event?.event && <Text label="Event" value={event.event} />}
+      {event?.weightCategory && (
+        <Text label="Weight Category" value={event.weightCategory} />
       )}
-      {certificate?.designation && (
-        <Text label="Designation" value={certificate.designation} />
+      {event?.ageCategory && (
+        <Text label="Age Category" value={event.ageCategory} />
       )}
-      {certificate?.eventVenue && (
-        <Text label="Event Venue" value={certificate.eventVenue} />
+      {event?.award && <Text label="Award" value={event.award} />}
+      {event?.position && <Text label="Position" value={event.position} />}
+      {event?.eventState && <Text label="State" value={event.eventState} />}
+      {event?.eventDistrict && (
+        <Text label="District" value={event.eventDistrict} />
       )}
-      {certificate?.eventDate && (
+      {event?.eventSchool && <Text label="School" value={event.eventSchool} />}
+      {event?.eventAcademy && (
+        <Text label="Academy" value={event.eventAcademy} />
+      )}
+      {event?.designation && (
+        <Text label="Designation" value={event.designation} />
+      )}
+      {event?.eventVenue && (
+        <Text label="Event Venue" value={event.eventVenue} />
+      )}
+      {event?.eventDate && (
         <Text
           label="Event Date"
-          value={new Date(certificate.eventDate).toLocaleDateString()}
+          value={new Date(event.eventDate).toLocaleDateString()}
         />
       )}
-      {certificate.certificateNumber && (
-        <Text
-          label="Certificate Number"
-          value={certificate.certificateNumber}
-        />
+      {event.certificateNumber && (
+        <Text label="Certificate Number" value={event.certificateNumber} />
       )}
-      {certificate.certificateName && (
-        <Text label="Certificate Name" value={certificate.certificateName} />
+      {event.certificateName && (
+        <Text label="Certificate Name" value={event.certificateName} />
       )}
-      {certificate?.certificateLink && (
+      {event?.certificateLink && (
         <>
           <Stack direction="row" spacing={2} alignItems={"center"}>
             <Typography fontWeight={700}>View Certificate:</Typography>
@@ -118,7 +128,7 @@ const ViewCertificate = ({ certificate }: IViewCertificateProps) => {
             >
               <Image
                 className={styles.customCertificate}
-                src={getTransformedLink(certificate?.certificateLink)}
+                src={getTransformedLink(event?.certificateLink)}
                 width={800}
                 height={800}
                 alt="certificate"

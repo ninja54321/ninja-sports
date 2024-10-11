@@ -25,22 +25,21 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 import axios from "axios";
 import { fetchStudent } from "@/front-end-apis/student";
-import { IFormValues } from "./interface";
+// import { IFormValues } from "./interface";
 import { initialValues } from "./constant";
-import Certificates from "./Certificates";
+import Events from "./Events";
 
 const StudentRegistration = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { handleSubmit, control, watch, reset } = useForm<IFormValues>({
+  const { handleSubmit, control, watch, reset } = useForm({
     defaultValues: initialValues,
   });
   const searchParams = useSearchParams();
   const [initialLoading, setInitialLoading] = useState<boolean>(false);
 
-  const onSubmit = async (values: IFormValues) => {
+  const onSubmit = async (values: any) => {
     setIsLoading(true);
-
     try {
       const studentId = searchParams.get("id");
       const token = localStorage.getItem("token");
@@ -107,7 +106,7 @@ const StudentRegistration = () => {
         });
     }
   }, []);
-  
+
   return (
     <main
       style={
@@ -214,6 +213,45 @@ const StudentRegistration = () => {
 
                 <Grid item xs={12}>
                   <Controller
+                    name="fatherName"
+                    control={control}
+                    // rules={{ required: true }}
+                    render={({ field, fieldState }) => (
+                      <TextField
+                        fullWidth
+                        name="fatherName"
+                        label="Father's Name "
+                        type="text"
+                        value={field.value}
+                        onChange={field.onChange}
+                        helperText={
+                          fieldState.error ? fieldState.error.message : ""
+                        }
+                        error={Boolean(fieldState.error)}
+                      />
+                    )}
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Controller
+                    name="dob"
+                    control={control}
+                    // rules={{ required: true }}
+                    render={({ field, fieldState }) => (
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <DatePicker
+                          label="Date of birth "
+                          value={field.value || null}
+                          onChange={(newValue) => field.onChange(newValue)}
+                        />
+                      </LocalizationProvider>
+                    )}
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Controller
                     name="email"
                     control={control}
                     // rules={{ required: true }}
@@ -223,6 +261,111 @@ const StudentRegistration = () => {
                         label="Email Address "
                         name="email"
                         autoComplete="email"
+                        value={field.value}
+                        onChange={field.onChange}
+                        helperText={
+                          fieldState.error ? fieldState.error.message : ""
+                        }
+                        error={Boolean(fieldState.error)}
+                      />
+                    )}
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Controller
+                    name="gender"
+                    // rules={{ required: true }}
+                    control={control}
+                    render={({ field, fieldState }) => {
+                      return (
+                        <FormControl>
+                          <FormLabel id="demo-radio-buttons-group-label">
+                            Gender
+                          </FormLabel>
+                          <RadioGroup
+                            aria-labelledby="demo-radio-buttons-group-label"
+                            defaultValue="female"
+                            name="gender"
+                            onChange={(e) => field.onChange(e.target.value)}
+                            value={field.value}
+                          >
+                            <FormControlLabel
+                              value="female"
+                              control={<Radio />}
+                              label="Female"
+                            />
+                            <FormControlLabel
+                              value="male"
+                              control={<Radio />}
+                              label="Male"
+                            />
+                            <FormControlLabel
+                              value="other"
+                              control={<Radio />}
+                              label="Other"
+                            />
+                          </RadioGroup>
+                        </FormControl>
+                      );
+                    }}
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Controller
+                    name="state"
+                    control={control}
+                    // rules={{ required: true }}
+                    render={({ field, fieldState }) => (
+                      <TextField
+                        fullWidth
+                        name="state"
+                        label="State "
+                        type="text"
+                        value={field.value}
+                        onChange={field.onChange}
+                        helperText={
+                          fieldState.error ? fieldState.error.message : ""
+                        }
+                        error={Boolean(fieldState.error)}
+                      />
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Controller
+                    name="district"
+                    control={control}
+                    // rules={{ required: true }}
+                    render={({ field, fieldState }) => (
+                      <TextField
+                        fullWidth
+                        name="district"
+                        label="District "
+                        type="text"
+                        value={field.value}
+                        onChange={field.onChange}
+                        helperText={
+                          fieldState.error ? fieldState.error.message : ""
+                        }
+                        error={Boolean(fieldState.error)}
+                      />
+                    )}
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Controller
+                    name="institute"
+                    control={control}
+                    // rules={{ required: true }}
+                    render={({ field, fieldState }) => (
+                      <TextField
+                        fullWidth
+                        name="Institute"
+                        label="Institute "
+                        type="text"
                         value={field.value}
                         onChange={field.onChange}
                         helperText={
@@ -281,14 +424,14 @@ const StudentRegistration = () => {
 
                 <Grid item xs={12}>
                   <Controller
-                    name="fatherName"
+                    name="address"
                     control={control}
                     // rules={{ required: true }}
                     render={({ field, fieldState }) => (
                       <TextField
                         fullWidth
-                        name="fatherName"
-                        label="Father's Name "
+                        name="address"
+                        label="Address "
                         type="text"
                         value={field.value}
                         onChange={field.onChange}
@@ -300,22 +443,7 @@ const StudentRegistration = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={12}>
-                  <Controller
-                    name="dob"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <DatePicker
-                          label="Date of birth "
-                          value={field.value || null}
-                          onChange={(newValue) => field.onChange(newValue)}
-                        />
-                      </LocalizationProvider>
-                    )}
-                  />
-                </Grid>
+
                 <Grid item xs={12}>
                   <Controller
                     name="qualification"
@@ -340,45 +468,6 @@ const StudentRegistration = () => {
                   />
                 </Grid>
 
-                <Grid item xs={12}>
-                  <Controller
-                    name="gender"
-                    // rules={{ required: true }}
-                    control={control}
-                    render={({ field, fieldState }) => {
-                      return (
-                        <FormControl>
-                          <FormLabel id="demo-radio-buttons-group-label">
-                            Gender
-                          </FormLabel>
-                          <RadioGroup
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue="female"
-                            name="gender"
-                            onChange={(e) => field.onChange(e.target.value)}
-                            value={field.value}
-                          >
-                            <FormControlLabel
-                              value="female"
-                              control={<Radio />}
-                              label="Female"
-                            />
-                            <FormControlLabel
-                              value="male"
-                              control={<Radio />}
-                              label="Male"
-                            />
-                            <FormControlLabel
-                              value="other"
-                              control={<Radio />}
-                              label="Other"
-                            />
-                          </RadioGroup>
-                        </FormControl>
-                      );
-                    }}
-                  />
-                </Grid>
                 {/* <Grid item xs={12}>
                 <Controller
                   name="ageCategory"
@@ -400,79 +489,17 @@ const StudentRegistration = () => {
                   )}
                 />
               </Grid> */}
+
                 <Grid item xs={12}>
                   <Controller
-                    name="category"
+                    name="referenceCoachName"
                     control={control}
                     // rules={{ required: true }}
                     render={({ field, fieldState }) => (
                       <TextField
                         fullWidth
-                        name="category"
-                        label="Category "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Controller
-                    name="state"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="state"
-                        label="State "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Controller
-                    name="district"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="district"
-                        label="District "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Controller
-                    name="address"
-                    control={control}
-                    // rules={{ required: true }}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="address"
-                        label="Address "
+                        name="Reference Coach name"
+                        label="Reference Coach name "
                         type="text"
                         value={field.value}
                         onChange={field.onChange}
@@ -511,14 +538,14 @@ const StudentRegistration = () => {
 
                 <Grid item xs={12}>
                   <Controller
-                    name="club"
+                    name="designation"
                     control={control}
                     // rules={{ required: true }}
                     render={({ field, fieldState }) => (
                       <TextField
                         fullWidth
-                        name="club"
-                        label="Club "
+                        name="Designation"
+                        label="Designation "
                         type="text"
                         value={field.value}
                         onChange={field.onChange}
@@ -533,44 +560,33 @@ const StudentRegistration = () => {
 
                 <Grid item xs={12}>
                   <Controller
-                    name="academy"
+                    name="joiningDate"
                     control={control}
                     // rules={{ required: true }}
                     render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="academy"
-                        label="Academy "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <DatePicker
+                          label="Joining date"
+                          value={field.value || null}
+                          onChange={(newValue) => field.onChange(newValue)}
+                        />
+                      </LocalizationProvider>
                     )}
                   />
                 </Grid>
-
                 <Grid item xs={12}>
                   <Controller
-                    name="school"
+                    name="expiryDate"
                     control={control}
                     // rules={{ required: true }}
                     render={({ field, fieldState }) => (
-                      <TextField
-                        fullWidth
-                        name="school"
-                        label="School "
-                        type="text"
-                        value={field.value}
-                        onChange={field.onChange}
-                        helperText={
-                          fieldState.error ? fieldState.error.message : ""
-                        }
-                        error={Boolean(fieldState.error)}
-                      />
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <DatePicker
+                          label="Expiry date"
+                          value={field.value || null}
+                          onChange={(newValue) => field.onChange(newValue)}
+                        />
+                      </LocalizationProvider>
                     )}
                   />
                 </Grid>
@@ -615,7 +631,7 @@ const StudentRegistration = () => {
                   />
                 </Grid> */}
               </Grid>
-              <Certificates control={control} />
+              <Events control={control} />
               <Button
                 type="submit"
                 fullWidth

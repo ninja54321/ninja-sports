@@ -107,7 +107,7 @@ export async function PUT(
       { _id: id },
       {
         ...formDataObject,
-        certificates: JSON.parse(formDataObject.certificates || "[]"),
+        // certificates: JSON.parse(formDataObject.certificates || "[]"),
       },
       { new: true }
     );
