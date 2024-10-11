@@ -37,7 +37,7 @@ const rows = [
   // },
   {
     srn: 2,
-    logo: require("../../../helper/state-table/up-logo.jpg"),
+    logo: require("../../../helper/state-table/up-logo.png"),
     state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
     officials: {
       title: "Mr.",

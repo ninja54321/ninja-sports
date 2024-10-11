@@ -81,7 +81,7 @@ const AffiliationComponent = () => {
           width={200}
         />
         <Image
-          src={require("../../../helper/logo-for-slider/up.png")}
+          src={require("../../../helper/logo-for-slider/up-logo.png")}
           alt="logos"
           height={200}
           width={200}
