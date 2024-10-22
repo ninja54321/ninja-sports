@@ -46,7 +46,12 @@ const Footer = () => {
         </Grid>
       </div>
 
-      <ContactText />
+      <Stack justifyContent="center" alignItems="center" spacing={1}>
+        <ContactText />
+        <Typography color={"#2e2e26"} sx={{ paddingBottom: '10px' }}>
+          Design made by GameSoft Technologies Bharat Pvt Ltd
+        </Typography>
+      </Stack>
     </Box>
   );
 };
