@@ -86,6 +86,12 @@ const AffiliationComponent = () => {
           height={200}
           width={200}
         />
+        <Image
+          src={require("../../../helper/logo-for-slider/haryana.png")}
+          alt="logos"
+          height={200}
+          width={200}
+        />
         {/* <img src="./logos/3m.svg" alt="3m" />
         <img src="./logos/barstool-store.svg" alt="Barstool Store" />
         <img src="./logos/budweiser.svg" alt="Budweiser" />

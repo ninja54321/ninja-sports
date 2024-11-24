@@ -15,11 +15,13 @@ const rows = [
     srn: 1,
     logo: require("../../../helper/state-table/delhi-logo.png"),
     state: { code: "NSMA/009/DEL/UT/08", stateName: "Delhi" },
-    officials: {
-      title: "Mrs.",
-      name: "Sangeeta Chauhan",
-      designation: "Gen. Secretary",
-    },
+    officials: [
+      {
+        title: "Mrs.",
+        name: "Sangeeta Chauhan",
+        designation: "Gen. Secretary",
+      },
+    ],
     president: "",
     genSecreatary: require("../../../helper/state-table/sangeeta-chauhan-img.jpg"),
   },
@@ -39,11 +41,13 @@ const rows = [
     srn: 2,
     logo: require("../../../helper/state-table/up-logo.png"),
     state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
-    officials: {
-      title: "Mr.",
-      name: "Vicky Panchal",
-      designation: "Gen. Secretary",
-    },
+    officials: [
+      {
+        title: "Mr.",
+        name: "Vicky Panchal",
+        designation: "Gen. Secretary",
+      },
+    ],
     president: "",
     genSecreatary: require("../../../helper/state-table/Vicky-Panchal-up-General-Secretary.jpg"),
   },
@@ -51,11 +55,13 @@ const rows = [
     srn: 3,
     logo: require("../../../helper/state-table/kk-logo.jpg"),
     state: { code: "NSMA/015/JH/140", stateName: "Jharkhand" },
-    officials: {
-      title: "Mr.",
-      name: "Kalim Khan",
-      designation: "Gen. Secretary",
-    },
+    officials: [
+      {
+        title: "Mr.",
+        name: "Kalim Khan",
+        designation: "Gen. Secretary",
+      },
+    ],
     president: "",
     genSecreatary: require("../../../helper/state-table/kalim-khan-img.jpg"),
   },
@@ -74,11 +80,13 @@ const rows = [
     srn: 5,
     logo: require("../../../helper/state-table/odisha-logo.jpg"),
     state: { code: "NSMA/026/ODI/250", stateName: "Odisha" },
-    officials: {
-      title: "Mr.",
-      name: "Dr. Dibya Ranjan Barad",
-      designation: "Gen. Secretary",
-    },
+    officials: [
+      {
+        title: "Mr.",
+        name: "Dr. Dibya Ranjan Barad",
+        designation: "Gen. Secretary",
+      },
+    ],
     president: "",
     genSecreatary: require("../../../helper/state-table/dibyaRanjan.jpg"),
   },
@@ -95,25 +103,48 @@ const rows = [
   // },
   {
     srn: 7,
-    officials: {
-      title: "Mr.",
-      name: "M.P.SUDHARSAN",
-      designation: "President",
-    },
+    officials: [
+      {
+        title: "Mr.",
+        name: "M.P.SUDHARSAN",
+        designation: "President",
+      },
+    ],
     state: { code: "NSMA/031/TN/300", stateName: "TAMILNADU" },
     president: require("../../../helper/state-table/mp-sudharshan.jpg"),
     genSecreatary: "",
   },
   {
     srn: 8,
-    officials: {
-      title: "Mr.",
-      name: "Anami sharan",
-      designation: "Gen. secretary",
-    },
+    officials: [
+      {
+        title: "Mr.",
+        name: "Anami sharan",
+        designation: "Gen. secretary",
+      },
+    ],
     state: { code: "NSMA/018/MP/170", stateName: "Madhya Pradesh" },
     president: "",
     genSecreatary: require("../../../helper/state-table/anami.jpg"),
+  },
+  {
+    srn: 9,
+    officials: [
+      {
+        title: "Mr.",
+        name: "Anil Kumar",
+        designation: "President",
+      },
+      {
+        title: "Mr.",
+        name: "Sandeep Kumar",
+        designation: "Gen. secretary",
+      },
+    ],
+    state: { code: "NSMA/SGFI/HR/110", stateName: "Haryana" },
+    president: require("../../../helper/state-table/anil-kumar-haryana-president.jpg"),
+    genSecreatary: require("../../../helper/state-table/sandeep-kumar-haryana-secretary.jpg"),
+    logo: require("../../../helper/logo-for-slider/haryana.png"),
   },
 ];
 
@@ -225,12 +256,16 @@ export default function StateTable() {
                 </Stack>
               </TableCell>
               <TableCell>
-                <Stack justifyContent={"center"} alignItems={"center"}>
-                  <Typography>
-                    <span>{row?.officials?.title} </span>
-                    {row?.officials?.name}
-                  </Typography>
-                  <Typography>{row?.officials?.designation}</Typography>
+                <Stack justifyContent="center" alignItems="center" spacing={2}>
+                  {row.officials.map((official, index) => (
+                    <div key={index}>
+                      <Typography>
+                        <span>{official?.title} </span>
+                        {official?.name}
+                      </Typography>
+                      <Typography>{official?.designation}</Typography>
+                    </div>
+                  ))}
                 </Stack>
               </TableCell>
               <TableCell>

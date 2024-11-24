@@ -20,7 +20,7 @@ const EventsContent = () => {
           alignItems={"center"}
           justifyContent={"center"}
           // m={"8rem"}
-          // gap={10}
+          gap={10}
         >
           <Image
             src={require("../../../helper/events/event.jpg")}
@@ -35,18 +35,19 @@ const EventsContent = () => {
             onMouseEnter={() => setIsHovered1(true)}
             onMouseLeave={() => setIsHovered1(false)}
           />
-          {/* <Image
-          style={{
-            height: isHovered2 ? "80vh" : "70vh",
-            width: "auto",
-            borderRadius: "1.5rem",
-          }}
-          src={require("../../../helper/events/referee-seminar.jpg")}
-          alt={""}
-          className={styles.image}
-          onMouseEnter={() => setIsHovered2(true)}
-          onMouseLeave={() => setIsHovered2(false)}
-        /> */}
+          <Image
+            style={{
+              height: isHovered2 ? "80vh" : "70vh",
+              width: "auto",
+              borderRadius: "1.5rem",
+              transition: "height 0.5s ease-in-out",
+            }}
+            src={require("../../../helper/events/interview-event.jpg")}
+            alt={""}
+            className={styles.image}
+            onMouseEnter={() => setIsHovered2(true)}
+            onMouseLeave={() => setIsHovered2(false)}
+          />
         </Stack>
 
         <Stack
