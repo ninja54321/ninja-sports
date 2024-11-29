@@ -3,6 +3,7 @@ import { Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./styles.module.css";
+import EventCard from "./EventCard";
 
 const EventsContent = () => {
   const [isHovered1, setIsHovered1] = useState(false);
@@ -22,31 +23,10 @@ const EventsContent = () => {
           // m={"8rem"}
           gap={10}
         >
-          <Image
-            src={require("../../../helper/events/event.jpg")}
-            style={{
-              height: isHovered1 ? "70vh" : "60vh",
-              width: "auto",
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease-in-out",
-            }}
-            alt={""}
-            className={styles.image}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
-          />
-          <Image
-            style={{
-              height: isHovered2 ? "80vh" : "70vh",
-              width: "auto",
-              borderRadius: "1.5rem",
-              transition: "height 0.5s ease-in-out",
-            }}
-            src={require("../../../helper/events/interview-event.jpg")}
-            alt={""}
-            className={styles.image}
-            onMouseEnter={() => setIsHovered2(true)}
-            onMouseLeave={() => setIsHovered2(false)}
+          <EventCard img={require("../../../helper/events/event.jpg")} />
+          <EventCard img={require("../../../helper/events/event-dec.jpg")} />
+          <EventCard
+            img={require("../../../helper/events/interview-event.jpg")}
           />
         </Stack>
 
