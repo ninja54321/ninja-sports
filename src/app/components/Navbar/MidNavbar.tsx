@@ -106,6 +106,19 @@ const MidNavbar = () => {
             {/* <Link className={styles.navItem} href={"/contact"}>
               <MenuItem>Contact Page</MenuItem>
             </Link> */}
+
+            <Link
+              href={
+                "https://docs.google.com/forms/d/e/1FAIpQLSfkxM4G535O2zkEJayb_YWpMv3-bZ_uPkVSWFs3_r8MuMFKAw/viewform?usp=sharing"
+              }
+              className={styles.navItem}
+              target="_blank"
+            >
+              <MenuItem>
+                <Typography>Delhi NCR Championship 2024</Typography>
+              </MenuItem>
+            </Link>
+
             <Link
               href={"https://forms.gle/651PyYNX3fnc61ydA"}
               className={styles.navItem}

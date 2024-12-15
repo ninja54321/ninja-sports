@@ -146,6 +146,18 @@ const rows = [
     genSecreatary: require("../../../helper/state-table/sandeep-kumar-haryana-secretary.jpg"),
     logo: require("../../../helper/logo-for-slider/haryana.png"),
   },
+  {
+    srn: 10,
+    officials: [
+      {
+        title: "Mr.",
+        name: "Dr. Shyam Sundar Verma",
+        designation: "President",
+      },
+    ],
+    state: { code: "NSMA/007/CHT/60", stateName: "Chhattisgarh" },
+    president: require("../../../helper/state-table/shyam-sundar.jpg"),
+  },
 ];
 
 export default function StateTable() {
@@ -258,13 +270,21 @@ export default function StateTable() {
               <TableCell>
                 <Stack justifyContent="center" alignItems="center" spacing={2}>
                   {row.officials.map((official, index) => (
-                    <div key={index}>
+                    <Stack
+                      key={index}
+                      style={{
+                        flexDirection: "column",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
                       <Typography>
                         <span>{official?.title} </span>
                         {official?.name}
                       </Typography>
                       <Typography>{official?.designation}</Typography>
-                    </div>
+                    </Stack>
                   ))}
                 </Stack>
               </TableCell>

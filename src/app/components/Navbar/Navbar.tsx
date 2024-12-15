@@ -107,6 +107,16 @@ export default function Navbar(props: Props) {
             </Link> */}
 
             <Link
+              href={
+                "https://docs.google.com/forms/d/e/1FAIpQLSfkxM4G535O2zkEJayb_YWpMv3-bZ_uPkVSWFs3_r8MuMFKAw/viewform?usp=sharing"
+              }
+              className={styles.navItemDrawer}
+              target="_blank"
+            >
+              <Typography>Delhi NCR Championship 2024</Typography>
+            </Link>
+
+            <Link
               href={"https://forms.gle/651PyYNX3fnc61ydA"}
               className={styles.navItemDrawer}
               target="_blank"
