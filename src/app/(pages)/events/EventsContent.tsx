@@ -17,13 +17,16 @@ const EventsContent = () => {
         </Typography>
 
         <Stack
-          direction={{ sx: "column", md: "row" }}
+          // direction={{ sx: "column", md: "row" }}
+          direction={"row"}
           alignItems={"center"}
           justifyContent={"center"}
+          flexWrap={"wrap"}
           // m={"8rem"}
           gap={10}
         >
           <EventCard img={require("../../../helper/events/event.jpg")} />
+          <EventCard img={require("../../../helper/events/dec-24.jpg")} />
           <EventCard img={require("../../../helper/events/event-dec.jpg")} />
           <EventCard
             img={require("../../../helper/events/interview-event.jpg")}

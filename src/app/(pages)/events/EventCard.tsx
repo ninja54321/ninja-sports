@@ -8,20 +8,17 @@ interface IEventCardProps {
 
 const EventCard = ({ img }: IEventCardProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+
   return (
-    <Image
-      src={img}
-      style={{
-        height: isHovered ? "70vh" : "60vh",
-        width: "auto",
-        borderRadius: "1.5rem",
-        transition: "height 0.5s ease-in-out",
-      }}
-      alt={""}
-      className={styles.image}
+    <div
+      className={`${styles.eventCardContainer} ${
+        isHovered ? styles.hovered : ""
+      }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-    />
+    >
+      <Image src={img} alt="" className={styles.eventCardImage} />
+    </div>
   );
 };
 

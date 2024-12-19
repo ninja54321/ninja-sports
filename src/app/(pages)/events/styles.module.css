@@ -11,3 +11,34 @@
 .image {
   transition: transform 0.3s ease; /* Add transition for smooth effect */
 }
+
+.eventCardContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Default image styles */
+.eventCardImage {
+  height: auto;
+  width: 150px; /* Default for smaller screens */
+  border-radius: 1.5rem;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Hover behavior */
+.eventCardContainer.hovered .eventCardImage {
+  width: 200px; /* Width when hovered on smaller screens */
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .eventCardImage {
+    width: 400px; /* Default for larger screens */
+  }
+
+  .eventCardContainer.hovered .eventCardImage {
+    width: 420px; /* Width when hovered on larger screens */
+  }
+}
