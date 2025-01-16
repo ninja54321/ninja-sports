@@ -5,6 +5,30 @@ export interface ISliderItems {
 }
 
 export const sliderItems1 = [
+  { image: require("../../../../public/new-images/1.jpg"), title: "image 1" },
+  { image: require("../../../../public/new-images/2.jpg"), title: "image 2" },
+  { image: require("../../../../public/new-images/3.jpg"), title: "image 3" },
+  { image: require("../../../../public/new-images/4.jpg"), title: "image 4" },
+  { image: require("../../../../public/new-images/5.jpg"), title: "image 5" },
+  { image: require("../../../../public/new-images/6.jpg"), title: "image 6" },
+  { image: require("../../../../public/new-images/7.jpg"), title: "image 7" },
+  { image: require("../../../../public/new-images/8.jpg"), title: "image 8" },
+  { image: require("../../../../public/new-images/9.jpg"), title: "image 9" },
+  { image: require("../../../../public/new-images/10.jpg"), title: "image 10" },
+  { image: require("../../../../public/new-images/11.jpg"), title: "image 11" },
+  { image: require("../../../../public/new-images/12.jpg"), title: "image 12" },
+  { image: require("../../../../public/new-images/13.jpg"), title: "image 13" },
+  { image: require("../../../../public/new-images/14.jpg"), title: "image 14" },
+  { image: require("../../../../public/new-images/15.jpg"), title: "image 15" },
+  { image: require("../../../../public/new-images/16.jpg"), title: "image 16" },
+  { image: require("../../../../public/new-images/17.jpg"), title: "image 17" },
+  { image: require("../../../../public/new-images/18.jpg"), title: "image 18" },
+  { image: require("../../../../public/new-images/19.jpg"), title: "image 19" },
+  { image: require("../../../../public/new-images/20.jpg"), title: "image 20" },
+  { image: require("../../../../public/new-images/21.jpg"), title: "image 21" },
+];
+
+export const sliderItems2 = [
   {
     image: require("../../../../public/sliderImage/20.jpg"),
     title: "image 1",
@@ -104,6 +128,7 @@ export const sliderItems1 = [
 ];
 
 export const galleryPhotos = [
+  ...sliderItems1,
   {
     image: require("../../../../public/galleryImage/12.jpg"),
     title: "image 1",

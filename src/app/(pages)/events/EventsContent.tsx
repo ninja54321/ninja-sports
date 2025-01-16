@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import EventCard from "./EventCard";
+import { latestImages } from "./constant";
 
 const EventsContent = () => {
   const [isHovered1, setIsHovered1] = useState(false);
@@ -40,109 +41,20 @@ const EventsContent = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <div className={styles.imageContainer}>
-            <Image
-              src={"/event/0.jpg"}
-              width={250}
-              height={250}
-              style={{
-                borderRadius: "1.5rem",
-              }}
-              alt={""}
-              className={styles.image}
-            />
-          </div>
-
-          <div className={styles.imageContainer}>
-            <Image
-              src={"/event/1.jpg"}
-              width={250}
-              height={250}
-              style={{
-                borderRadius: "1.5rem",
-              }}
-              alt={""}
-              className={styles.image}
-            />
-          </div>
-
-          <div className={styles.imageContainer}>
-            <Image
-              src={"/event/2.jpg"}
-              width={250}
-              height={250}
-              style={{
-                borderRadius: "1.5rem",
-              }}
-              alt={""}
-              className={styles.image}
-            />
-          </div>
-
-          <div className={styles.imageContainer}>
-            <Image
-              src={"/event/5.jpg"}
-              width={250}
-              height={250}
-              style={{
-                borderRadius: "1.5rem",
-              }}
-              alt={""}
-              className={styles.image}
-            />
-          </div>
-
-          <div className={styles.imageContainer}>
-            <Image
-              src={"/event/7.jpg"}
-              width={250}
-              height={250}
-              style={{
-                borderRadius: "1.5rem",
-              }}
-              alt={""}
-              className={styles.image}
-            />
-          </div>
-
-          <div className={styles.imageContainer}>
-            <Image
-              src={"/event/10.jpg"}
-              width={250}
-              height={250}
-              style={{
-                borderRadius: "1.5rem",
-              }}
-              alt={""}
-              className={styles.image}
-            />
-          </div>
-
-          <div className={styles.imageContainer}>
-            <Image
-              src={"/event/27.jpg"}
-              width={250}
-              height={250}
-              style={{
-                borderRadius: "1.5rem",
-              }}
-              alt={""}
-              className={styles.image}
-            />
-          </div>
-
-          <div className={styles.imageContainer}>
-            <Image
-              src={"/event/29.jpg"}
-              width={250}
-              height={250}
-              style={{
-                borderRadius: "1.5rem",
-              }}
-              alt={""}
-              className={styles.image}
-            />
-          </div>
+          {latestImages.map((image, index) => (
+            <div className={styles.imageContainer} key={index}>
+              <Image
+                src={image}
+                width={250}
+                height={250}
+                style={{
+                  borderRadius: "1.5rem",
+                }}
+                alt={"event-img"}
+                className={styles.image}
+              />
+            </div>
+          ))}
         </Stack>
       </Stack>
     </Stack>

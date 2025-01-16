@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import PhotoSection from "./PhotoSection";
 import CrouselComponent from "./Crousel";
-import { sliderItems1 } from "./content";
+import { sliderItems1, sliderItems2 } from "./content";
 
 const GalleryComponent = () => {
   return (
@@ -40,7 +40,7 @@ const GalleryComponent = () => {
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <CrouselComponent data={sliderItems1} />
+        <CrouselComponent data={sliderItems2} />
       </Box>
     </Box>
   );

@@ -132,7 +132,7 @@ const IntroSection = () => {
                 GOVERNMENT OF INDIA
               </Typography>
 
-              <Box
+              {/* <Box
                 display={"flex"}
                 alignItems={"center"}
                 justifyContent={"flex-start"}
@@ -156,7 +156,7 @@ const IntroSection = () => {
                 >
                   All Indoor & Outdoor Games
                 </Typography>
-              </Box>
+              </Box> */}
             </Stack>
           </Box>
         </Box>
