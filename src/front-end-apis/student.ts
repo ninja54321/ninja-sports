@@ -1,11 +1,29 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const fetchStudentsDetails = async (page: number, limit: number) => {
+// export const fetchStudentsDetails = async (page: number, limit: number) => {
+//   try {
+//     const res = await axios.get(
+//       `/api/students/details?page=${page}&limit=${limit}`
+//     );
+//     return res.data;
+//   } catch (error) {
+//     console.log(error);
+//     toast.error("Error in fetching student data", {
+//       autoClose: 2000,
+//     });
+//   }
+// };
+export const fetchStudentsDetails = async (
+  page: number,
+  limit: number,
+  registrationNumber?: string | null
+) => {
   try {
-    const res = await axios.get(
-      `/api/students/details?page=${page}&limit=${limit}`
-    );
+    const query = registrationNumber
+      ? `/api/students/details?registrationNumber=${registrationNumber}`
+      : `/api/students/details?page=${page}&limit=${limit}`;
+    const res = await axios.get(query);
     return res.data;
   } catch (error) {
     console.log(error);

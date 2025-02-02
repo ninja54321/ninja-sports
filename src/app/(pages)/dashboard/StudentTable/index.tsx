@@ -5,16 +5,20 @@ import {
   Button,
   CircularProgress,
   IconButton,
+  Popover,
   Stack,
+  TextField,
   Typography,
 } from "@mui/material";
 import { fetchStudentsDetails } from "@/front-end-apis/student";
 import { FaPencilAlt } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import StatusUpdate from "./StatusUpdate";
 import styles from "./styles.module.css";
 import { MdDelete } from "react-icons/md";
 import DeleteDetails from "./DeleteDetails";
+import { BiSearch } from "react-icons/bi";
+import { CiSearch } from "react-icons/ci";
 
 const StudentTable = () => {
   const [studentData, setStudentData] = useState<any[]>([]);
@@ -22,18 +26,32 @@ const StudentTable = () => {
   const [limit, setLimit] = useState<number>(10);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
+  const [searchAnchorEl, setSearchAnchorEl] =
+    React.useState<HTMLButtonElement | null>(null);
+  const searchParams = useSearchParams();
+  const [registrationNumber, setRegistrationNumber] = useState<string>("");
 
   const handleEdit = (studentId: string) => {
     router.push(`/studentRegistration?id=${studentId}`);
   };
 
-  const fetchData = async () => {
+  const fetchData = async (registrationNumber: string | null) => {
     setIsLoading(true);
-    const data = await fetchStudentsDetails(page, limit);
+    const data = await fetchStudentsDetails(page, limit, registrationNumber);
     setIsLoading(false);
     if (data) {
       setStudentData(data.data);
     }
+  };
+
+  const handleRegistrationSearch = () => {
+    const params = new URLSearchParams(window.location.search);
+    if (registrationNumber.trim()) {
+      params.set("registrationNumber", registrationNumber);
+    } else {
+      params.delete("registrationNumber");
+    }
+    router.push(`?${params.toString()}`);
   };
 
   const handleDelete = (studentId: string) => {
@@ -41,16 +59,28 @@ const StudentTable = () => {
   };
 
   useEffect(() => {
-    fetchData();
-  }, [page, limit]);
+    setRegistrationNumber(searchParams.get("registrationNumber") || "");
+    fetchData(searchParams.get("registrationNumber"));
+  }, [page, limit, searchParams]);
 
   const columns = [
     {
       key: "registrationNumber",
       name: "Registration Number",
       renderHeaderCell: () => (
-        <Stack className={styles.commonCellStyle}>
-          <Typography textAlign="center">Registration Number</Typography>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
+          sx={{ width: "100%" }}
+          className={styles.commonCellStyle}
+        >
+          <Typography variant="body1">Registration Number</Typography>
+          <IconButton
+            onClick={(event) => setSearchAnchorEl(event.currentTarget)}
+          >
+            <BiSearch size={20} />
+          </IconButton>
         </Stack>
       ),
       renderCell: ({ row }: any) => (
@@ -134,8 +164,8 @@ const StudentTable = () => {
   ];
 
   return (
-    <Stack marginTop="2rem" p={4} justifyContent="center">
-      {studentData.length > 0 && !isLoading && (
+    <>
+      <Stack marginTop="2rem" p={4} justifyContent="center">
         <Stack maxHeight="65vh">
           <DataGrid
             enableVirtualization={false}
@@ -152,35 +182,75 @@ const StudentTable = () => {
             rowHeight={50}
           />
         </Stack>
-      )}
-      {studentData.length === 0 ? (
-        <Typography textAlign="center">No result found</Typography>
-      ) : (
-        <></>
-      )}
-      {isLoading && <CircularProgress sx={{ color: "#82b9d1" }} />}
-      <Stack
-        direction="row"
-        spacing={2}
-        alignItems="center"
-        justifyContent="flex-end"
-        mt="2rem"
-      >
-        <Button
-          disabled={isLoading}
-          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+        {studentData.length === 0 ? (
+          <Typography textAlign="center">No result found</Typography>
+        ) : (
+          <></>
+        )}
+        {isLoading && <CircularProgress sx={{ color: "#82b9d1" }} />}
+        <Stack
+          direction="row"
+          spacing={2}
+          alignItems="center"
+          justifyContent="flex-end"
+          mt="2rem"
         >
-          Previous
-        </Button>
-        <Typography>Page {page}</Typography>
-        <Button
-          disabled={isLoading || studentData.length === 0}
-          onClick={() => setPage((prev) => prev + 1)}
-        >
-          Next
-        </Button>
+          <Button
+            disabled={isLoading}
+            onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+          >
+            Previous
+          </Button>
+          <Typography>Page {page}</Typography>
+          <Button
+            disabled={isLoading || studentData.length === 0}
+            onClick={() => setPage((prev) => prev + 1)}
+          >
+            Next
+          </Button>
+        </Stack>
       </Stack>
-    </Stack>
+
+      {Boolean(searchAnchorEl) && (
+        <Popover
+          open={Boolean(searchAnchorEl)}
+          anchorEl={searchAnchorEl}
+          onClose={() => setSearchAnchorEl(null)}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+        >
+          <Stack sx={{ padding: "8px" }} gap={2}>
+            <Typography>Enter Registration Number to search</Typography>
+            <Stack direction="row" spacing={2}>
+              <TextField
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleRegistrationSearch();
+                  }
+                }}
+                placeholder="Enter registration number"
+                value={registrationNumber}
+                onChange={(event) => setRegistrationNumber(event.target.value)}
+                InputProps={{
+                  endAdornment: (
+                    <IconButton
+                      type="button"
+                      aria-label="search"
+                      edge="end"
+                      onClick={handleRegistrationSearch}
+                    >
+                      <CiSearch />
+                    </IconButton>
+                  ),
+                }}
+              />
+            </Stack>
+          </Stack>
+        </Popover>
+      )}
+    </>
   );
 };
 
