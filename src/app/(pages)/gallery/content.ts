@@ -128,6 +128,54 @@ export const sliderItems2 = [
 ];
 
 export const galleryPhotos = [
+  {
+    image: require("../../../../public/galleryImage/20-04-25/1.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/2.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/3.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/4.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/5.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/6.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/7.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/8.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/9.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/10.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/11.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/20-04-25/12.jpg"),
+    title: "image 1",
+  },
   ...sliderItems1,
   {
     image: require("../../../../public/galleryImage/12.jpg"),
