@@ -25,18 +25,6 @@ const rows = [
     president: "",
     genSecreatary: require("../../../helper/state-table/sangeeta-chauhan-img.jpg"),
   },
-  // {
-  //   srn: 2,
-  //   logo: require("../../../helper/state-table/up-logo.jpg"),
-  //   state: { code: "NSMA/035/UP/340", stateName: "Uttar Pradesh" },
-  //   officials: {
-  //     title: "Mr.",
-  //     name: "T.S. Rana",
-  //     designation: "Gen. Secretary",
-  //   },
-  //   president: "",
-  //   genSecreatary: require("../../../helper/state-table/ts-rana-up.jpg"),
-  // },
   {
     srn: 2,
     logo: require("../../../helper/state-table/up-logo.png"),
@@ -51,6 +39,20 @@ const rows = [
     president: "",
     genSecreatary: require("../../../helper/state-table/Vicky-Panchal-up-General-Secretary.jpg"),
   },
+  {
+    srn: 3,
+    officials: [
+      {
+        title: "Mr.",
+        name: "Ganesh Kumar",
+        designation: "General Secretary",
+      },
+    ],
+    state: { code: "NSMA/031/TN/300", stateName: "Jharkhand" },
+    president: "",
+    genSecreatary: require("../../../helper/state-table/ganeshkumar.jpg"),
+  },
+
   {
     srn: 7,
     officials: [
