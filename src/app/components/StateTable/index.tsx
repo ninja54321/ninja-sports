@@ -48,7 +48,7 @@ const rows = [
         designation: "General Secretary",
       },
     ],
-    state: { code: "NSMA/031/TN/300", stateName: "Jharkhand" },
+    state: { code: "NSMA/015/JH/140", stateName: "Jharkhand" },
     president: "",
     genSecreatary: require("../../../helper/state-table/ganeshkumar.jpg"),
   },
