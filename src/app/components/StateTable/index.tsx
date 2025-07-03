@@ -54,7 +54,7 @@ const rows = [
   },
 
   {
-    srn: 7,
+    srn: 4,
     officials: [
       {
         title: "Mr.",
@@ -67,7 +67,7 @@ const rows = [
     genSecreatary: "",
   },
   {
-    srn: 8,
+    srn: 5,
     officials: [
       {
         title: "Mr.",
@@ -80,7 +80,7 @@ const rows = [
     genSecreatary: require("../../../helper/state-table/anami.jpg"),
   },
   {
-    srn: 9,
+    srn: 6,
     officials: [
       {
         title: "Mr.",
@@ -99,7 +99,7 @@ const rows = [
     logo: require("../../../helper/logo-for-slider/haryana.png"),
   },
   {
-    srn: 10,
+    srn: 7,
     officials: [
       {
         title: "Mr.",
