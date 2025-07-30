@@ -44,12 +44,17 @@ const rows = [
     officials: [
       {
         title: "Mr.",
+        name: "AMIT KUMAR SONKAR",
+        designation: "President",
+      },
+      {
+        title: "Mr.",
         name: "Ganesh Kumar",
         designation: "General Secretary",
       },
     ],
     state: { code: "NSMA/015/JH/140", stateName: "Jharkhand" },
-    president: "",
+    president: require("../../../helper/state-table/amit-kumar.jpg"),
     genSecreatary: require("../../../helper/state-table/ganeshkumar.jpg"),
   },
 
