@@ -27,6 +27,9 @@ const EventsContent = () => {
           gap={10}
         >
           <EventCard
+            img={require("../../../helper/events/event-10-09-25.jpg")}
+          />
+          <EventCard
             img={require("../../../helper/events/event-30-01-2-25.jpg")}
           />
           <EventCard img={require("../../../helper/events/refree.jpg")} />

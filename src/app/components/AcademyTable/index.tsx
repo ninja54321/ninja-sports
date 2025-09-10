@@ -121,6 +121,19 @@ const rows = [
     },
     photo: require("../../../helper/academy-table/rameswar.jpg"),
   },
+  {
+    srn: 8,
+    name: {
+      fullName: "Arvind Kumar sonkar",
+      post: "District President",
+    },
+    coach: {
+      code: "NSMA/SGFI/035/340/A/C",
+      instituteName: "Academy name Tiger fitness and Fight Club",
+      city: "Raebareli (UP)",
+    },
+    photo: require("../../../helper/academy-table/arvind-kumar-sonkar.jpg"),
+  },
 ];
 const AcademyTable = () => {
   return (
