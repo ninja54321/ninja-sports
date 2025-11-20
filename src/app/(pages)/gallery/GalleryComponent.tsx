@@ -1,9 +1,11 @@
 "use client";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import PhotoSection from "./PhotoSection";
 import CrouselComponent from "./Crousel";
-import { sliderItems1, sliderItems2 } from "./content";
+import { delhiGalleryPhotos, sliderItems1, sliderItems2 } from "./content";
+import Image from "next/image";
+import styles from "./styles.module.css";
 
 const GalleryComponent = () => {
   return (
@@ -28,6 +30,61 @@ const GalleryComponent = () => {
       >
         Our Photo Gallery
       </Typography>
+      <Box mb={"4rem"}>
+        {/* TODO: videos is pending */}
+        <Typography
+          variant="h4"
+          color={"blue"}
+          sx={{
+            textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
+            fontWeight: 500,
+          }}
+        >
+          Delhi
+        </Typography>
+        <Grid container spacing={2} justifyContent={"center"}>
+          {delhiGalleryPhotos.map((photo, index) => (
+            <Grid item key={index}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={photo.image}
+                  height={200}
+                  alt={""}
+                  className={styles.image}
+                />
+              </div>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      <Box mb={"4rem"}>
+        {/* TODO: videos is pending */}
+        <Typography
+          variant="h4"
+          color={"blue"}
+          sx={{
+            textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
+            fontWeight: 500,
+          }}
+        >
+          Up
+        </Typography>
+        <Grid container spacing={2} justifyContent={"center"}>
+          {delhiGalleryPhotos.map((photo, index) => (
+            <Grid item key={index}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={photo.image}
+                  height={200}
+                  alt={""}
+                  className={styles.image}
+                />
+              </div>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
       <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
         <CrouselComponent data={sliderItems1} />
       </Box>

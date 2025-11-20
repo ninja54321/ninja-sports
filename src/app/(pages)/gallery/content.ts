@@ -4,6 +4,180 @@ export interface ISliderItems {
   title: string;
 }
 
+export const delhiGalleryPhotos = [
+  {
+    image: require("../../../../public/galleryImage/delhi/1.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/2.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/3.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/4.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/5.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/6.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/7.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/8.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/9.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/10.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/11.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/12.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/13.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/14.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/15.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/16.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/17.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/18.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/delhi/21.jpg"),
+    title: "image 1",
+  },
+];
+
+export const upGalleryPhotos = [
+  {
+    image: require("../../../../public/galleryImage/up/1.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/2.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/3.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/4.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/5.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/6.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/7.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/8.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/9.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/10.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/11.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/12.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/13.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/14.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/15.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/16.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/17.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/18.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/21.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/22.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/23.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/24.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/up/25.jpg"),
+    title: "image 1",
+  },
+];
+
 export const sliderItems1 = [
   { image: require("../../../../public/new-images/1.jpg"), title: "image 1" },
   { image: require("../../../../public/new-images/2.jpg"), title: "image 2" },
