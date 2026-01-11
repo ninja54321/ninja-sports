@@ -4,6 +4,118 @@ export interface ISliderItems {
   title: string;
 }
 
+export const martialArtChampionship2025 = [
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/1.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/2.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/3.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/4.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/5.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/6.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/7.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/8.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/9.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/10.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/11.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/12.jpg"),
+    title: "image 1",
+  },
+
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/13.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/14.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/15.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/16.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/17.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/18.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/19.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/20.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/21.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/22.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/23.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/24.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/25.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/26.jpg"),
+    title: "image 1",
+  },
+  {
+    image: require("../../../../public/galleryImage/martial-art-championship-2025/27.jpg"),
+    title: "image 1",
+  },
+];
+
 export const delhiGalleryPhotos = [
   {
     image: require("../../../../public/galleryImage/delhi/1.jpg"),

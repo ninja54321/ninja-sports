@@ -1,9 +1,14 @@
 "use client";
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import PhotoSection from "./PhotoSection";
 import CrouselComponent from "./Crousel";
-import { delhiGalleryPhotos, sliderItems1, sliderItems2 } from "./content";
+import {
+  delhiGalleryPhotos,
+  martialArtChampionship2025,
+  sliderItems1,
+  sliderItems2,
+} from "./content";
 import Image from "next/image";
 import styles from "./styles.module.css";
 
@@ -30,6 +35,32 @@ const GalleryComponent = () => {
       >
         Our Photo Gallery
       </Typography>
+      <Box mb={"4rem"}>
+        <Typography
+          variant="h4"
+          color={"blue"}
+          sx={{
+            textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
+            fontWeight: 500,
+          }}
+        >
+          1st National Ninja Sports Martial Art Championship 2025
+        </Typography>
+        <Grid container spacing={2} justifyContent={"center"}>
+          {martialArtChampionship2025.map((photo, index) => (
+            <Grid item key={index}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={photo.image}
+                  height={200}
+                  alt={""}
+                  className={styles.image}
+                />
+              </div>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
       <Box mb={"4rem"}>
         {/* TODO: videos is pending */}
         <Typography
