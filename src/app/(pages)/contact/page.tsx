@@ -106,9 +106,9 @@ const ContactUs = () => {
                   <Typography fontSize={"0.8rem"} color={"white"}>
                     Head office number
                   </Typography>
-                  <Typography fontSize={"0.8rem"} color={"white"}>
+                  {/* <Typography fontSize={"0.8rem"} color={"white"}>
                     01169261710
-                  </Typography>
+                  </Typography> */}
                 </Stack>
                 <Stack>
                   <Typography fontSize={"0.8rem"} color={"white"}>
